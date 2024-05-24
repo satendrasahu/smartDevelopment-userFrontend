@@ -1,0 +1,118 @@
+import { styled } from "@mui/material/styles";
+import { Box } from "@mui/material";
+
+export const StyledPrimaryCard = styled(Box)(({ theme }) => ({
+  background: theme.colors.primary.mainColor,
+  borderRadius: theme.borderRadius,
+  // overflow: 'hidden',
+  border: `1px solid ${theme.colors.extra.highLightColor}`,
+  boxShadow: `0 0 10px ${theme.colors.extra.highLightColor}`,
+  position: "relative",
+  "& .Counter": {
+    top: "-30px",
+    left: "0",
+    right: "0",
+    padding: "1rem",
+    position: "absolute",
+    background: theme.colors.extra.mainColor,
+    width: theme.spacing(5),
+    height: theme.spacing(5),
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    margin: "0 auto",
+    fontSize: theme.spacing(2.3),
+    fontWeight: "bold",
+    borderRadius: "10px", //theme.borderRadius,
+    color: theme.colors.extra.highLightColor,
+    border: `3px solid ${theme.colors.extra.highLightColor}`,
+    boxShadow: `0 0 10px ${theme.colors.extra.highLightColor}`,
+  },
+  "& .number-heading": {
+    color: theme.colors.primary.textColor,
+    fontSize: "max(25px, min(1.2vw, 40px))",
+    textAlign: "center",
+    padding: "64px 48px 0",
+    marginBottom: "16px",
+    fontWeight: "bold",
+    [theme.breakpoints.down("xl")]: {
+      padding: "64px 0 0",
+    },
+  },
+  "& .number-text": {
+    flexGrow: 1,
+    marginBottom: "28px",
+    padding: "0 48px",
+    color: theme.colors.secondary.textColor,
+    fontWeight: "400",
+    textAlign: "center",
+    [theme.breakpoints.down("xl")]: {
+      padding: "0",
+    },
+  },
+  "& img": {
+    width: "100%",
+    marginBottom: "-7px",
+    // borderRadius: "0 0 15px 15px",
+  },
+}));
+
+export const StyledSecondaryCard = styled(Box)(({ theme }) => ({
+  background: theme.colors.primary.mainColor,
+  borderRadius: theme.borderRadius,
+  minHeight: theme.spacing(10),
+  width: `calc(100% - 5rem)`,
+  [theme.breakpoints.down("lg")]: {
+    width: "100%",
+  },
+  [theme.breakpoints.down("lg")]: {
+    width: `calc(100% - 3rem)`,
+    left: theme.spacing(2),
+  },
+
+  position: "relative",
+  border: `1px solid ${theme.colors.extra.highLightColor}`,
+  boxShadow: `0 0 10px ${theme.colors.extra.highLightColor}`,
+  "& .Counter": {
+    top: "-17.5%",
+    left: "-5%",
+    // right: "0",
+    padding: "1rem",
+    position: "absolute",
+    background: theme.colors.extra.mainColor,
+    width: theme.spacing(5),
+    height: theme.spacing(5),
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    // margin: "0 auto",
+    fontSize: theme.spacing(2.3),
+    fontWeight: "bold",
+    borderRadius: "10px", //theme.borderRadius,
+    color: theme.colors.extra.highLightColor,
+    border: `3px solid ${theme.colors.extra.highLightColor}`,
+    boxShadow: `0 0 10px ${theme.colors.extra.highLightColor}`,
+  },
+  "& .number-heading": {
+    color: theme.colors.primary.textColor,
+    fontSize: "max(25px, min(1.2vw, 40px))",
+    textAlign: "center",
+    padding: "64px 48px 0",
+    marginBottom: "16px",
+    fontWeight: "bold",
+    [theme.breakpoints.down("xl")]: {
+      padding: "64px 0 0",
+    },
+  },
+  "& .number-text": {
+    flexGrow: 1,
+    marginBottom: "28px",
+    padding: "0 48px",
+    color: theme.colors.secondary.textColor,
+    fontWeight: "400",
+    textAlign: "center",
+    [theme.breakpoints.down("xl")]: {
+      padding: "0",
+    },
+  },
+}));

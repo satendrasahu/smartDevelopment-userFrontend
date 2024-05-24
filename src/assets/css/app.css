@@ -1,0 +1,20 @@
+body {
+    background: #003144 !important;
+    font-family: "IBM Plex Sans", sans-serif !important;
+  }
+  
+  
+  .main-loader {
+    position: fixed;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    background: #003144;
+    height: 100%;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
