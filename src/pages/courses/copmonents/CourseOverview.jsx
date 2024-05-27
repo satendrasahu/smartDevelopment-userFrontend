@@ -11,8 +11,8 @@ import { useTheme } from "@emotion/react";
 export default function ResponsiveGrid() {
   const navigate = useNavigate();
   const theme = useTheme()
-  const changePath = (courseId) => {
-    navigate(`${ROUTE_PATHS.courses}/${courseId}`);
+  const changePath = (topicId) => {
+    navigate(`${ROUTE_PATHS.topics}/${topicId}`);
   };
   const coursesDetails = [
     {

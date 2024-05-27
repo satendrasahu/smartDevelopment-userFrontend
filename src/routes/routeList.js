@@ -37,5 +37,12 @@ export const routersList = [{
     path: ROUTE_PATHS.courseOverview,
     component: lazy(() => import('../pages/courses/copmonents/CourseOverview')),
     hasAuth: false,
+  },
+  {
+    key: uuidv4(),
+    label: 'View - Topics',
+    path: ROUTE_PATHS.topicsOverview,
+    component: lazy(() => import('../pages/courses/copmonents/TopicOverview')),
+    hasAuth: false,
   }
 ]

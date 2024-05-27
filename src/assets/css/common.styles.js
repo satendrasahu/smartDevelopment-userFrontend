@@ -1,4 +1,4 @@
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Button, Divider, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
 export const MainWrap = styled(Box)(({ theme, props }) => ({
@@ -59,10 +59,20 @@ export const CenteredItemBox = styled(Box)(({ theme, props }) => ({
 
 export const PrimaryText = styled(Typography)(({ theme, props }) => ({
   color: theme.colors.primary.textColor,
-
+  fontSize :theme.spacing(2),
   ...props,
 }));
 export const SecondaryText = styled(Typography)(({ theme, props }) => ({
   color: theme.colors.secondary.textColor,
+  ...props,
+}));
+export const StyledDivider = styled(Divider)(({ theme, props }) => ({
+  borderWidth: theme.spacing(0.15),
+  borderColor: theme.colors.primary.textColor,
+  color:"red",
+  width:'100%',
+  margin: theme.spacing(1.5, 0),
+  border: `1px solid ${theme.colors.extra.highLightColor}`,
+  boxShadow: `0 0 10px ${theme.colors.extra.highLightColor}`,
   ...props,
 }));
