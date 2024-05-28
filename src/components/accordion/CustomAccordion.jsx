@@ -17,6 +17,8 @@ const CustomAccordion = (props) => {
   const handleChange = (count) => (_, isExpanded) => {
     setExpandedcount(isExpanded ? count : null);
   };
+
+  console.log("details",details)
   return (
     <StyledAccordion expanded={expandedcount === count} onChange={handleChange(count)}>
       <AccordionSummary
@@ -40,7 +42,7 @@ const CustomAccordion = (props) => {
 
       <StyledDivider />
       <AccordionDetails className="accordion-details">
-        <SecondaryText>{subtitle}</SecondaryText>
+        {/* <SecondaryText>{subtitle}</SecondaryText> */}
         {details}
       </AccordionDetails>
     </StyledAccordion>

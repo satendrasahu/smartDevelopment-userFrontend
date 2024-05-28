@@ -1,4 +1,4 @@
-import { Box, Button, Divider, Typography } from "@mui/material";
+import { Box, Button, Divider, Tooltip, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
 export const MainWrap = styled(Box)(({ theme, props }) => ({
@@ -75,4 +75,13 @@ export const StyledDivider = styled(Divider)(({ theme, props }) => ({
   border: `1px solid ${theme.colors.extra.highLightColor}`,
   boxShadow: `0 0 10px ${theme.colors.extra.highLightColor}`,
   ...props,
+}));
+
+
+export const StyledTooltip = styled(({ className, ...props }) => (
+  <Tooltip {...props} classes={{ popper: className }} />
+))(({ theme }) => ({
+  [`& .MuiTooltip-tooltip`]: {
+    backgroundColor: theme.colors.primary.mainColor,
+  },
 }));

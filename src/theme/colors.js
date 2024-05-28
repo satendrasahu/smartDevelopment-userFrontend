@@ -5,7 +5,7 @@ export const colors = {
     textColor: "#E5E5E5",
     btnColor: "#006d96",
     btnHoverColor: "#033d52",
-    success: "",
+    success: "#2ecc71",
     warning: "",
     info: "",
     error: "",

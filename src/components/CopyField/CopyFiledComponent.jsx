@@ -1,15 +1,14 @@
 import { memo, useState, useRef, useEffect } from 'react'
-import { Grid, InputLabel, InputAdornment, IconButton, Typography, Box, Fab } from '@mui/material/index'
+import { Grid, InputAdornment, IconButton, Typography, Box, Fab } from '@mui/material/index'
 import { useTranslation } from 'react-i18next'
 import FileCopyIcon from '@mui/icons-material/FileCopy'
-import { CustomTextField, useStyles } from './style'
+import { CustomTextField, StyledInputLabel} from './style'
 import CheckIcon from '@mui/icons-material/Check'
 import { green } from '@mui/material/colors'
 
 const CopyFieldComponent = (props) => {
   const { value, copyTitleMessage, title, handleCopyClick, name, isTextCopied } = props
   const { t } = useTranslation()
-  const classes = useStyles()
   const { isCopy, message } = isTextCopied || {}
 
   const [loading, setLoading] = useState(false)
@@ -50,9 +49,9 @@ const CopyFieldComponent = (props) => {
     <Grid item xs={12}>
       <Grid className="copy-input-wrap">
 
-        <InputLabel className={classes?.inputLabel}>
+        <StyledInputLabel>
           {t(title)}
-        </InputLabel>
+        </StyledInputLabel>
         <CustomTextField
           type='text'
           className='form-control shadow-none'

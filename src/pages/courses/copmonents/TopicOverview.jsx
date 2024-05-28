@@ -1,37 +1,29 @@
 // TopicOverview.js
-import React, { useState } from 'react';
-import MainLayout from '../../../components/ui_kit/mainLayout/MainLayout';
+import React, { useState } from "react";
+import MainLayout from "../../../components/ui_kit/mainLayout/MainLayout";
 import {
   CenteredItemBox,
   MainWrap,
   PrimaryText,
   StyledDivider,
-} from '../../../assets/css/common.styles';
-import CustomAccordion from '../../../components/accordion/CustomAccordion';
-import { useTheme } from '@emotion/react';
-import CodeSnippet from './CodeSnippet';
-import { questionDetails } from './questionDetails';
+} from "../../../assets/css/common.styles";
+import CustomAccordion from "../../../components/accordion/CustomAccordion";
+import { useTheme } from "@emotion/react";
+import CodeSnippet from "./CodeSnippet";
+import { questionDetails } from "./questionDetails";
+import AnswerDetails from "./AnswerDetails";
 
 const TopicOverview = () => {
   const theme = useTheme();
-  const [editorTheme, setEditorTheme] = useState('light'); // Default to light theme
-  const [language, setLanguage] = useState('javascript'); // Default language is JavaScript
+  
 
-  const toggleTheme = () => {
-    setEditorTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
-  };
-
-  const handleLanguageChange = (event) => {
-    setLanguage(event.target.value);
-  };
-
-  const topicName = 'Complete Your KYC'
+  const topicName = "Complete Your KYC";
 
   return (
     <MainLayout header footer>
       <MainWrap>
         <CenteredItemBox>
-          <StyledDivider props={{ width: '50%' }} />
+          <StyledDivider props={{ width: "50%" }} />
         </CenteredItemBox>
 
         <CenteredItemBox>
@@ -51,26 +43,15 @@ const TopicOverview = () => {
           <StyledDivider />
         </CenteredItemBox>
 
-        <div>
-          <button onClick={toggleTheme}>Toggle Theme</button>
-          <select onChange={handleLanguageChange} value={language}>
-            <option value="javascript">JavaScript</option>
-            <option value="python">Python</option>
-            <option value="html">HTML</option>
-          </select>
-        </div>
+        
 
         {questionDetails?.map((data) => (
           <CustomAccordion
-            key={data.id}
-            title={data.question}
-            subtitle={data.overView}
-            details={
-              <div>
-                <CodeSnippet code={data.answerLanguage[language]} language={language} editorTheme={editorTheme} />
-              </div>
-            }
-            count={data.id}
+            key={data?.id}
+            title={data?.question}
+            subtitle={data?.overView}
+            details={<AnswerDetails  data={data}/>}
+            count={data?.id}
           />
         ))}
       </MainWrap>
