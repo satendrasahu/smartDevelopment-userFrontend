@@ -2,7 +2,7 @@ import { Box, Fab, IconButton } from "@mui/material";
 import React, { useState } from "react";
 import CodeSnippet from "./CodeSnippet";
 import { useTranslation } from "react-i18next";
-import CopyButton from "../../../components/CopyField/CopyButton";
+import CopyButton from "../../../components/copyField/CopyButton";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness5Icon from "@mui/icons-material/Brightness5";
 import { useTheme } from "@emotion/react";
@@ -10,6 +10,7 @@ import {
   CenteredItemBox,
   SecondaryText,
 } from "../../../assets/css/common.styles";
+import AutoCompleteDropDown from "../../../components/dropDown/AutoCompleteDropDown";
 
 const AnswerDetails = (props) => {
   const { data } = props;
@@ -52,6 +53,12 @@ const AnswerDetails = (props) => {
   };
   const handleTheme = () => {};
 
+  const languagesData = [
+    { label: "JavaScript", value: "javascript" },
+    { label: "python", value: "Python" },
+    { label: "html", value: "HTML" },
+  ];
+
   return (
     <>
       {isTextCopied?.isCopy && (
@@ -76,6 +83,11 @@ const AnswerDetails = (props) => {
           <option value="python">Python</option>
           <option value="html">HTML</option>
         </select>
+
+        <AutoCompleteDropDown
+          renderData={languagesData}
+          placeHolder={t("selectDropDownValue", { value: t("codeLanguages") })}
+        />
         <IconButton onClick={handleTheme} aria-label="change theme">
           <Fab
             aria-label="save"

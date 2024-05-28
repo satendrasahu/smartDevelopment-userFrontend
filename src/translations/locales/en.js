@@ -19,4 +19,6 @@ export default {
   copyContent: "Copy Content",
   copiedtoClipBoard: "{{text}} copied to clip-board",
   content: "Content",
+  selectDropDownValue :"Select {{value}}",
+  codeLanguages :"Code Languages"
 };
