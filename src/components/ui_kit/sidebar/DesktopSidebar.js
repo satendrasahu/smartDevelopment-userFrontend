@@ -10,7 +10,6 @@ import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
 import { useDispatch, useSelector } from "react-redux";
 import { handleSidebar } from "../../../redux/slices/layout/layout.slice";
-import zIndex from "@mui/material/styles/zIndex";
 
 const drawerWidth = 240;
 

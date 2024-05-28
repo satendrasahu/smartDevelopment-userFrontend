@@ -1,33 +1,21 @@
 import { memo, useState, useRef, useEffect } from "react";
 import {
-  Grid,
-  InputAdornment,
   IconButton,
-  Typography,
   Box,
   Fab,
-  Tooltip,
-  Button,
 } from "@mui/material/index";
-import { useTranslation } from "react-i18next";
 import FileCopyIcon from "@mui/icons-material/FileCopy";
-import { CustomTextField, StyledInputLabel } from "./style";
 import CheckIcon from "@mui/icons-material/Check";
 import { green } from "@mui/material/colors";
 import { useTheme } from "@emotion/react";
-import { styled } from "@mui/material/styles";
 import { StyledTooltip } from "../../assets/css/common.styles";
+
 const CopyButton = (props) => {
   const {
-    value,
-    copyTitleMessage,
-    title,
     handleCopyClick,
-    name,
     isTextCopied,
   } = props;
-  const { t } = useTranslation();
-  const { isCopy, message } = isTextCopied || {};
+  const { isCopy } = isTextCopied || {};
 
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
@@ -93,10 +81,6 @@ const CopyButton = (props) => {
 };
 
 CopyButton.defaultProps = {
-  value: "",
-  copyTitleMessage: "",
-  title: "",
-  name: "",
   handleCopyClick: () => {},
   isTextCopied: {},
 };

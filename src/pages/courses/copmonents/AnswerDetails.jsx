@@ -1,4 +1,4 @@
-import { Box, Fab, IconButton } from "@mui/material";
+import {  Fab, IconButton } from "@mui/material";
 import React, { useState } from "react";
 import CodeSnippet from "./CodeSnippet";
 import { useTranslation } from "react-i18next";
@@ -78,11 +78,11 @@ const AnswerDetails = (props) => {
       <CenteredItemBox
         props={{ justifyContent: "right", paddingBottom: "20px" }}
       >
-        <select onChange={handleLanguageChange} value={language}>
+        {/* <select onChange={handleLanguageChange} value={language}>
           <option value="javascript">JavaScript</option>
           <option value="python">Python</option>
           <option value="html">HTML</option>
-        </select>
+        </select> */}
 
         <AutoCompleteDropDown
           renderData={languagesData}
@@ -104,27 +104,20 @@ const AnswerDetails = (props) => {
         </IconButton>
 
         <CopyButton
-          value={data?.answerLanguage[language]}
-          title={t(`yourRefferalCode`)}
           handleCopyClick={() =>
             handleCopyClick(data?.answerLanguage[language])
           }
-          name=""
-          copyTitleMessage={t("copyTitleMessage", {
-            title: t("yourRefferalCode"),
-          })}
-          setIsTextCopied={setIsTextCopied}
           isTextCopied={isTextCopied}
         />
       </CenteredItemBox>
 
-      <CenteredItemBox props={{ display: "block" }}>
+      {/* <CenteredItemBox props={{ display: "block" }}>
         <CodeSnippet
           code={data?.answerLanguage[language]}
           language={language}
           editorTheme={editorTheme}
         />
-      </CenteredItemBox>
+      </CenteredItemBox> */}
     </>
   );
 };

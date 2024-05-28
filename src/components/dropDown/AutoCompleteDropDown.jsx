@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import TextField from '@mui/material/TextField';
-import Autocomplete from '@mui/material/Autocomplete';
+import { StyledAutocomplete } from './style';
 
 export default function AutoCompleteDropDown(props) {
     const {renderData,placeHolder} = props;
@@ -11,12 +11,18 @@ export default function AutoCompleteDropDown(props) {
     }
   };
 
+  const [open, setOpen] = useState(true);
+
   return (
-    <Autocomplete
+    <StyledAutocomplete
       disablePortal
+
+      open={open}
+      onOpen={() => setOpen(true)}
+      onClose={() => setOpen(true)}
+
       id="combo-box-demo"
       options={renderData}
-      sx={{ width: 300 }}
       onChange={handleSelectionChange}
       renderInput={(params) => <TextField {...params} label={placeHolder} />}
     />

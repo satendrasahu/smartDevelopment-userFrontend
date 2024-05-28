@@ -61,7 +61,7 @@ const PageNotFound = () => {
       clearInterval(redirectTimer);
       clearTimeout(redirectTimeout);
     };
-  }, [redirectTime]);
+  }, [redirectTime,navigate]);
 
   const handleRedirect = () => {
     navigate(ROUTE_PATHS.home);

@@ -1,12 +1,9 @@
-// CodeSnippet.js
-import { useTheme } from '@emotion/react';
 import React from 'react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { prism, tomorrow } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 const CodeSnippet = ({ code, language, editorTheme }) => {
   const style = editorTheme === 'light' ? prism : tomorrow;
-  const theme = useTheme()
 
   const containerStyle = {
     backgroundColor: editorTheme === 'light' ? '#FFFFFF' : '#282c34',

@@ -1,5 +1,5 @@
 // TopicOverview.js
-import React, { useState } from "react";
+import React from "react";
 import MainLayout from "../../../components/ui_kit/mainLayout/MainLayout";
 import {
   CenteredItemBox,
@@ -9,14 +9,11 @@ import {
 } from "../../../assets/css/common.styles";
 import CustomAccordion from "../../../components/accordion/CustomAccordion";
 import { useTheme } from "@emotion/react";
-import CodeSnippet from "./CodeSnippet";
 import { questionDetails } from "./questionDetails";
 import AnswerDetails from "./AnswerDetails";
 
 const TopicOverview = () => {
   const theme = useTheme();
-  
-
   const topicName = "Complete Your KYC";
 
   return (

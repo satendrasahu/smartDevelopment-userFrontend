@@ -1,5 +1,4 @@
 import  React from "react";
-import styled from "@mui/system/styled";
 import MainLayout from "../../components/ui_kit/mainLayout/MainLayout";
 import { MainWrap } from "../../assets/css/common.styles";
 import PrimaryCard from "../../components/cards/PrimaryCard";
