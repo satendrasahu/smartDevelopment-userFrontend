@@ -8,6 +8,13 @@ export const StyledPrimaryCard = styled(Box)(({ theme }) => ({
   border: `1px solid ${theme.colors.extra.highLightColor}`,
   boxShadow: `0 0 10px ${theme.colors.extra.highLightColor}`,
   position: "relative",
+  transition: "top 0.3s ease, background 0.3s ease", 
+  top: 0,
+  "&:hover": {
+    background: theme.colors.extra.mainColor,
+    top: "-1rem",
+  },
+ 
   "& .Counter": {
     top: "-30px",
     left: "0",
@@ -71,6 +78,12 @@ export const StyledSecondaryCard = styled(Box)(({ theme }) => ({
   },
 
   position: "relative",
+  transition: "top 0.3s ease, background 0.3s ease",
+  top: 0,
+  "&:hover": {
+    background: theme.colors.extra.mainColor,
+    top: "-1rem",
+  },
   border: `1px solid ${theme.colors.extra.highLightColor}`,
   boxShadow: `0 0 10px ${theme.colors.extra.highLightColor}`,
   "& .Counter": {
