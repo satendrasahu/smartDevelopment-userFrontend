@@ -21,5 +21,7 @@ export default {
   content: "Content",
   selectDropDownValue :"Select {{value}}",
   codeLanguages :"Code Languages",
-  noOptionsAvailable :"No options available"
+  noOptionsAvailable :"No options available",
+  userNameOrEmail :"Username or Email",
+  isRequired :"{{text}} is required"
 };

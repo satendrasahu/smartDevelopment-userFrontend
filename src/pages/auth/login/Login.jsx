@@ -6,7 +6,12 @@ import { useTranslation } from "react-i18next";
 import { StyledLoginContainer } from "./style";
 import { Form, Formik } from "formik";
 import { initialValues, loginSchema } from "./login.schema";
-import { CenteredItemBox, PrimaryText } from "../../../assets/css/common.styles";
+import {
+  CenteredItemBox,
+  PrimaryText,
+} from "../../../assets/css/common.styles";
+import TextField from "../../../components/textField/TextField";
+import { AccountCircle } from "@mui/icons-material";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -16,14 +21,14 @@ const Login = () => {
   const closeDialog = () => {
     dispatch(handleLoginPopup(false));
   };
-  const handleSubmitHandler = () =>{}
+  const handleSubmitHandler = () => {};
   return (
     <DialogComponent
       dialogOpen={toggleLoginPopup}
       handleDialogClose={closeDialog}
     >
       <StyledLoginContainer>
-      <Formik
+        <Formik
           initialValues={initialValues}
           validationSchema={() => loginSchema(t)}
           onSubmit={handleSubmitHandler}
@@ -33,15 +38,15 @@ const Login = () => {
               <CenteredItemBox>
                 <PrimaryText>{t("Login")}</PrimaryText>
               </CenteredItemBox>
-             {/* <TextField
-             label={t('userNameOrEmail')}
-             icon ={   <AccountCircle />}
-             /> */}
+              <TextField
+                label={t("userNameOrEmail")}
+                icon={<AccountCircle />}
+              />
             </Form>
           )}
         </Formik>
       </StyledLoginContainer>
-      </DialogComponent>
+    </DialogComponent>
   );
 };
 
