@@ -4,6 +4,7 @@ import MainLayout from "../../../components/ui_kit/mainLayout/MainLayout";
 import {
   CenteredItemBox,
   MainWrap,
+  PrimaryButton,
   PrimaryText,
   StyledDivider,
 } from "../../../assets/css/common.styles";
@@ -11,10 +12,12 @@ import CustomAccordion from "../../../components/accordion/CustomAccordion";
 import { useTheme } from "@emotion/react";
 import { questionDetails } from "./questionDetails";
 import AnswerDetails from "./AnswerDetails";
+import { useTranslation } from "react-i18next";
 
 const TopicOverview = () => {
   const theme = useTheme();
   const topicName = "Complete Your KYC";
+  const {t} = useTranslation()
 
   return (
     <MainLayout header footer>
@@ -46,11 +49,15 @@ const TopicOverview = () => {
           <CustomAccordion
             key={data?.id}
             title={data?.question}
-            subtitle={data?.overView}
             details={<AnswerDetails  data={data}/>}
             count={data?.id}
           />
         ))}
+
+        <CenteredItemBox props={{justifyContent:"space-between"}}>
+          <PrimaryButton>{t('previous')}</PrimaryButton>
+          <PrimaryButton>{t('next')}</PrimaryButton>
+        </CenteredItemBox>
       </MainWrap>
     </MainLayout>
   );

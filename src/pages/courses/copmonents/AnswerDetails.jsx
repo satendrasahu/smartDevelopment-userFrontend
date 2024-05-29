@@ -1,4 +1,4 @@
-import {  Fab, IconButton } from "@mui/material";
+import { Fab, IconButton } from "@mui/material";
 import React, { useState } from "react";
 import CodeSnippet from "./CodeSnippet";
 import { useTranslation } from "react-i18next";
@@ -37,10 +37,6 @@ const AnswerDetails = (props) => {
     setEditorTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
   };
 
-  const handleLanguageChange = (event) => {
-    setLanguage(event.target.value);
-  };
-
   const handleCopyClick = (copyData) => {
     if (navigator?.clipboard) {
       navigator.clipboard.writeText(copyData);
@@ -53,10 +49,14 @@ const AnswerDetails = (props) => {
   };
   const handleTheme = () => {};
 
+  const getSelectedValue = (data) => {
+    setLanguage(data.value);
+  };
+
   const languagesData = [
     { label: "JavaScript", value: "javascript" },
-    { label: "python", value: "Python" },
-    { label: "html", value: "HTML" },
+    { label: "Python", value: "python" },
+    { label: "HTML", value: "html" },
   ];
 
   return (
@@ -75,18 +75,14 @@ const AnswerDetails = (props) => {
           </SecondaryText>
         </CenteredItemBox>
       )}
+
       <CenteredItemBox
         props={{ justifyContent: "right", paddingBottom: "20px" }}
       >
-        {/* <select onChange={handleLanguageChange} value={language}>
-          <option value="javascript">JavaScript</option>
-          <option value="python">Python</option>
-          <option value="html">HTML</option>
-        </select> */}
-
         <AutoCompleteDropDown
           renderData={languagesData}
           placeHolder={t("selectDropDownValue", { value: t("codeLanguages") })}
+          getSelectedValue={getSelectedValue}
         />
         <IconButton onClick={handleTheme} aria-label="change theme">
           <Fab
@@ -111,13 +107,22 @@ const AnswerDetails = (props) => {
         />
       </CenteredItemBox>
 
-      {/* <CenteredItemBox props={{ display: "block" }}>
-        <CodeSnippet
-          code={data?.answerLanguage[language]}
-          language={language}
-          editorTheme={editorTheme}
-        />
-      </CenteredItemBox> */}
+      {data?.answerLanguage?.details?.[language] && (
+        <CenteredItemBox
+          props={{ justifyContent: "left", marginBottom: theme.spacing(1) }}
+        >
+          {data?.answerLanguage?.details?.[language]}
+        </CenteredItemBox>
+      )}
+      {data?.answerLanguage?.code?.[language] && (
+        <CenteredItemBox props={{ display: "block" }}>
+          <CodeSnippet
+            code={data?.answerLanguage?.code?.[language]}
+            language={language}
+            editorTheme={editorTheme}
+          />
+        </CenteredItemBox>
+      )}
     </>
   );
 };

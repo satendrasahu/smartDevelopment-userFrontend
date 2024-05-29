@@ -1,20 +1,29 @@
-import React from 'react';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { prism, tomorrow } from 'react-syntax-highlighter/dist/esm/styles/prism';
+
+import React from "react";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import {
+  prism,
+  tomorrow,
+} from "react-syntax-highlighter/dist/esm/styles/prism";
+import { StyledCodeSnippet } from "./style";
 
 const CodeSnippet = ({ code, language, editorTheme }) => {
-  const style = editorTheme === 'light' ? prism : tomorrow;
+  const style = editorTheme === "light" ? prism : tomorrow;
 
-  const containerStyle = {
-    backgroundColor: editorTheme === 'light' ? '#FFFFFF' : '#282c34',
+
+  const syntaxHighlighterStyle = {
+    backgroundColor: "inherit", 
   };
-
   return (
-    <div style={containerStyle}>
-      <SyntaxHighlighter language={language} style={style}>
+    <StyledCodeSnippet editorTheme={editorTheme}>
+      <SyntaxHighlighter
+        language={language}
+        style={style}
+        customStyle={syntaxHighlighterStyle}
+      >
         {code}
       </SyntaxHighlighter>
-    </div>
+    </StyledCodeSnippet>
   );
 };
 

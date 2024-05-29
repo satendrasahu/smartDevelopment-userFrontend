@@ -18,18 +18,21 @@ const CustomAccordion = (props) => {
     setExpandedcount(isExpanded ? count : null);
   };
 
-  console.log("details",details)
   return (
-    <StyledAccordion expanded={expandedcount === count} onChange={handleChange(count)}>
+    <StyledAccordion
+      expanded={expandedcount === count}
+      onChange={handleChange(count)}
+    >
       <AccordionSummary
         expandIcon={
-          count &&  expandedcount !== count? (
+          count && expandedcount !== count ? (
             <CenteredItemBox props={{ color: theme.colors.extra.whiteColor }}>
               <Typography>{count}</Typography> <ExpandMoreIcon />
             </CenteredItemBox>
           ) : (
             <CenteredItemBox props={{ color: theme.colors.extra.whiteColor }}>
-             <ExpandMoreIcon /> <Typography className="count">{count}</Typography> 
+              <ExpandMoreIcon />
+              <Typography className="count">{count}</Typography>
             </CenteredItemBox>
           )
         }
@@ -42,7 +45,7 @@ const CustomAccordion = (props) => {
 
       <StyledDivider />
       <AccordionDetails className="accordion-details">
-        {/* <SecondaryText>{subtitle}</SecondaryText> */}
+        {subtitle && <SecondaryText>{subtitle}</SecondaryText>}
         {details}
       </AccordionDetails>
     </StyledAccordion>

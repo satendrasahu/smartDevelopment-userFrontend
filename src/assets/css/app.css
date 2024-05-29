@@ -1,20 +1,25 @@
 body {
-    background: #003144 !important;
-    font-family: "IBM Plex Sans", sans-serif !important;
-  }
-  
-  
-  .main-loader {
-    position: fixed;
-    width: 100%;
-    transform: translate(-50%, -50%);
-    top: 50%;
-    left: 50%;
-    background: #003144;
-    height: 100%;
-    z-index: 999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
+  background: #003144 !important;
+  font-family: "IBM Plex Sans", sans-serif !important;
+}
+
+/* Define scrollbar styles */
+::-webkit-scrollbar {
+  width: 5px; /* Width of the scrollbar */
+  height: 5px; /* Height of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background-color: #042b32; /* Background color of the track */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #49c7f4; /* Color of the thumb */
+  border-radius: 6px; /* Border radius of the thumb */
+ 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Color of the thumb on hover */
+ 
+}

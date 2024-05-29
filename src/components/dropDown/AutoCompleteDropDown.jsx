@@ -1,30 +1,41 @@
-import React, { useState } from 'react';
-import TextField from '@mui/material/TextField';
-import { StyledAutocomplete } from './style';
+import React, { memo } from "react";
+import TextField from "@mui/material/TextField";
+import { CustomPaper, StyledAutocomplete } from "./style";
+import { Typography } from "@mui/material";
+import { colors } from "../../theme/colors";
+import { useTranslation } from "react-i18next";
 
-export default function AutoCompleteDropDown(props) {
-    const {renderData,placeHolder} = props;
+const AutoCompleteDropDown = (props) => {
+  const { renderData, placeHolder, getSelectedValue } = props;
+  const { t } = useTranslation();
 
-  const handleSelectionChange = (event, value) => {
+  const handleSelectionChange = (_, value) => {
     if (value) {
-      console.log('Selected item:', value);
+      getSelectedValue(value);
     }
   };
-
-  const [open, setOpen] = useState(true);
 
   return (
     <StyledAutocomplete
       disablePortal
-
-      open={open}
-      onOpen={() => setOpen(true)}
-      onClose={() => setOpen(true)}
-
       id="combo-box-demo"
       options={renderData}
       onChange={handleSelectionChange}
+      PaperComponent={(props) => <CustomPaper {...props} />}
       renderInput={(params) => <TextField {...params} label={placeHolder} />}
+      noOptionsText={
+        <Typography sx={{ color: colors.primary.textColor }}>
+          {t("noOptionsAvailable")}
+        </Typography>
+      }
     />
   );
-}
+};
+
+AutoCompleteDropDown.defaultProps = {
+  renderData: [],
+  placeHolder: "",
+  getSelectedValue: () => {},
+};
+
+export default memo(AutoCompleteDropDown);
