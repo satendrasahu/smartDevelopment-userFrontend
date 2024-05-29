@@ -67,7 +67,7 @@ const AnswerDetails = (props) => {
         >
           <SecondaryText
             props={{
-              color: theme.colors.primary.success,
+              color: theme.colors.extra.successColor,
               fontSize: theme.spacing(0.8),
             }}
           >
