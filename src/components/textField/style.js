@@ -3,7 +3,7 @@ import { Box, styled } from "@mui/material";
 export const StyledTextField = styled(Box)(({ theme, props }) => ({
   padding: theme.spacing(0, 1.2),
   marginBottom: theme.spacing(2),
-  display: "flex",
+  // display: "flex",
   position: "relative",
   "& .MuiFormControl-root": {
     width: "100%",
@@ -63,24 +63,25 @@ export const StyledTextField = styled(Box)(({ theme, props }) => ({
   "& .MuiSvgIcon-root": {
     color: theme.colors.extra.whiteColor,
   },
-  "& .MuiInputLabel-root": {
-    color: theme.colors.primary.textColor,
-    fontSize: theme.spacing(0.875),
-    transform: "none",
-    position: "static",
-    minWidth: "140px",
-    whiteSpace: "unset",
-    [theme.breakpoints.down("md")]: {
-      minWidth: "80px",
-    },
-  },
+  // "& .MuiInputLabel-root": {
+  //   color: theme.colors.primary.textColor,
+  //   fontSize: theme.spacing(0.875),
+  //   transform: "none",
+  //   position: "static",
+  //   minWidth: "140px",
+  //   whiteSpace: "unset",
+  //   [theme.breakpoints.down("md")]: {
+  //     minWidth: "80px",
+  //   },
+    
+  // },
   "& .MuiOutlinedInput-root": {
     width: "100%",
     background: theme.colors.extra.darkColor,
 
     "&.Mui-focused": {
       "& .MuiOutlinedInput-notchedOutline": {
-        borderColor: 'red',//theme.colors.btnSecondary,
+        borderColor:theme.colors.primary.btnColor,
         borderWidth: "0 0 2px 0",
       },
     },

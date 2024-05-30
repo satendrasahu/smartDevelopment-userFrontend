@@ -22,6 +22,6 @@ export const colors = {
     successColor: "#2ecc71",
     warningColor: "",
     infoColor: "",
-    errorColor: "",
+    errorColor: "#d50000",
   },
 };

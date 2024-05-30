@@ -1,16 +1,18 @@
 import React from "react";
 import { StyledTextField } from "./style";
 import { InputAdornment, TextField as MUITextField } from "@mui/material";
+import ErrorMessageComponent from "../errorMessage/ErrorMessageComponent";
 const TextField = (props) => {
-  const { name, label, value, handleChange, handleBlur, icon } = props;
+  const { name, label, value, onChange, onBlur, icon,placeHolder } = props;
   return (
     <StyledTextField>
       <MUITextField
         name={name}
         label={label}
         value={value}
-        onChange={handleChange}
-        onBlur={handleBlur}
+        onChange={onChange}
+        onBlur={onBlur}
+        placeHolder ={placeHolder}
         InputProps={{
           startAdornment: icon && (
             <InputAdornment position="start">{icon}</InputAdornment>
@@ -18,7 +20,7 @@ const TextField = (props) => {
         }}
         variant="standard"
       />
-      {/* <ErrorMessageComponent name={name} /> */}
+      <ErrorMessageComponent name={name} />
     </StyledTextField>
   );
 };
