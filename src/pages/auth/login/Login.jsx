@@ -11,12 +11,13 @@ import {
   PrimaryButton,
   PrimaryText,
   SecondaryButton,
-  StyledIconButton,
+  StyledLinkButton,
 } from "../../../assets/css/common.styles";
 import TextField from "../../../components/textField/TextField";
 import { AccountCircle, Visibility, VisibilityOff } from "@mui/icons-material";
 import LockIcon from "@mui/icons-material/Lock";
 import { useTheme } from "@emotion/react";
+import { handleRegisterPopup } from "../../../redux/slices/auth/register.slice";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -33,6 +34,10 @@ const Login = () => {
     // Add your form submission logic here
   };
 
+  const changeDialog = () => {
+    dispatch(handleLoginPopup(false));
+    dispatch(handleRegisterPopup(true));
+  };
   return (
     <DialogComponent
       dialogOpen={toggleLoginPopup}
@@ -50,7 +55,7 @@ const Login = () => {
                 <PrimaryText
                   props={{ color: theme.colors.extra.highLightColor }}
                 >
-                  {t("Login")}
+                  {t("login")}
                 </PrimaryText>
               </CenteredItemBox>
               <TextField
@@ -81,6 +86,9 @@ const Login = () => {
                 isRequired
               />
 
+              <CenteredItemBox props={{ marginBottom: theme.spacing(1) }}>
+                <StyledLinkButton>{t("forgetPassword")}</StyledLinkButton>
+              </CenteredItemBox>
               <CenteredItemBox>
                 <SecondaryButton
                   props={{ width: "100%" }}
@@ -96,6 +104,11 @@ const Login = () => {
             </Form>
           )}
         </Formik>
+        <CenteredItemBox props={{ marginTop: theme.spacing(2) }}>
+          <StyledLinkButton onClick={changeDialog}>
+            {t("hasNoAccount")}
+          </StyledLinkButton>
+        </CenteredItemBox>
       </StyledLoginContainer>
     </DialogComponent>
   );

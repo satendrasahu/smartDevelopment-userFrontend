@@ -5,8 +5,10 @@ body {
 
 /* Define scrollbar styles */
 ::-webkit-scrollbar {
-  width: 5px; /* Width of the scrollbar */
+  width: 2px; /* Width of the scrollbar */
   height: 5px; /* Height of the scrollbar */
+ 
+
 }
 
 ::-webkit-scrollbar-track {
@@ -15,8 +17,7 @@ body {
 
 ::-webkit-scrollbar-thumb {
   background-color: #49c7f4; /* Color of the thumb */
-  border-radius: 6px; /* Border radius of the thumb */
- 
+  border-radius: 16px; /* Border radius of the thumb */ 
 }
 
 ::-webkit-scrollbar-thumb:hover {

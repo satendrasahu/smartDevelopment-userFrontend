@@ -24,7 +24,17 @@ export default {
   noOptionsAvailable :"No options available",
   userNameOrEmail :"Username or Email",
   isRequired :"{{text}} is required",
-  password :"Password",
   ok :"Ok",
-  cancel :"Cancel"
+  cancel :"Cancel",
+  login :"Login",
+  register:"Register",
+  firstName :"First Name",
+  lastName :"Last Name",
+  email :"Email",
+  mobileNum :"Mobile Number",
+  password :"Password",
+  confirmPassword :"Confirm Password",
+  hasAccount:"Has account ?",
+  hasNoAccount :"Has no account? create new",
+  forgetPassword:"Forget Password"
 };

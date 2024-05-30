@@ -14,10 +14,11 @@ const TextField = (props) => {
     startIcon,
     type,
     endIcon,
+    styledProps,
     placeHolder,
   } = props;
   return (
-    <StyledTextField>
+    <StyledTextField props={styledProps}>
       <StyledInputLabel>
         {label}
         {isRequired && <IsRequiredIndicator />}

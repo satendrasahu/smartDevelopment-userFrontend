@@ -1,4 +1,4 @@
-import { Box, Button, Divider, IconButton, Tooltip, Typography } from "@mui/material";
+import { Box, Button, Divider, IconButton, Link, Tooltip, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
 export const MainWrap = styled(Box)(({ theme, props }) => ({
@@ -51,6 +51,15 @@ export const SecondaryButton = styled(Button)(({ theme, props }) => ({
 
 export const StyledIconButton = styled(IconButton)(({ theme, props }) => ({
   color:theme.colors.primary.textColor,
+  ...props,
+}));
+export const StyledLinkButton = styled(Link)(({ theme, props }) => ({
+  color:theme.colors.extra.highLightColor,
+  textDecoration:'none',
+  cursor:"pointer",
+  "&:hover":{
+    color:theme.colors.primary.btnColor,
+  },
   ...props,
 }));
 
