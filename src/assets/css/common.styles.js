@@ -27,13 +27,13 @@ export const PrimaryButton = styled(Button)(({ theme, props }) => ({
   },
   "&:hover": {
     background: theme.colors.primary.btnHoverColor,
-    color: theme.colors.white,
+    color: theme.colors.extra.whiteColor,
   },
   ...props,
 }));
 export const SecondaryButton = styled(Button)(({ theme, props }) => ({
-  background: theme.colors.btnSecondary,
-  color: theme.colors.dark,
+  background:theme.colors.secondary.btnColor,
+  color: theme.colors.primary.textColor,
   fontWeight: theme.typography.fontWeightSemiBold,
   padding: theme.spacing(0.5, 1),
   margin: theme.spacing(0.5),
@@ -43,8 +43,8 @@ export const SecondaryButton = styled(Button)(({ theme, props }) => ({
     minWidth: "auto",
   },
   "&:hover": {
-    background: theme.colors.btnSecondaryHover,
-    color: theme.colors.white,
+    background: theme.colors.secondary.btnHoverColor,
+    color: theme.colors.extra.whiteColor,
   },
   ...props,
 }));

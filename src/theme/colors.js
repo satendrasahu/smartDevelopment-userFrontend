@@ -10,7 +10,7 @@ export const colors = {
     mainColor: "#003144",
     hoverColor: "",
     textColor: "#E5E5E5",
-    btnColor: "#005d80",
+    btnColor: "#023D54",
     btnHoverColor: "",
     success: "",
   },

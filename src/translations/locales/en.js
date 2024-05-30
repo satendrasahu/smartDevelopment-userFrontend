@@ -23,5 +23,8 @@ export default {
   codeLanguages :"Code Languages",
   noOptionsAvailable :"No options available",
   userNameOrEmail :"Username or Email",
-  isRequired :"{{text}} is required"
+  isRequired :"{{text}} is required",
+  password :"Password",
+  ok :"Ok",
+  cancel :"Cancel"
 };

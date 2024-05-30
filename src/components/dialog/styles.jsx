@@ -2,12 +2,12 @@ import { Dialog } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
 export const StyledDialog = styled(Dialog)(({theme}) => ({
-  display: 'flex',
-  justifyContent: 'center',
-  paddingBottom: '20px',
+  
   '& .MuiPaper-root': {
     borderRadius: '12px',
-    backgroundColor: '#005E82'
+    backgroundColor:theme.colors.extra.mainColor,
+    border: `1px solid ${theme.colors.extra.highLightColor}`,
+  boxShadow: `0 0 10px ${theme.colors.extra.highLightColor}`,
   },
   "&.confirmation-modal": {
     "& .MuiTypography-root": {

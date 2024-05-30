@@ -26,18 +26,18 @@ export const StyledTextField = styled(Box)(({ theme, props }) => ({
     },
   },
 
-  "& .MuiOutlinedInput-input": {
-    background: theme.colors.black,
-    borderRadius: "0",
-    color: theme.colors.whiteColor,
-    padding: theme.spacing(0.4, 0.313),
-    minHeight: "23px",
-    "&:hover": {
-      "& .MuiOutlinedInput-notchedOutline": {
-        borderColor: "transparent",
-      },
-    },
-  },
+  // "& .MuiOutlinedInput-input": {
+  //   background: 'green',//theme.colors.black,
+  //   borderRadius: "0",
+  //   color: 'red',//theme.colors.whiteColor,
+  //   padding: theme.spacing(0.4, 0.313),
+  //   minHeight: "23px",
+  //   "&:hover": {
+  //     "& .MuiOutlinedInput-notchedOutline": {
+  //       borderColor: "transparent",
+  //     },
+  //   },
+  // },
   "& .MuiInput-root": {
     background: theme.colors.extra.darkColor,
     borderRadius: "0.313rem",
@@ -57,7 +57,7 @@ export const StyledTextField = styled(Box)(({ theme, props }) => ({
       },
     },
     "&:after": {
-      borderColor: theme.colors.btnSecondary,
+      borderColor: theme.colors.extra.highLightColor
     },
   },
   "& .MuiSvgIcon-root": {
@@ -80,7 +80,7 @@ export const StyledTextField = styled(Box)(({ theme, props }) => ({
 
     "&.Mui-focused": {
       "& .MuiOutlinedInput-notchedOutline": {
-        borderColor: theme.colors.btnSecondary,
+        borderColor: 'red',//theme.colors.btnSecondary,
         borderWidth: "0 0 2px 0",
       },
     },
