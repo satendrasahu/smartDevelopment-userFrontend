@@ -1,4 +1,4 @@
-import { Box, Button, Divider, Tooltip, Typography } from "@mui/material";
+import { Box, Button, Divider, IconButton, Tooltip, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
 export const MainWrap = styled(Box)(({ theme, props }) => ({
@@ -48,6 +48,12 @@ export const SecondaryButton = styled(Button)(({ theme, props }) => ({
   },
   ...props,
 }));
+
+export const StyledIconButton = styled(IconButton)(({ theme, props }) => ({
+  color:theme.colors.primary.textColor,
+  ...props,
+}));
+
 
 export const CenteredItemBox = styled(Box)(({ theme, props }) => ({
   display: "flex",

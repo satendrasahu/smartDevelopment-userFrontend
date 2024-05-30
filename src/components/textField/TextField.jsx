@@ -1,24 +1,42 @@
 import React from "react";
-import { StyledTextField } from "./style";
-import { InputAdornment, TextField as MUITextField } from "@mui/material";
+import { StyledInputAdornment, StyledInputLabel, StyledOutlinedInput, StyledTextField } from "./style";
 import ErrorMessageComponent from "../errorMessage/ErrorMessageComponent";
+import IsRequiredIndicator from "../requiredIndicator/IsRequiredIndicator";
+
 const TextField = (props) => {
-  const { name, label, value, onChange, onBlur, icon,placeHolder } = props;
+  const {
+    isRequired,
+    name,
+    label,
+    value,
+    onChange,
+    onBlur,
+    startIcon,
+    type,
+    endIcon,
+    placeHolder,
+  } = props;
   return (
     <StyledTextField>
-      <MUITextField
-        name={name}
-        label={label}
+      <StyledInputLabel>
+        {label}
+        {isRequired && <IsRequiredIndicator />}
+      </StyledInputLabel>
+
+      <StyledOutlinedInput
+        type={type}
         value={value}
         onChange={onChange}
+        name={name}
         onBlur={onBlur}
-        placeHolder ={placeHolder}
-        InputProps={{
-          startAdornment: icon && (
-            <InputAdornment position="start">{icon}</InputAdornment>
-          ),
-        }}
-        variant="standard"
+        startAdornment={
+          startIcon && (
+            <StyledInputAdornment  position="start">{startIcon}</StyledInputAdornment>
+          )
+        }
+        endAdornment={
+          endIcon && <StyledInputAdornment position="start">{endIcon}</StyledInputAdornment>
+        }
       />
       <ErrorMessageComponent name={name} />
     </StyledTextField>

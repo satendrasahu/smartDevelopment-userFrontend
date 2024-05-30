@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { DialogComponent } from "../../../components/dialog";
 import { useDispatch, useSelector } from "react-redux";
 import { handleLoginPopup } from "../../../redux/slices/auth/login.sclice";
@@ -11,24 +11,23 @@ import {
   PrimaryButton,
   PrimaryText,
   SecondaryButton,
+  StyledIconButton,
 } from "../../../assets/css/common.styles";
 import TextField from "../../../components/textField/TextField";
-import { AccountCircle } from "@mui/icons-material";
+import { AccountCircle, Visibility, VisibilityOff } from "@mui/icons-material";
 import LockIcon from "@mui/icons-material/Lock";
 import { useTheme } from "@emotion/react";
-import { Grid } from "@mui/material";
-import ErrorMessageComponent from "../../../components/errorMessage/ErrorMessageComponent";
 
 const Login = () => {
   const dispatch = useDispatch();
   const theme = useTheme();
   const { t } = useTranslation();
   const { toggleLoginPopup } = useSelector((state) => state.login);
-
+  const [showPassword, setShowPassword] = useState(false);
   const closeDialog = () => {
     dispatch(handleLoginPopup(false));
   };
-
+  const togglePasswordVisibility = () => setShowPassword((show) => !show);
   const handleSubmitHandler = (values) => {
     console.log("Form submitted with values:", values);
     // Add your form submission logic here
@@ -56,22 +55,30 @@ const Login = () => {
               </CenteredItemBox>
               <TextField
                 label={t("userNameOrEmail")}
-                icon={<AccountCircle />}
+                startIcon={<AccountCircle />}
                 value={values.userNameOrEmailOrMobile}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                variant="standard"
                 name="userNameOrEmailOrMobile"
                 placeHolder="place holder"
+                isRequired
               />
               <TextField
                 label={t("password")}
-                icon={<LockIcon />}
+                startIcon={<LockIcon />}
+                type={showPassword ? "text" : "password"}
+                endIcon={
+                  showPassword ? (
+                    <Visibility onClick={togglePasswordVisibility} />
+                  ) : (
+                    <VisibilityOff onClick={togglePasswordVisibility} />
+                  )
+                }
                 value={values.password}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                variant="standard"
                 name="password"
+                isRequired
               />
 
               <CenteredItemBox>
