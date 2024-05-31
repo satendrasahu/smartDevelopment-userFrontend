@@ -21,6 +21,7 @@ import { appDetails, headerLinks } from "../../../utils/common.Data";
 import { colors } from "../../../theme/colors";
 import SearchBox from "./components/SearchBox";
 import { LogoTypography, StyledToolbar } from "./header.styles";
+import { ROUTE_PATHS } from "../../../routes/routesPath";
 const drawerWidth = 240;
 
 function DrawerAppBar(props) {
@@ -44,9 +45,9 @@ function DrawerAppBar(props) {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center",background: colors.primary.mainColor, height:"100%" }}>
-      <Typography variant="h6" sx={{ my: 2, ml: 1 }}>
-        {appDetails.APP_NAME}
-      </Typography>
+     <LogoTypography variant="h6" component="a" href={ROUTE_PATHS.home}>
+            {appDetails.APP_NAME}
+          </LogoTypography>
 
       <Divider />
       {isSmallScreen && (
@@ -87,7 +88,7 @@ function DrawerAppBar(props) {
           >
             <MenuIcon />
           </IconButton>
-          <LogoTypography variant="h6" component="div">
+          <LogoTypography variant="h6" component="a" href={ROUTE_PATHS.home}>
             {appDetails.APP_NAME}
           </LogoTypography>
 

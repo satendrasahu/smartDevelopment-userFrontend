@@ -17,6 +17,9 @@ const StyledContainer = styled(Box)(({ theme }) => ({
   alignItems: "center",
   justifyContent: "center",
   paddingTop : theme.spacing(15),
+  [theme.breakpoints.down("sm")]: {
+    paddingTop : theme.spacing(1),
+  },
   "& .textComingSoon": {
     fontSize: theme.spacing(5),
     color: theme.colors.primary.textColor,
