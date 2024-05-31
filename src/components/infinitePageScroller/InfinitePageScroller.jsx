@@ -1,18 +1,14 @@
 import React, { useState, useEffect, useRef, memo } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
-import AppLoader from "components/ui-kit/AppLoader/index";
-import { LOADER_TYPE } from "constants/index";
-import { colors } from "theme/colors/index";
-import { Box, Grid, Typography } from "@mui/material";
-import { viewAllSubCategoryUseStyle } from "./style";
-import { GameCard } from "components/ui-kit/Gamecard/index";
-import { useTranslation } from 'react-i18next';
+import { Box} from "@mui/material";
+import { useTranslation } from "react-i18next";
+import MyCircularProgress from "../progressbar/MyCircularProgress";
+import { SecondaryText } from "../../assets/css/common.styles";
 
 const InfinitePageScroller = (props) => {
-  const { renderData, hasMore, fetchMoreData } = props;
-  const { t } = useTranslation()
+  const { renderData, hasMore, fetchMoreData,renderComponent } = props;
+  const { t } = useTranslation();
   const [items, setItems] = useState([]);
-  const subCatClasses = viewAllSubCategoryUseStyle();
   const scrollableContainerRef = useRef(null);
 
   const handleScroll = () => {
@@ -20,7 +16,7 @@ const InfinitePageScroller = (props) => {
       scrollableContainerRef.current.scrollTop === 0 &&
       hasMore &&
       scrollableContainerRef.current.scrollHeight >
-      scrollableContainerRef.current.clientHeight
+        scrollableContainerRef.current.clientHeight
     ) {
       fetchMoreData();
     }
@@ -29,40 +25,42 @@ const InfinitePageScroller = (props) => {
     setItems(renderData);
   }, [renderData]);
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
-
-
   return (
     <InfiniteScroll
       dataLength={items?.length}
       next={fetchMoreData}
       hasMore={hasMore}
-      loader={hasMore ? (
-        <Box
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-          marginTop={4}
-        >
-          <Box>
-            <AppLoader variant={LOADER_TYPE.PULSE} color={colors.white} />
-            <Typography color={colors.white} >{t('scrollUp')}</Typography>
+      loader={
+        hasMore ? (
+          <Box
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+            marginTop={4}
+          >
+            <Box>
+              <MyCircularProgress />
+              <SecondaryText >{t("scrollDown")}</SecondaryText>
+            </Box>
           </Box>
-        </Box>
-      ) : null}
+        ) : null
+      }
       scrollableTarget={scrollableContainerRef.current}
       scrollThreshold={0.5}
       scrollEvent={false}
     >
-      <Box ref={scrollableContainerRef} className="container" onScroll={handleScroll}>
-        <Grid className={`${subCatClasses?.searchGamesWrap} ${subCatClasses?.viewAllPageWrap}`}>
-          {items?.map((game) => (
-            <Box key={game?.casinoGameId}>
-              <GameCard game={game} />
+      <Box
+        ref={scrollableContainerRef}
+        onScroll={handleScroll}
+      >
+        
+          {items?.map((game,ind) => (
+            <Box key={ind}>
+              {renderComponent(game)}
             </Box>
           ))}
-        </Grid>
       </Box>
     </InfiniteScroll>
   );
@@ -71,7 +69,8 @@ const InfinitePageScroller = (props) => {
 InfinitePageScroller.defaultProps = {
   renderData: [],
   hasMore: true,
-  fetchMoreData: () => { }
+  fetchMoreData: () => {},
+  renderComponent :""
 };
 
 export default memo(InfinitePageScroller);

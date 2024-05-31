@@ -45,4 +45,17 @@ const TextField = (props) => {
   );
 };
 
+TextField.defaultProps = {
+  isRequired: false,
+  name: "",
+  label: "",
+  value: "",
+  onChange: () => {},
+  onBlur: () => {},
+  startIcon: null,
+  type: "text",
+  endIcon: null,
+  styledProps: {},
+  placeHolder: "",
+};
 export default TextField;

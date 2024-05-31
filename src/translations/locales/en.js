@@ -40,6 +40,7 @@ export default {
   hasNoAccount :"Has no account? create new",
   forgetPassword:"Forget Password",
   placeholderText :"Enter {{text}}",
-  gender :"Gender"
+  gender :"Gender",
+  scrollDown :"Scroll down to fetch more data"
   
 };
