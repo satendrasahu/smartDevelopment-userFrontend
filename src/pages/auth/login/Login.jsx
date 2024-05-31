@@ -59,13 +59,13 @@ const Login = () => {
                 </PrimaryText>
               </CenteredItemBox>
               <TextField
-                label={t("userNameOrEmail")}
+                label={t("userNameOrEmailOrMobile")}
                 startIcon={<AccountCircle />}
                 value={values.userNameOrEmailOrMobile}
                 onChange={handleChange}
                 onBlur={handleBlur}
                 name="userNameOrEmailOrMobile"
-                placeHolder="place holder"
+                placeHolder={t('placeholderText',{text:t('userNameOrEmailOrMobile')})}
                 isRequired
               />
               <TextField
@@ -83,6 +83,7 @@ const Login = () => {
                 onChange={handleChange}
                 onBlur={handleBlur}
                 name="password"
+                placeHolder={t('placeholderText',{text:t('password')})}
                 isRequired
               />
 

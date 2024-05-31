@@ -30,6 +30,7 @@ const TextField = (props) => {
         onChange={onChange}
         name={name}
         onBlur={onBlur}
+        placeholder={placeHolder}
         startAdornment={
           startIcon && (
             <StyledInputAdornment  position="start">{startIcon}</StyledInputAdornment>

@@ -22,7 +22,9 @@ export default {
   selectDropDownValue :"Select {{value}}",
   codeLanguages :"Code Languages",
   noOptionsAvailable :"No options available",
+  userName:"Username",
   userNameOrEmail :"Username or Email",
+  userNameOrEmailOrMobile:"Username / Email / Mobile",
   isRequired :"{{text}} is required",
   ok :"Ok",
   cancel :"Cancel",
@@ -36,5 +38,8 @@ export default {
   confirmPassword :"Confirm Password",
   hasAccount:"Has account ?",
   hasNoAccount :"Has no account? create new",
-  forgetPassword:"Forget Password"
+  forgetPassword:"Forget Password",
+  placeholderText :"Enter {{text}}",
+  gender :"Gender"
+  
 };
