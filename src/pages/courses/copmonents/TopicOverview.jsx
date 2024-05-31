@@ -24,7 +24,7 @@ const TopicOverview = () => {
   const fetchMoreData = useCallback(() => {
     setRenderData([
       ...renderData,
-      ...questionDetails()?.slice(renderData.length, renderData.length + 11),
+      ...questionDetails()?.slice(renderData.length, renderData.length + 10),
     ]);
     setHasMore(renderData.length < questionDetails().length);
     // const payload = {
