@@ -10,7 +10,7 @@ const PrimaryCard = (props) => {
   return (
     <StyledPrimaryCard>
       <Typography className="Counter" variant="span">
-        {details?.id}
+        {details?.index}
       </Typography>
       <Typography className="number-heading">{details?.heading}</Typography>
       <Typography className="number-text">{details?.subHeading}</Typography>

@@ -13,9 +13,9 @@ export const questionDetails = (()=>{
         //     html: `<p>kyc level 3 </p>`,
         //   },
         //   code: {
-        //     javascript: `function helloWorld() {
-        //      console.log('Hello, world! Hello, world! Hello, world! Hello, world! Hello, world! Hello, world! Hello, world! Hello, world! Hello, world! Hello, world! Hello, world! Hello, world!');
-        //    }`,
+          //   javascript: `function helloWorld() {
+          //    console.log('Hello, world! Hello, world! Hello, world! Hello, world! Hello, world! Hello, world! Hello, world! Hello, world! Hello, world! Hello, world! Hello, world! Hello, world!');
+          //  }`,
         //     python: `def helloWorld():
         //    print('Hello, world!')`,
         //     html: `<p>Hello, world!</p>`,

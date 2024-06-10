@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { AccordionDetails, AccordionSummary, Typography } from "@mui/material";
+import { AccordionDetails, AccordionSummary, Box, Typography } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { StyledAccordion } from "./style";
 import {
@@ -40,7 +40,7 @@ const CustomAccordion = (props) => {
         id="panel1-header"
         className="accordion-summery"
       >
-        {title}
+        <Box>{title}</Box>
       </AccordionSummary>
 
       <StyledDivider />

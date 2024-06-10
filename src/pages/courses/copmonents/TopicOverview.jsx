@@ -14,13 +14,23 @@ import { questionDetails } from "./questionDetails";
 import AnswerDetails from "./AnswerDetails";
 import { useTranslation } from "react-i18next";
 import InfinitePageScroller from "../../../components/infinitePageScroller/InfinitePageScroller";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { fetchQuestionAnswerDataThunk } from "../../../redux/thunks/courses/courses.thunk";
 
 const TopicOverview = () => {
   const theme = useTheme();
   const [hasMore, setHasMore] = useState(true);
+  const {topicId} = useParams()
+  const { questionAnswerData } = useSelector((state) => state.courses);
+  const dispatch = useDispatch();
+
   const topicName = "Complete Your KYC";
   const { t } = useTranslation();
-  const [renderData, setRenderData] = useState(questionDetails()?.slice(0, 10));
+  const [renderData, setRenderData] = useState([]);
+  // const [renderData, setRenderData] = useState(questionDetails()?.slice(0, 10));
+
   const fetchMoreData = useCallback(() => {
     setRenderData([
       ...renderData,
@@ -41,6 +51,23 @@ const TopicOverview = () => {
     //   }));
     // }
   });
+
+ useEffect(() => {
+    const result = questionAnswerData?.data?.map((questionAnswer,index) => {
+      return {
+        index :index+1,
+        id:questionAnswer?._id
+
+      };
+    });
+    setRenderData(result)
+  }, [questionAnswerData]);
+
+
+  useEffect(() => {
+    const paylaod ={ref_topicId:topicId}
+    dispatch(fetchQuestionAnswerDataThunk(paylaod));
+  }, []);
 
   return (
     <MainLayout header footer>
@@ -75,20 +102,10 @@ const TopicOverview = () => {
               key={renderProps?.id}
               title={renderProps?.question}
               details={<AnswerDetails renderProps={renderProps} />}
-              count={renderProps?.id}
+              count={renderProps?.index}
             />
           )}
         />
-
-        {/* {questionDetails()?.map((data) => (
-          <CustomAccordion
-            key={data?.id}
-            title={data?.question}
-            details={<AnswerDetails  data={data}/>}
-            count={data?.id}
-          />
-        ))} */}
-
         <CenteredItemBox props={{ justifyContent: "space-between" }}>
           <PrimaryButton>{t("previous")}</PrimaryButton>
           <PrimaryButton>{t("next")}</PrimaryButton>

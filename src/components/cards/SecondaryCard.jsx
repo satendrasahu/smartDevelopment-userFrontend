@@ -5,14 +5,13 @@ import { CenteredItemBox, PrimaryButton } from "../../assets/css/common.styles";
 import { useTranslation } from "react-i18next";
 
 const SecondaryCard = (props) => {
-  const {t} = useTranslation()
+  const { t } = useTranslation();
   const { details } = props;
   return (
     <StyledSecondaryCard>
       <Typography className="Counter" variant="span">
-        {details?.id}
+        {details?.index}
       </Typography>
-
       <Typography className="number-heading">{details?.heading}</Typography>
       <Typography className="number-text">{details?.subHeading}</Typography>
       <CenteredItemBox>
