@@ -22,7 +22,7 @@ import { fetchQuestionAnswerDataThunk } from "../../../redux/thunks/courses/cour
 const TopicOverview = () => {
   const theme = useTheme();
   const [hasMore, setHasMore] = useState(true);
-  const {topicId} = useParams()
+  const { topicId } = useParams();
   const { questionAnswerData } = useSelector((state) => state.courses);
   const dispatch = useDispatch();
 
@@ -52,21 +52,24 @@ const TopicOverview = () => {
     // }
   });
 
- useEffect(() => {
-    const result = questionAnswerData?.data?.map((questionAnswer,index) => {
+  useEffect(() => {
+    const result = questionAnswerData?.data?.map((questionAnswer, index) => {
       return {
-        index :index+1,
-        id:questionAnswer?._id
-
+        ...questionAnswer,
+        index: index + 1,
+        id: questionAnswer?._id,
+        question: questionAnswer?.questions
+          ?.map((question) => question?.questionText)
+          ?.join(" Or "),
       };
     });
-    setRenderData(result)
+    setRenderData(result);
   }, [questionAnswerData]);
 
-
   useEffect(() => {
-    const paylaod ={ref_topicId:topicId}
+    const paylaod = { ref_topicId: topicId };
     dispatch(fetchQuestionAnswerDataThunk(paylaod));
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
   return (
@@ -106,10 +109,10 @@ const TopicOverview = () => {
             />
           )}
         />
-        <CenteredItemBox props={{ justifyContent: "space-between" }}>
+        {/* <CenteredItemBox props={{ justifyContent: "space-between" }}>
           <PrimaryButton>{t("previous")}</PrimaryButton>
           <PrimaryButton>{t("next")}</PrimaryButton>
-        </CenteredItemBox>
+        </CenteredItemBox> */}
       </MainWrap>
     </MainLayout>
   );

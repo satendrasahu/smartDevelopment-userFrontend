@@ -41,6 +41,6 @@ export default {
   forgetPassword:"Forget Password",
   placeholderText :"Enter {{text}}",
   gender :"Gender",
-  scrollDown :"Scroll down to fetch more data"
-  
+  scrollDown :"Scroll down to fetch more data",
+  loading:"Loading ..."
 };

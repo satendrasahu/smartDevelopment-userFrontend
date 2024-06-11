@@ -36,3 +36,7 @@ export const headerLinks = (t) => {
   ];
   return headerLinkData;
 };
+
+
+//
+export const questionAnswerType = ['text','code','image'];

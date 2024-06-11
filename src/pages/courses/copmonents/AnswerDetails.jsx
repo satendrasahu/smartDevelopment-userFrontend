@@ -1,5 +1,5 @@
 import { Fab, IconButton } from "@mui/material";
-import React, { useState } from "react";
+import React, { memo, useState } from "react";
 import CodeSnippet from "./CodeSnippet";
 import { useTranslation } from "react-i18next";
 import CopyButton from "../../../components/copyField/CopyButton";
@@ -10,17 +10,18 @@ import {
   CenteredItemBox,
   SecondaryText,
 } from "../../../assets/css/common.styles";
-import AutoCompleteDropDown from "../../../components/dropDown/AutoCompleteDropDown";
+// import AutoCompleteDropDown from "../../../components/dropDown/AutoCompleteDropDown";
+import { questionAnswerType } from "../../../utils/common.Data";
 
 const AnswerDetails = (props) => {
-  const { data } = props;
+  const { renderProps } = props;
   const { t } = useTranslation();
   const [isTextCopied, setIsTextCopied] = useState({
     isCopy: false,
     message: "",
   });
   const [editorTheme, setEditorTheme] = useState("dark"); // Default to light theme
-  const [language, setLanguage] = useState("javascript"); // Default language is JavaScript
+  // const [language, setLanguage] = useState("javascript"); // Default language is JavaScript
 
   const theme = useTheme();
   const buttonSx = {
@@ -49,9 +50,9 @@ const AnswerDetails = (props) => {
   };
   const handleTheme = () => {};
 
-  const getSelectedValue = (data) => {
-    setLanguage(data.value);
-  };
+  // const getSelectedValue = (data) => {
+  //   setLanguage(data.value);
+  // };
 
   const languagesData = [
     { label: "JavaScript", value: "javascript" },
@@ -61,70 +62,97 @@ const AnswerDetails = (props) => {
 
   return (
     <>
-      {isTextCopied?.isCopy && (
-        <CenteredItemBox
-          props={{ justifyContent: "right", paddingBottom: "20px" }}
-        >
-          <SecondaryText
-            props={{
-              color: theme.colors.extra.successColor,
-              fontSize: theme.spacing(0.8),
-            }}
-          >
-            {isTextCopied?.message}
-          </SecondaryText>
-        </CenteredItemBox>
-      )}
+      {renderProps?.answers?.map((answer) => {
+        if (answer?.answerType === questionAnswerType[0]) {
+          return (
+            <CenteredItemBox
+              props={{
+                justifyContent: "left",
+                textAlign: "left",
+                marginBottom: theme.spacing(1),
+                background: theme.colors.primary.mainColor,
+                padding: theme.spacing(0.5),
+                borderRadius: theme.spacing(0.5),
+              }}
+            >
+              {answer?.answerText}
+            </CenteredItemBox>
+          );
+        } else if (answer?.answerType === questionAnswerType[1]) {
+          return (
+            <>
+              {isTextCopied?.isCopy && (
+                <CenteredItemBox
+                  props={{ justifyContent: "right", paddingBottom: "20px" }}
+                >
+                  <SecondaryText
+                    props={{
+                      color: theme.colors.extra.successColor,
+                      fontSize: theme.spacing(0.8),
+                    }}
+                  >
+                    {isTextCopied?.message}
+                  </SecondaryText>
+                </CenteredItemBox>
+              )}
 
-      <CenteredItemBox
-        props={{ justifyContent: "right", paddingBottom: "20px" }}
-      >
-        <AutoCompleteDropDown
-          renderData={languagesData}
-          placeHolder={t("selectDropDownValue", { value: t("codeLanguages") })}
-          getSelectedValue={getSelectedValue}
-        />
-        <IconButton onClick={handleTheme} aria-label="change theme">
-          <Fab
-            aria-label="save"
-            color="primary"
-            sx={buttonSx}
-            onClick={toggleTheme}
-          >
-            {editorTheme === "light" ? (
-              <Brightness5Icon fontSize="small" />
-            ) : (
-              <Brightness4Icon fontSize="small" style={{ color: "#000" }} />
-            )}
-          </Fab>
-        </IconButton>
+              <CenteredItemBox
+                props={{ justifyContent: "right", paddingBottom: "20px" }}
+              >
+                {/* <AutoCompleteDropDown
+                  renderData={languagesData}
+                  placeHolder={t("selectDropDownValue", {
+                    value: t("codeLanguages"),
+                  })}
+                  getSelectedValue={getSelectedValue}
+                /> */}
+                <IconButton onClick={handleTheme} aria-label="change theme">
+                  <Fab
+                    aria-label="save"
+                    color="primary"
+                    sx={buttonSx}
+                    onClick={toggleTheme}
+                  >
+                    {editorTheme === "light" ? (
+                      <Brightness5Icon fontSize="small" />
+                    ) : (
+                      <Brightness4Icon
+                        fontSize="small"
+                        style={{ color: "#000" }}
+                      />
+                    )}
+                  </Fab>
+                </IconButton>
 
-        <CopyButton
-          handleCopyClick={() =>
-            handleCopyClick(data?.answerLanguage[language])
-          }
-          isTextCopied={isTextCopied}
-        />
-      </CenteredItemBox>
-
-      {data?.answerLanguage?.details?.[language] && (
-        <CenteredItemBox
-          props={{ justifyContent: "left", marginBottom: theme.spacing(1) }}
-        >
-          {data?.answerLanguage?.details?.[language]}
-        </CenteredItemBox>
-      )}
-      {data?.answerLanguage?.code?.[language] && (
-        <CenteredItemBox props={{ display: "block" }}>
-          <CodeSnippet
-            code={data?.answerLanguage?.code?.[language]}
-            language={language}
-            editorTheme={editorTheme}
-          />
-        </CenteredItemBox>
-      )}
+                <CopyButton
+                  handleCopyClick={() => handleCopyClick(answer?.answerText)}
+                  isTextCopied={isTextCopied}
+                />
+              </CenteredItemBox>
+              <CenteredItemBox props={{ display: "block" }}>
+                <CodeSnippet
+                  code={answer?.answerText}
+                  language={renderProps?.questionAnswerLanguage}
+                  editorTheme={editorTheme}
+                />
+              </CenteredItemBox>
+            </>
+          );
+        } else if (answer?.answerType === questionAnswerType[2]) {
+          return (
+            <img
+              style={{ height: 300 }}
+              src={
+                answer?.answerText ||
+                "https://www.onlybets.tv/static/media/loyalty-2.7028b3d74d9977667d0c.png"
+              }
+              alt="image1"
+            />
+          );
+        }
+      })}
     </>
   );
 };
 
-export default AnswerDetails;
+export default memo(AnswerDetails);
