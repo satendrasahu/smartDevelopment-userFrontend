@@ -30,7 +30,7 @@ const MobileSidebar = () => {
 
   return (
    
-    <Box mt={10}>
+    <Box mt={5}>
       <ButtonsSlider
       renderData={renderSidebarList()}
       // extraButtons={extraButtons}

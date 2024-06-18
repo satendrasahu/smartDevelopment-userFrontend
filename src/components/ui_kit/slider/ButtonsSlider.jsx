@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { memo, useEffect, useRef, useState } from "react";
 import { Box } from "@mui/material";
 import { StyledSlider, SlickSliderWrap, SliderCard } from "./styles";
 import Slider from "react-slick";
@@ -105,7 +105,7 @@ const ButtonsSlider = (props) => {
 
   console.log(isPrevActive, isNextActive);
   return (
-    <StyledSlider isPrevActive isNextActive>
+    <StyledSlider isPrevActive={isPrevActive} isNextActive={isNextActive}>
       <Box style={{ display: "flex", overflow: "hidden" }}>
         <SlickSliderWrap>
           <Slider
@@ -196,4 +196,4 @@ ButtonsSlider.defaultProps = {
   gameSubCategoryActiveTab: null,
 };
 
-export default ButtonsSlider;
+export default memo(ButtonsSlider)

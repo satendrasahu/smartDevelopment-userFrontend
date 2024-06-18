@@ -7,8 +7,7 @@ import { useTheme } from "@emotion/react";
 const Sidebar = () => {
   const theme = useTheme()
   const isMediumScreen = useMediaQuery(theme.breakpoints.down("md"));
-  // return isMediumScreen ? <MobileSidebar /> : <DesktopSidebar />;
-  return <MobileSidebar />
+  return isMediumScreen ? <MobileSidebar /> : <DesktopSidebar />;
 };
 
 export default Sidebar;

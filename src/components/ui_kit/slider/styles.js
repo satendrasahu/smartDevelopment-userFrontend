@@ -1,7 +1,6 @@
 import { styled } from "@mui/material/styles";
 
 export const StyledSlider = styled("div")(({ theme,isPrevActive, isNextActive }) => {
-console.log("isPrevActive, isNextActive",isPrevActive, isNextActive)
   return (
     {
       margin: theme.spacing(1, 0),
@@ -64,27 +63,24 @@ console.log("isPrevActive, isNextActive",isPrevActive, isNextActive)
       },
       "& .slick-slider.slick-initialized": {
         "& .slick-next": {
-          right: "-92px !important",
+          right: "-93px !important",
           borderRadius: "0 50px 50px 0 !important",
           height: "37px !important",
           width: "37px !important",
           borderColor: "transparent !important",
-          background: isNextActive ? theme.colors.extra.highLightColor :"red",
-          // "&.active": {
-          //   background: isPrevActive ? theme.colors.extra.highLightColor :"inherit",
-          // },
+          background: isNextActive ? theme.colors.primary.btnColor :"inherit",
+
+          
         },
         "& .slick-prev": {
-          right: "-55px !important",
+          right: "-54px !important",
           left: "inherit !important",
           borderRadius: "50px 0 0 50px !important",
           height: "37px !important",
           width: "37px !important",
           borderColor: "transparent !important",
-          background: isPrevActive ? theme.colors.extra.highLightColor :"red",
-        //  "&.active": {
-        //     background: theme.colors.extra.highLightColor,
-        //   },
+          background: isPrevActive ? theme.colors.primary.btnColor :"inherit",
+      
         },
       },
     }
