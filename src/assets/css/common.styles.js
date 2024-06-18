@@ -4,7 +4,7 @@ import { styled } from "@mui/material/styles";
 export const MainWrap = styled(Box)(({ theme, props }) => ({
   // background:theme.colors.extra.dark,
   margin: theme.spacing(7, 5),
-  minHeight: "100vh",
+  minHeight:"calc(100vh - 440px)",
   width: `calc(100vw-230px)`,
   borderRadius: theme.borderRadius,
   [theme.breakpoints.down("sm")]: {

@@ -40,13 +40,12 @@ const Drawer = styled(MuiDrawer, {
   width: drawerWidth,
   flexShrink: 0,
   whiteSpace: "nowrap",
-  background: "red",
   boxSizing: "border-box",
   ...(open && {
     ...openedMixin(theme),
     "& .MuiDrawer-paper": {
       ...openedMixin(theme),
-      height :"107%",
+      maxHeight:"calc(100vh - 215px)",
       paddingTop: "70px",
       position: "absolute",
       zIndex: 0,
@@ -56,7 +55,7 @@ const Drawer = styled(MuiDrawer, {
     ...closedMixin(theme),
     "& .MuiDrawer-paper": {
       ...closedMixin(theme),
-      height :"107%",
+      maxHeight:"calc(100vh - 215px)",
       paddingTop: "70px",
       zIndex: 0,
       position: "absolute",

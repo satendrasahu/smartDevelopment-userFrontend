@@ -25,9 +25,9 @@ const Home = () => {
   }, [homeData]);
 
   return (
-    <MainLayout header footer>
+    <MainLayout header footer sidebar>
       <MainWrap>
-        <CenteredItemBox props={{ marginBottom: theme.spacing(2) }}>
+        {/* <CenteredItemBox props={{ marginBottom: theme.spacing(2) }}>
           <PrimaryText props={{ fontSize: theme.spacing(5) }}>
             {t("welcomeText", { name: t(appDetails.APP_TITLE) })}
           </PrimaryText>
@@ -59,7 +59,7 @@ const Home = () => {
               <SecondaryCard details={cources} />
             </Grid>
           ))}
-        </Grid>
+        </Grid> */}
       </MainWrap>
     </MainLayout>
   );
