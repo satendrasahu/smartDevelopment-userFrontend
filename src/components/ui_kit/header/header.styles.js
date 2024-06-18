@@ -1,5 +1,5 @@
 import { styled } from "@mui/material/styles";
-import { Toolbar, Typography } from "@mui/material";
+import { Box, Toolbar, Typography } from "@mui/material";
 
 export const LogoTypography = styled(Typography)(({ theme, props }) => ({
   flexGrow: 1,
@@ -19,3 +19,8 @@ export const StyledToolbar = styled(Toolbar)(({ theme }) => ({
     padding: theme.spacing(0, 1),
   },
 }));
+export const StyledContainer = styled(Box)(({ theme }) => ({
+  paddingLeft:theme.spacing(1.3),
+  paddingright:theme.spacing(1),
+}));
+

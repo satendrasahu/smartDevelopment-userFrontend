@@ -3,7 +3,6 @@ import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import Container from "@mui/material/Container";
 import HeaderLinks from "./components/HeaderLinks";
 import { useTranslation } from "react-i18next";
 
@@ -16,6 +15,9 @@ import { IconButton } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
 import { handleSidebar } from "../../../redux/slices/layout/layout.slice";
 import { ROUTE_PATHS } from "../../../routes/routesPath";
+import { StyledContainer } from "./header.styles";
+import DoubleArrowIcon from '@mui/icons-material/DoubleArrow';
+import MenuOpenIcon from '@mui/icons-material/MenuOpen';
 function DesktopHeader() {
   const { t } = useTranslation();
   const {toggleSidebar} = useSelector(state=>state.layout)
@@ -32,7 +34,8 @@ function DesktopHeader() {
 
   return (
     <AppBar  position="fixed"  sx={{background: colors.primary.mainColor}}>
-      <Container maxWidth="xl">
+      
+      <StyledContainer >
         <Toolbar disableGutters>
         <IconButton
             color="inherit"
@@ -43,7 +46,7 @@ function DesktopHeader() {
               marginRight : "1rem"
             }}
           >
-            <MenuIcon />
+           {toggleSidebar ?  <MenuOpenIcon/>:<DoubleArrowIcon/>} 
           </IconButton>
           <Typography
             variant="h6"
@@ -73,7 +76,7 @@ function DesktopHeader() {
           </Box>
           
         </Toolbar>
-      </Container>
+      </StyledContainer>
     </AppBar>
   );
 }
