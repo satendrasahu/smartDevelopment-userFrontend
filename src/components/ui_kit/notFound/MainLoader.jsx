@@ -37,7 +37,7 @@ const MainLoader = () => {
   const { t } = useTranslation();
   const theme = useTheme()
   return (
-    <MainLayout header footer>
+      <MainLayout header footer>
       <MainWrap>
         <StyledContainer>
           <Typography className="textWelcomeText">

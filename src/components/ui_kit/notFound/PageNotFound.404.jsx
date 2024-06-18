@@ -68,7 +68,7 @@ const PageNotFound = () => {
   };
 
   return (
-    <MainLayout header footer>
+      <MainLayout header footer>
       <MainWrap>
         <StyledContainer>
           <Typography className="textOoops">{t("ooops")}</Typography>

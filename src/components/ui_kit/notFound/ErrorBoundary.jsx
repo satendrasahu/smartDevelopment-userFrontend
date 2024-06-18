@@ -47,7 +47,7 @@ class ErrorBoundary extends Component {
     const { errorBoundaryMessage } = this.props;
     if (this.state.hasError) {
       return (
-        <MainLayout header footer>
+          <MainLayout header footer>
           <MainWrap>
             <StyledContainer>
               <Typography className="textOoops">

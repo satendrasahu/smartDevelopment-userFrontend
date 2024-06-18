@@ -37,7 +37,7 @@ export default function ResponsiveGrid() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
   return (
-    <MainLayout header footer>
+      <MainLayout header footer sidebar>
       <MainWrap>
         <Box sx={{ flexGrow: 1 }}>
           {loader ? (

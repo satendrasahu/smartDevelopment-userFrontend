@@ -40,7 +40,7 @@ const PageNotFound = () => {
   };
 
   return (
-    <MainLayout header footer>
+      <MainLayout header footer sidebar>
       <MainWrap>
         <StyledContainer>
           <Typography className="textComingSoon">{t("comingSoon")}</Typography>

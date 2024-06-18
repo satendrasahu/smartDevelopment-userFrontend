@@ -7,10 +7,12 @@ import Login from "../../../pages/auth/login/Login";
 import Register from "../../../pages/auth/register/Register";
 export default function Header() {
   const theme = useTheme();
-  const isLargeScreen = useMediaQuery(theme.breakpoints.down("md"));
-  return <Box>
-    {isLargeScreen ? <MobileHeader /> : <DesktopHeader />}
-    <Login/>
-    <Register/>
-    </Box>;
+  const isMediumScreen = useMediaQuery(theme.breakpoints.down("md"));
+  return (
+    <Box>
+      {isMediumScreen ? <MobileHeader /> : <DesktopHeader />}
+      <Login />
+      <Register />
+    </Box>
+  );
 }

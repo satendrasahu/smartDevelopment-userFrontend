@@ -49,7 +49,7 @@ export default function ResponsiveGrid() {
   }, []);
 
   return (
-    <MainLayout header footer>
+      <MainLayout header footer sidebar>
       <MainWrap props={{ marginTop: theme.spacing(8) }}>
         <Box sx={{ flexGrow: 1 }}>
           {loader ? (

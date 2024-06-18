@@ -73,7 +73,7 @@ const TopicOverview = () => {
   }, []);
 
   return (
-    <MainLayout header footer>
+      <MainLayout header footer sidebar>
       <MainWrap>
         <CenteredItemBox>
           <StyledDivider props={{ width: "50%" }} />

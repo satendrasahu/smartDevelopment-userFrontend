@@ -12,7 +12,7 @@ const Training = () => {
   const theme = useTheme();
   const { t } = useTranslation();
   return (
-    <MainLayout header footer>
+      <MainLayout header footer sidebar>
       <MainWrap>
         <CenteredItemBox props={{ marginBottom: theme.spacing(2) }}>
           <PrimaryText props={{ fontSize: theme.spacing(2) }}>
