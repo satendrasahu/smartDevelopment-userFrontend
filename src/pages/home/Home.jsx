@@ -53,7 +53,7 @@ const Home = () => {
             {t("visitOurPrograms")}
           </PrimaryText>
         </CenteredItemBox>
-        <Grid container spacing={1} rowGap={5}>
+        <Grid container spacing={1} rowGap={5} ml={2}>
           {renderHomeData()?.map((cources, index) => (
             <Grid item xs={12} sm={12} md={6}  key={index}>
               <SecondaryCard details={cources} />

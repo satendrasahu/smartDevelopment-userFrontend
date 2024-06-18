@@ -1,9 +1,13 @@
-import { Box, CssBaseline } from "@mui/material";
+import { CssBaseline } from "@mui/material";
 import React from "react";
 import Footer from "../footer";
 import Header from "../header";
 import Sidebar from "../sidebar/index.js";
-import { MainLayoutComponents, MainLayoutContent } from "./style.js";
+import {
+  MainLayoutComponents,
+  MainLayoutContent,
+  SidebarBox,
+} from "./style.js";
 
 const MainLayout = (props) => {
   const { header, sidebar, children, footer } = props;
@@ -11,10 +15,10 @@ const MainLayout = (props) => {
     <MainLayoutComponents>
       <CssBaseline />
       {header && <Header />}
-      <Box sx={{ display: "flex" }}>
+      <SidebarBox>
         {sidebar && <Sidebar />}
         <MainLayoutContent>{children}</MainLayoutContent>
-      </Box>
+      </SidebarBox>
       {footer && <Footer />}
     </MainLayoutComponents>
   );

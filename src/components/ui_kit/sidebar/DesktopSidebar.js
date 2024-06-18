@@ -6,10 +6,7 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import MailIcon from "@mui/icons-material/Mail";
 import { useDispatch, useSelector } from "react-redux";
-import { handleSidebar } from "../../../redux/slices/layout/layout.slice";
 import { colors } from "../../../theme/colors";
 import { sideBarList } from "./common";
 import { useNavigate } from "react-router-dom";
@@ -76,9 +73,6 @@ export default function MiniDrawer() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const {t} = useTranslation()
-  const handleSidebarClose = () => {
-    dispatch(handleSidebar(false));
-  };
 
   const visitPage = (route) => {
     navigate(route);

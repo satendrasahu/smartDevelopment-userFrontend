@@ -59,5 +59,12 @@ export const routersList = [{
     path: ROUTE_PATHS.upcoming,
     component: lazy(() => import('../pages/upcoming/index')),
     hasAuth: false,
+  },
+  {
+    key: uuidv4(),
+    label: 'Live Projects',
+    path: ROUTE_PATHS.liveProjects,
+    component: lazy(() => import('../pages/upcoming/index')),
+    hasAuth: false,
   }
 ]

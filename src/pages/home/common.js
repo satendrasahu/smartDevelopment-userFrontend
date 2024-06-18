@@ -20,14 +20,14 @@ export const homeData = (t, visitPage) => [
     index: 3,
     heading: t("kyc3"),
     subheading: t("update now"),
+    id:ROUTE_PATHS.liveProjects,
+    onBtnClick: visitPage,
+  },
+  {
+    index: 4,
+    heading: t("kyc4"),
+    subheading: t("update now"),
     id:ROUTE_PATHS.upcoming,
     onBtnClick: visitPage,
   },
-  // {
-  //   index: 4,
-  //   heading: t("kyc4"),
-  //   subheading: t("update now"),
-  //   id:ROUTE_PATHS.upcoming,
-  //   onBtnClick: visitPage,
-  // },
 ];

@@ -10,3 +10,4 @@ export const MainLayoutComponents = styled(Box)(() => ({
 }));
 
 export const MainLayoutContent = styled(Box)(() => ({ flexGrow: 1 }));
+export const SidebarBox = styled(Box)(() => ({ flexGrow: 1 }));

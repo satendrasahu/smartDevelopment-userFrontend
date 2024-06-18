@@ -12,7 +12,6 @@ import HeaderButtons from "./components/HeaderButtons";
 import { colors } from "../../../theme/colors";
 import { useDispatch, useSelector } from "react-redux";
 import { IconButton } from "@mui/material";
-import MenuIcon from '@mui/icons-material/Menu';
 import { handleSidebar } from "../../../redux/slices/layout/layout.slice";
 import { ROUTE_PATHS } from "../../../routes/routesPath";
 import { StyledContainer } from "./header.styles";
@@ -22,6 +21,7 @@ function DesktopHeader() {
   const { t } = useTranslation();
   const {toggleSidebar} = useSelector(state=>state.layout)
   const dispatch = useDispatch()
+  
   const getHeaderLinks = useMemo(() => {
     return headerLinks(t);
   }, [headerLinks]);

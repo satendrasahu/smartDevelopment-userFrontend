@@ -12,4 +12,5 @@ export const ROUTE_PATHS = {
   comingSoon: "/comming-soon",
   training: "/training",
   upcoming: "/upcoming",
+  liveProjects :"/live-projects"
 };
