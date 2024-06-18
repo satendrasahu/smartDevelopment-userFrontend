@@ -61,7 +61,7 @@ export default function ResponsiveGrid() {
             </CenteredItemBox>
           ) : (
             <Grid container spacing={1} rowGap={5}>
-              {renderTopicsData().map((cources, index) => (
+              {renderTopicsData()?.map((cources, index) => (
                 <Grid item sm={12} lg={6} key={index}>
                   <SecondaryCard details={cources} />
                 </Grid>

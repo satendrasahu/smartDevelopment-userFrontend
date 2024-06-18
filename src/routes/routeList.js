@@ -1,6 +1,7 @@
 import { lazy } from 'react'
 import { v4 as uuidv4 } from 'uuid'
 import { ROUTE_PATHS } from './routesPath'
+
 export const routersList = [{
     key: uuidv4(),
     label: 'Home',
@@ -43,6 +44,20 @@ export const routersList = [{
     label: 'View - Topics',
     path: ROUTE_PATHS.topicsOverview,
     component: lazy(() => import('../pages/courses/copmonents/TopicOverview')),
+    hasAuth: false,
+  },
+  {
+    key: uuidv4(),
+    label: 'Training',
+    path: ROUTE_PATHS.training,
+    component: lazy(() => import('../pages/training/index')),
+    hasAuth: false,
+  },
+  {
+    key: uuidv4(),
+    label: 'UpComing',
+    path: ROUTE_PATHS.upcoming,
+    component: lazy(() => import('../pages/upcoming/index')),
     hasAuth: false,
   }
 ]
