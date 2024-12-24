@@ -27,6 +27,7 @@ const Home = () => {
   return (
     <MainLayout header footer sidebar>
       <MainWrap>
+        <h1>hello this is dummy project for learning</h1>
         {/* <CenteredItemBox props={{ marginBottom: theme.spacing(2) }}>
           <PrimaryText props={{ fontSize: theme.spacing(5) }}>
             {t("welcomeText", { name: t(appDetails.APP_TITLE) })}

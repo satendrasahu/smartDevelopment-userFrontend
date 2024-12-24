@@ -66,5 +66,20 @@ export const routersList = [{
     path: ROUTE_PATHS.liveProjects,
     component: lazy(() => import('../pages/upcoming/index')),
     hasAuth: false,
+  },
+
+  {
+    key: uuidv4(),
+    label: 'Profile',
+    path: ROUTE_PATHS.profile,
+    component: lazy(() => import('../pages/profile/index')),
+    hasAuth: false,
+  },
+  {
+    key: uuidv4(),
+    label: 'view user profile',
+    path: ROUTE_PATHS.viewUserProfile,
+    component: lazy(() => import('../pages/userDetails/index')),
+    hasAuth: false,
   }
 ]

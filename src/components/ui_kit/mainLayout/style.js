@@ -10,4 +10,12 @@ export const MainLayoutComponents = styled(Box)(() => ({
 }));
 
 export const MainLayoutContent = styled(Box)(() => ({ flexGrow: 1 }));
-export const SidebarBox = styled(Box)(() => ({ flexGrow: 1 }));
+export const SidebarBox = styled(Box)(({theme}) => ({ 
+  flexGrow: 1,
+  display:'flex',
+  [theme.breakpoints.down("md")]: {
+    display:'block',
+  },
+
+
+ }));

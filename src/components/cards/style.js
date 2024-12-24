@@ -8,13 +8,13 @@ export const StyledPrimaryCard = styled(Box)(({ theme }) => ({
   border: `1px solid ${theme.colors.extra.highLightColor}`,
   boxShadow: `0 0 10px ${theme.colors.extra.highLightColor}`,
   position: "relative",
-  transition: "top 0.3s ease, background 0.3s ease", 
+  transition: "top 0.3s ease, background 0.3s ease",
   top: 0,
   "&:hover": {
     background: theme.colors.extra.mainColor,
     top: "-1rem",
   },
- 
+
   "& .Counter": {
     top: "-30px",
     left: "0",
@@ -128,4 +128,50 @@ export const StyledSecondaryCard = styled(Box)(({ theme }) => ({
       padding: "0",
     },
   },
+}));
+
+export const StyledThirdCard = styled(Box)(({ theme }) => ({
+  margin: theme.spacing(1, 0),
+  padding:theme.spacing(0.25,0),
+  background: theme.colors.primary.mainColor,
+  borderRadius: "2rem",
+  width: `calc(100% - 2.5rem)`,
+  // [theme.breakpoints.down("lg")]: {
+  //   width: "100%",
+  // },
+  // [theme.breakpoints.down("lg")]: {
+  //   width: `calc(100% - 3rem)`,
+  //   left: theme.spacing(2),
+  // },
+
+  position: "relative",
+  transition: "top 0.3s ease, background 0.3s ease",
+  top: 0,
+  "&:hover": {
+    background: theme.colors.extra.mainColor,
+    top: "-1rem",
+  },
+  border: `1px solid ${theme.colors.extra.highLightColor}`,
+  boxShadow: `0 0 10px ${theme.colors.extra.highLightColor}`,
+  "& .Counter": {
+    top: "-25%",
+    left: "-5%",
+    // right: "0",
+    padding: "0rem",
+    position: "absolute",
+    background: theme.colors.extra.mainColor,
+    width: theme.spacing(3),
+    height: theme.spacing(3),
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    // margin: "0 auto",
+    fontSize: theme.spacing(1.5),
+    fontWeight: "bold",
+    borderRadius: "50%", //theme.borderRadius,
+    color: theme.colors.extra.highLightColor,
+    border: `3px solid ${theme.colors.extra.highLightColor}`,
+    boxShadow: `0 0 10px ${theme.colors.extra.highLightColor}`,
+  },
+
 }));

@@ -10,7 +10,7 @@ import {
 } from "./style.js";
 
 const MainLayout = (props) => {
-  const { header, sidebar, children, footer } = props;
+  const { header, sidebar, footer,children } = props;
   return (
     <MainLayoutComponents>
       <CssBaseline />

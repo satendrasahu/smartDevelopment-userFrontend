@@ -37,6 +37,7 @@ export default function ResponsiveGrid() {
         heading: course?.topicName,
         subHeading: course?.topicDetails,
         id: course?._id,
+        isButton:true
       };
     });
     return result || [];

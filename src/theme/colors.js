@@ -12,7 +12,6 @@ export const colors = {
     textColor: "#E5E5E5",
     btnColor: "#023D54",
     btnHoverColor: "",
-    success: "",
   },
   extra: {
     mainColor: "#042b32",
@@ -23,5 +22,6 @@ export const colors = {
     warningColor: "",
     infoColor: "",
     errorColor: "#d50000",
+    cancelBtnColor: '#313543',
   },
 };

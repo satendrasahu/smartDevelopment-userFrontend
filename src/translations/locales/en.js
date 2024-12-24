@@ -47,4 +47,20 @@ export default {
   ourProgram: "Our {{name}} Program",
   training: "Training",
   upComing: "Up - Coming",
+  personalDetails: "Personal Details",
+  myProfile: "My Profile",
+  fileAllowed: "Please upload only {{files}} files with allowed size {{size}}",
+  fileAllowedFormat: "Please upload only {{files}} files",
+  fileAllowedSize:
+    "File size exceeds the limit {{fileSize}}. Please upload a smaller file.",
+  uploading: "Uploading...",
+  uploadNewImage: "Upload New Image",
+  resetPassword: " Reset Password",
+  updateProfile: "Update Profile",
+  changePassword: "Change Password",
+  currentPassword: "Current Password",
+  alternateMobileNumber: "Alternate Mobile Number",
+  resumeMaker: "Resume Maker",
+  heyThere: "Hey there! ",
+  shortIntro :" A passionate Full Stack / MERN Stack Developer specializing in building scalable and user-centric web applications."
 };

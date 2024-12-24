@@ -13,15 +13,17 @@ const SecondaryCard = (props) => {
         {details?.index}
       </Typography>
       <Typography className="number-heading">{details?.heading}</Typography>
-      <Typography className="number-text">{details?.subHeading}</Typography>
-      <CenteredItemBox>
-        <PrimaryButton
-          props={{ width: "100%" }}
-          onClick={() => details.onBtnClick(details?.id)}
-        >
-          {t("exploreNow")}
-        </PrimaryButton>
-      </CenteredItemBox>
+      {details?.subHeading &&<Typography className="number-text">{details?.subHeading}</Typography>}
+      {details?.isButton && (
+        <CenteredItemBox>
+          <PrimaryButton
+            props={{ width: "100%" }}
+            onClick={() => details.onBtnClick(details?.id)}
+          >
+            {t("exploreNow")}
+          </PrimaryButton>
+        </CenteredItemBox>
+      )}
     </StyledSecondaryCard>
   );
 };

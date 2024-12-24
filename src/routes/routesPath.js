@@ -12,5 +12,9 @@ export const ROUTE_PATHS = {
   comingSoon: "/comming-soon",
   training: "/training",
   upcoming: "/upcoming",
-  liveProjects :"/live-projects"
+  liveProjects :"/live-projects",
+  profile:"/profile",
+  personalInformation:"/profile/personalInformation",
+  resumeMaker:"/resumeMaker",
+  viewUserProfile:"/viewUserProfile"
 };

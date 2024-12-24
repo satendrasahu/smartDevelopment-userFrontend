@@ -1,0 +1,40 @@
+import { Box, styled } from "@mui/material";
+
+export const StyledTitle = styled(Box)(({ theme }) => ({
+    textTransform: "uppercase",
+    fontSize: "2rem",
+    color: "white",
+    position: "relative",
+    paddingBottom: "1rem",
+    letterSpacing: "3px",
+    "&::before": {
+      content: '""',
+      bottom: 0,
+      position: "absolute",
+      left: 0,
+      backgroundColor: "#0381ff38",
+      width: "6rem",
+      height: "0.4rem",
+      borderRadius: "50px",
+    },
+    "&::after": {
+      content: '""',
+      bottom: 0,
+      position: "absolute",
+      left: 0,
+      backgroundColor: "#037FFF",
+      width: "3rem",
+      height: "0.4rem",
+      borderRadius: "50px",
+    },
+    "& span": {
+      position: "absolute",
+      top: "15%",
+      left: 0,
+      right: 0,
+      width: "100%",
+      fontSize: "5rem",
+      opacity: 0.07,
+      overflow: "hidden",
+    },
+  }));
