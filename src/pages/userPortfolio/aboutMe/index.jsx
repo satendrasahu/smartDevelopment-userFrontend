@@ -91,7 +91,7 @@ export default function AboutMe() {
         </Grid>
 
         <Grid item xs={12} >
-          <CircularSlider3D renderData={skillsData} />
+          {/* <CircularSlider3D renderData={skillsData} /> */}
         </Grid>
       </Grid>
     </StyledAboutMeContainer>

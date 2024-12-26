@@ -6,7 +6,7 @@ import { tabList } from "./constant";
 import { Box } from "@mui/material";
 import { useTheme } from "@emotion/react";
 
-const UserDetails = () => {
+const UserPortfolio = () => {
   const [activeTab, setActiveTab] = useState(null);
   const theme = useTheme();
   const sectionRefs = {
@@ -23,6 +23,8 @@ const UserDetails = () => {
     projects: useRef(),
   };
 
+
+  console.log("activeTab",activeTab)
   const tabListRef = useRef();
 
   const handleScroll = () => {
@@ -59,7 +61,7 @@ const UserDetails = () => {
   }, []);
 
   const renderTabList = useMemo(() => {
-    return tabList;
+    return tabList(setActiveTab);
   }, []);
 
   return (
@@ -91,4 +93,4 @@ const UserDetails = () => {
   );
 };
 
-export default UserDetails;
+export default UserPortfolio;

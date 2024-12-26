@@ -16,5 +16,5 @@ export const ROUTE_PATHS = {
   profile:"/profile",
   personalInformation:"/profile/personalInformation",
   resumeMaker:"/resumeMaker",
-  viewUserProfile:"/viewUserProfile"
+  viewUserPortfolio:"/viewUserPortfolio"
 };

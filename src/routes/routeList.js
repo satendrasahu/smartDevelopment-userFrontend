@@ -78,8 +78,8 @@ export const routersList = [{
   {
     key: uuidv4(),
     label: 'view user profile',
-    path: ROUTE_PATHS.viewUserProfile,
-    component: lazy(() => import('../pages/userDetails/index')),
+    path: ROUTE_PATHS.viewUserPortfolio,
+    component: lazy(() => import('../pages/userPortfolio/index')),
     hasAuth: false,
   }
 ]

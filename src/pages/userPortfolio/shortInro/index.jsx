@@ -12,13 +12,18 @@ import {
 } from "./style";
 import { useTheme } from "@emotion/react";
 
-const ShortIntro = () => {
+const ShortIntro = ({setActiveTab,redirectIdTab}) => {
   const { t } = useTranslation();
   const theme = useTheme();
   const [imageLoaded, setImageLoaded] = useState(false);
+  const [imageError, setImageError] = useState(false);
 
   const handleImageLoad = () => {
     setImageLoaded(true);
+  };
+
+  const handleImageError = () => {
+    setImageError(true);
   };
 
   return (
@@ -42,25 +47,24 @@ const ShortIntro = () => {
           }}
         >
           <StyledImage
-            src="https://as2.ftcdn.net/v2/jpg/09/33/74/03/1000_F_933740387_6v4QtD2VWJuOzSMNRDVmlnD9uEfwwd5h.webp"
-            // src="https://static.vecteezy.com/system/resources/previews/024/999/781/non_2x/3d-sportsman-character-exuding-confidence-with-arms-crossed-pose-in-a-dynamic-setting-free-png.png"
+            src={imageError ? "" : "https://as2.ftcdn.net/v2/jpg/09/33/74/03/1000_F_933740387_6v4QtD2VWJuOzSMNRDVmlnD9uEfwwd5h.webp"}
             alt="Satendra Sahu"
             onLoad={handleImageLoad}
+            onError={handleImageError}
             style={{ opacity: imageLoaded ? 1 : 0 }}
           />
         </Grid>
         <Grid item xs={12} md={6} textAlign="center"
-        
-        sx={{
-          [theme.breakpoints.down("md")]: {
-            paddingBottom: "4rem",
-          },
-        }}>
+          sx={{
+            [theme.breakpoints.down("md")]: {
+              paddingBottom: "4rem",
+            },
+          }}>
           <HeroText>{t("Hey there!")}</HeroText>
           <SubtitleText>{t("I'm Satendra Sahu")}</SubtitleText>
           <DescriptionText>{t("shortIntro")}</DescriptionText>
           <CenteredItemBox>
-            <ButtonStyled>{t("Contact Me")}</ButtonStyled>
+            <ButtonStyled onClick={()=>{setActiveTab(redirectIdTab)}}>{t("Contact Me")}</ButtonStyled>
           </CenteredItemBox>
         </Grid>
       </Grid>

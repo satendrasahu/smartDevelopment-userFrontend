@@ -1,4 +1,6 @@
+
 import { Box, Button, styled, Typography } from "@mui/material";
+// const fallbackImage ="https://static.vecteezy.com/system/resources/previews/024/999/781/non_2x/3d-sportsman-character-exuding-confidence-with-arms-crossed-pose-in-a-dynamic-setting-free-png.png"
 
 export const StyledShortIntroContainer = styled(Box)(({ theme, props }) => ({
   padding: "3.5rem",
@@ -64,16 +66,14 @@ export const DescriptionText = styled(Typography)(({ theme }) => ({
 
 export const StyledImage = styled("img")(({ theme }) => ({
   width: "100%", // Make image larger
-  // border:"1px solid red",
-  // maxWidth: "500px", // Increase the max width of the image
   height: "auto",
   maxHeight: "84.5vh",
-  // display:"hidden",
   borderRadius: "50%",
   // boxShadow: `0 20px 50px rgba(0, 0, 0, 0.1)`, // Softer shadow
-  transition: "transform 0.5s ease-in-out, box-shadow 0.3s ease",
+  transition: "transform 0.5s ease-in-out, box-shadow 0.3s ease",  
   opacity: 0,
   animation: "fadeInImage 1s forwards, zoomInImage 0.5s ease-out", // Animation for zoom effect
+  // background: `url(${fallbackImage}) center center / cover no-repeat`, // Fallback background image
   "@keyframes fadeInImage": {
     "0%": {
       opacity: 0,
