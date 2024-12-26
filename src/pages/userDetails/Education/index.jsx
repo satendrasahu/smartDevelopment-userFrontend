@@ -10,7 +10,8 @@ import {
 import { colors } from "../../../theme/colors";
 import { v4 as uuidv4 } from "uuid";
 import AnimationOne from "../../../components/ui_kit/Headings/AnimationOne";
-export default function WorkExperience() {
+
+export default function Education() {
   const { t } = useTranslation();
   const educationData = [
     {

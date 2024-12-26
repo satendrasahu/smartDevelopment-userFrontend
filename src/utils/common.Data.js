@@ -1,8 +1,8 @@
 import { ROUTE_PATHS } from "../routes/routesPath";
 
 export const appDetails = {
-  APP_NAME: "AMX-GAMING", //"SMART-DEVELOPMENT",
-  APP_TITLE: "Amx-Gaming", //"Smart-Development"
+  APP_NAME: "SAHU'S", //"SMART-DEVELOPMENT",
+  APP_TITLE: "Sahu's", //"Smart-Development"
 };
 
 export const localStorageKeys = {

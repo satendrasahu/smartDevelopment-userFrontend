@@ -26,7 +26,7 @@ const ButtonItem = ({ href, label, variant, color }) => (
   </Grid>
 );
 
-const ContactUs = () => {
+const Contact = () => {
   const contactInfo = [
     { href: 'tel:+123456789', icon: <Phone fontSize="large" />, text: '+1 234 567 89' },
     { href: 'mailto:your.email@example.com', icon: <Email fontSize="large" />, text: 'your.email@example.com' },
@@ -72,4 +72,4 @@ const ContactUs = () => {
   );
 };
 
-export default ContactUs;
+export default Contact;
