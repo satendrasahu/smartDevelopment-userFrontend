@@ -27,6 +27,17 @@ const UserPortfolio = () => {
   console.log("activeTab",activeTab)
   const tabListRef = useRef();
 
+  const handleTabClick = (id) => {
+    setActiveTab(id);
+    if (sectionRefs[id]?.current) {
+      sectionRefs[id].current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
+
   const handleScroll = () => {
     renderTabList.forEach((section) => {
       const ref = sectionRefs[section.id]?.current;
@@ -61,7 +72,7 @@ const UserPortfolio = () => {
   }, []);
 
   const renderTabList = useMemo(() => {
-    return tabList(setActiveTab);
+    return tabList(handleTabClick);
   }, []);
 
   return (
@@ -71,6 +82,7 @@ const UserPortfolio = () => {
         setActiveTab={setActiveTab}
         renderTabList={renderTabList}
         tabListRef={tabListRef}
+        handleTabClick={handleTabClick}
       />
       <MainWrap props={
         {

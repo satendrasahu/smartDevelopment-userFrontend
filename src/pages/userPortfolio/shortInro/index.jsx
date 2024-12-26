@@ -12,7 +12,7 @@ import {
 } from "./style";
 import { useTheme } from "@emotion/react";
 
-const ShortIntro = ({setActiveTab,redirectIdTab}) => {
+const ShortIntro = ({handleTabClick,redirectIdTab}) => {
   const { t } = useTranslation();
   const theme = useTheme();
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -64,7 +64,7 @@ const ShortIntro = ({setActiveTab,redirectIdTab}) => {
           <SubtitleText>{t("I'm Satendra Sahu")}</SubtitleText>
           <DescriptionText>{t("shortIntro")}</DescriptionText>
           <CenteredItemBox>
-            <ButtonStyled onClick={()=>{setActiveTab(redirectIdTab)}}>{t("Contact Me")}</ButtonStyled>
+            <ButtonStyled onClick={()=>{handleTabClick(redirectIdTab)}}>{t("Contact Me")}</ButtonStyled>
           </CenteredItemBox>
         </Grid>
       </Grid>

@@ -10,8 +10,8 @@ import ShortIntro from "./shortInro";
 import Skills from "./skills";
 import WorkExperience from "./workExperience";
 
-export const tabList =(setActiveTab)=> [
-    { id: "shortIntro", name: "Short Intro", component: <ShortIntro setActiveTab={setActiveTab} redirectIdTab="contact"/> },
+export const tabList =(handleTabClick)=> [
+    { id: "shortIntro", name: "Short Intro", component: <ShortIntro handleTabClick={handleTabClick} redirectIdTab="contact"/> },
     { id: "aboutMe", name: "About Me", component: <AboutMe /> },
     { id: "skills", name: "Skills", component: <Skills /> },
     { id: "education", name: "Education", component: <Education /> },

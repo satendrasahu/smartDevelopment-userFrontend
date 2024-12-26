@@ -4,11 +4,7 @@ import { colors } from "../../../../theme/colors";
 import { ROUTE_PATHS } from "../../../../routes/routesPath";
 import { appDetails } from "../../../../utils/common.Data";
 
-const Header = ({ activeTab, setActiveTab, renderTabList, tabListRef }) => {
-  const handleTabClick = (id) => {
-    setActiveTab(id);
-  };
-
+const Header = ({ activeTab, setActiveTab, renderTabList, tabListRef,handleTabClick }) => {
   return (
     <AppBar
       position="fixed"
