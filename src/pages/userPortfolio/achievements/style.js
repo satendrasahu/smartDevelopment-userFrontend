@@ -2,7 +2,7 @@ import { Box, styled, Typography } from "@mui/material";
 
 export const StyledAchievementsContainer = styled(Box)(({ theme }) => ({
   padding: "2rem 4rem",
-  background: `linear-gradient(135deg, ${theme.palette.primary.main} 40%, ${theme.palette.secondary.main} 100%)`,
+  background: `linear-gradient(135deg,  ${theme.palette.secondary.main} 50%, ${theme.palette.primary.main} 100%)`,
   minHeight: "93vh",
   justifyContent: "center",
   alignItems: "center",
@@ -11,7 +11,7 @@ export const StyledAchievementsContainer = styled(Box)(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
   [theme.breakpoints.down("sm")]: {
-    padding: "1rem 2rem",
+    padding: "1rem 0.5rem",
   },
 }));
 
@@ -24,7 +24,7 @@ export const HeroText = styled(Typography)(({ theme }) => ({
   letterSpacing: "1px",
   textShadow: "1px 1px 2px rgba(0, 0, 0, 0.4)",
   [theme.breakpoints.down("sm")]: {
-    fontSize: "3rem",
+    fontSize: "2rem",
   },
 }));
 
@@ -83,6 +83,9 @@ const styles = {
     "@media (max-width: 600px)": {
       padding: "1.5rem",
     },
+    "@media (max-width: 480px)": {
+      padding: "1rem",
+    },
   },
   achievementItem: {
     display: "flex",
@@ -106,3 +109,4 @@ const styles = {
 };
 
 export default styles;
+

@@ -24,12 +24,12 @@ const Achievements = () => {
     <StyledAchievementsContainer>
       <HeroText>{t("My Achievements")}</HeroText>
 
-      <Grid container spacing={6} justifyContent="center" alignItems="center">
+      <Grid container spacing={6} justifyContent="center" alignItems="center" mt={0}>
         {/* Left Section: Achievements */}
         <Grid item xs={12} md={6}>
           <Box sx={styles.achievementsList}>
             <SubtitleText>{t("Key Milestones")}</SubtitleText>
-            <ul style={{ paddingLeft: "1.5rem" }}>
+            <ul style={{ padding:0 }}>
               {achievements.map((text, index) => (
                 <li key={index} style={styles.achievementItem}>
                   <StarOutline fontSize="small" style={styles.icon} />

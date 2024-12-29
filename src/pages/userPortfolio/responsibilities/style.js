@@ -2,7 +2,7 @@ import { Box, Button, styled, Typography } from "@mui/material";
 
 export const StyledResponsibilitiesContainer = styled(Box)(({ theme }) => ({
   padding: "2rem 4rem",
-  background: `linear-gradient(135deg, ${theme.palette.primary.main} 40%, ${theme.palette.secondary.main} 100%)`,
+  background: `linear-gradient(135deg, ${theme.palette.primary.main} 50%, ${theme.palette.secondary.main} 100%)`,
   minHeight: "93vh",
   justifyContent: "center",
   alignItems: "center",
@@ -11,7 +11,7 @@ export const StyledResponsibilitiesContainer = styled(Box)(({ theme }) => ({
   display: "flex", // Ensure that the container is flex so that it can center the content
   flexDirection: "column", // Center content vertically as well
   [theme.breakpoints.down("sm")]: {
-    padding: "1rem 2rem",
+    padding: "1rem 0.5rem",
   },
 }));
 
@@ -24,7 +24,7 @@ export const HeroText = styled(Typography)(({ theme }) => ({
   letterSpacing: "1px",
   textShadow: "1px 1px 2px rgba(0, 0, 0, 0.4)",
   [theme.breakpoints.down("sm")]: {
-    fontSize: "3rem",
+    fontSize: "2rem",
   },
 }));
 
@@ -83,6 +83,12 @@ const styles = {
     transition: "box-shadow 0.3s ease-in-out",
     "@media (max-width: 600px)": {
       padding: "1.5rem",
+    },
+    "@media (max-width: 600px)": {
+      padding: "1.5rem",
+    },
+    "@media (max-width: 480px)": {
+      padding: "1rem",
     },
   },
   responsibilityItem: {

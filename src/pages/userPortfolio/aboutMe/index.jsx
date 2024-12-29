@@ -7,41 +7,43 @@ import {
   HeroText,
   StyledAboutMeContainer,
 } from "./style";
-import CircularSlider3D from "../../../components/slider/keenSlider/circularSlider3D/CircularSlider3D";
 import { CenteredItemBox } from "../../../assets/css/common.styles";
 import { useTranslation } from "react-i18next";
+import CircularSlider3D from "../../../components/slider/keenSlider/circularSlider3D/CircularSlider3D";
 
 export default function AboutMe() {
   const { t } = useTranslation();
   const skillsData = [
     {
       src: "",
-      title: "casino",
+      title: "MERN Stack",
+    },
+   
+    {
+      src: "",
+      title: "Solution Architect",
     },
     {
       src: "",
-      title: "sports",
+      title: "NEXT Js"
     },
     {
       src: "",
-      title: "aviator",
+      title: "FULL Stack",
     },
     {
       src: "",
-      title: "kigFish",
+      title: "Project Leadership",
     },
     {
       src: "",
-      title: "freefire",
+      title: "Team Collaboration",
     },
     {
       src: "",
-      title: "pubg",
+      title: "Database Design",
     },
-    {
-      src: "",
-      title: "favourite",
-    },
+
   ];
 
   const aboutMeData = [
@@ -75,7 +77,7 @@ export default function AboutMe() {
 
   return (
     <StyledAboutMeContainer>
-      <Grid container spacing={6} justifyContent="center" alignItems="center">
+      <Grid container justifyContent="center" alignItems="center">
         
         <Grid item xs={12}>
           <HeroText>{t("About Me")}</HeroText>
@@ -90,8 +92,8 @@ export default function AboutMe() {
           </CenteredItemBox>
         </Grid>
 
-        <Grid item xs={12} >
-          {/* <CircularSlider3D renderData={skillsData} /> */}
+        <Grid item xs={12} mt={5} mb={2}>
+          <CircularSlider3D renderData={skillsData} />
         </Grid>
       </Grid>
     </StyledAboutMeContainer>

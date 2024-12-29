@@ -21,27 +21,12 @@ const Responsibilities = () => {
 
   return (
     <StyledResponsibilitiesContainer>
-      <HeroText>{t("My Responsibilities")}</HeroText>
+      <HeroText>{t("myResponsibilities")}</HeroText>
       
-      <Grid container spacing={6} justifyContent="center" alignItems="center">
+      <Grid container spacing={6} justifyContent="center" alignItems="center" mt={0}>
         {/* Left Section: Image */}
         <Grid item xs={12} md={6}>
-          {!imageLoaded && (
-            <Box
-              sx={{
-                width: "100%",
-                height: "500px",
-                backgroundColor: "#ccc",
-                borderRadius: "50%",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                animation: "fadeIn 1.5s ease-in-out",
-              }}
-            >
-              <Typography sx={{ color: "#fff" }}>Loading...</Typography>
-            </Box>
-          )}
+        
           <StyledImage
             src="https://desunacademy.in/wp-content/uploads/2024/01/MERN-Stack-Development.png"
             alt="Satendra Sahu"
@@ -57,7 +42,7 @@ const Responsibilities = () => {
         <Grid item xs={12} md={6}>
           <Box sx={styles.responsibilities}>
             <SubtitleText>{t("As a Full Stack Developer")}</SubtitleText>
-            <ul style={{ paddingLeft: "1.5rem" }}>
+            <ul style={{padding:"0"}}>
               {responsibilities.map((text, index) => (
                 <li key={index} style={styles.responsibilityItem}>
                   <CheckCircleOutline fontSize="small" style={styles.icon} />

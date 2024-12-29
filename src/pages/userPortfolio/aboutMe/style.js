@@ -1,7 +1,7 @@
 import { Box, Button, styled, Typography } from "@mui/material";
 
 export const StyledAboutMeContainer = styled(Box)(({ theme, props }) => ({
-  padding: "1rem 3rem",
+  padding: "3.5rem",
   background: `linear-gradient(135deg, ${theme.colors.primary.mainColor} 40%, ${theme.colors.secondary.mainColor} 100%)`, // Gradient background
   // Gradient background
   display: "flex",
@@ -50,8 +50,9 @@ export const DescriptionText = styled(Typography)(({ theme }) => ({
   marginBottom:"1rem",
   // textAlign: "center",
   lineHeight: 1.6,
-  [theme.breakpoints.down("sm")]: {
+  [theme.breakpoints.down("md")]: {
     fontSize: "1rem",
+    maxWidth: "95%",
   },
 }));
 

@@ -22,9 +22,6 @@ const UserPortfolio = () => {
     domains: useRef(),
     projects: useRef(),
   };
-
-
-  console.log("activeTab",activeTab)
   const tabListRef = useRef();
 
   const handleTabClick = (id) => {

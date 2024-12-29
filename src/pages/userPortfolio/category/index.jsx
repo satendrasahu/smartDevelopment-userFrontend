@@ -6,7 +6,7 @@ const domainsData = [
   {
     id: 1,
     icon: '📱', // Replace with actual icons or FontAwesome icons
-    title: 'Mobile Development',
+    title: 'Full Stack Development',
     description: 'I have worked extensively on mobile app development using React Native and Flutter.',
     projectLink: '/projects/mobile-development'
   },
@@ -31,13 +31,13 @@ const domainsData = [
     description: 'Proficient in building scalable backend systems using Node.js, Express, and databases like MongoDB and PostgreSQL.',
     projectLink: '/projects/backend-development'
   },
-  {
-    id: 5,
-    icon: '📊', // Replace with actual icons or FontAwesome icons
-    title: 'Data Science',
-    description: 'Experience in data analysis, machine learning, and artificial intelligence using Python, TensorFlow, and Pandas.',
-    projectLink: '/projects/data-science'
-  },
+  // {
+  //   id: 5,
+  //   icon: '📊', // Replace with actual icons or FontAwesome icons
+  //   title: 'Data Science',
+  //   description: 'Experience in data analysis, machine learning, and artificial intelligence using Python, TensorFlow, and Pandas.',
+  //   projectLink: '/projects/data-science'
+  // },
   {
     id: 6,
     icon: '🔒', // Replace with actual icons or FontAwesome icons

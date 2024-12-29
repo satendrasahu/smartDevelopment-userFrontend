@@ -1,4 +1,21 @@
+const userPortfolio ={
+  resumeMaker: "Resume Maker",
+  heyThere: "Hey there! ",
+  shortIntro :" A passionate Full Stack / MERN Stack Developer specializing in building scalable and user-centric web applications.",
+  letsConnect:"Let's Connect",
+  ILoveHearYou:" I’d love to hear from you. Reach out via the options below!",
+  letsConnectMessage :"Whether you’re looking to collaborate, discuss a project, hire me, or simply connect, I’m just a call, email, or message away. Explore the options above to get in touch—I’d be thrilled to hear from you!",
+  frequentlyAskedQuestions:"Frequently Asked Questions",
+  havequestionsHereAre:"Have questions? Here are a few common ones that might help!",
+  howdoStartProjectWithYou:" How do I start a work/project with you?",
+  simplyReachOutTontactOptionsAbove:"   Simply reach out through the contact options above, and we’ll discuss your needs and start the process!",
+  whatAreYourWorkingHours:"What are your working hours?",
+  imAvailable:"I’m available Monday to Friday, 9 AM to 6 PM IST. However, I’m flexible for important projects!",
+  myResponsibilities:"My Responsibilities"
+}
+
 export default {
+  ...userPortfolio,
   welcomeText: "Welcome To {{name}}",
   courses: "Courses",
   interviewKit: "Interview Kit",
@@ -60,7 +77,4 @@ export default {
   changePassword: "Change Password",
   currentPassword: "Current Password",
   alternateMobileNumber: "Alternate Mobile Number",
-  resumeMaker: "Resume Maker",
-  heyThere: "Hey there! ",
-  shortIntro :" A passionate Full Stack / MERN Stack Developer specializing in building scalable and user-centric web applications."
 };
