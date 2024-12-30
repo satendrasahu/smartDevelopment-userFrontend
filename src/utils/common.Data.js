@@ -1,7 +1,7 @@
 import { ROUTE_PATHS } from "../routes/routesPath";
 
 export const appDetails = {
-  APP_NAME: "SAHU'S", //"SMART-DEVELOPMENT",
+  APP_NAME: "Amx-gamming", //"SMART-DEVELOPMENT",
   APP_TITLE: "Sahu's", //"Smart-Development"
 };
 

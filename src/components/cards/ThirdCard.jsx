@@ -12,7 +12,7 @@ const ThirdCard = (props) => {
       <Typography className="Counter" variant="span">
         {details?.index}
       </Typography>
-      <PrimaryText props={{textAlign:'center',fontSize:"1rem", fontWeight:"500"}}>{details?.heading}</PrimaryText> 
+      <PrimaryText props={{textAlign:'center',fontSize:"1rem", fontWeight:"500", width :"100%"}}>{details?.heading}</PrimaryText> 
     </StyledThirdCard>
   );
 };
