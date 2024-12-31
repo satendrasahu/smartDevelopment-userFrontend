@@ -11,17 +11,17 @@ const FourthDesign = (props) => {
       {listData?.map((item, index) => (
         <Box key={index} className="forthDesignItem" style={{ "--accent-color": item.accentColor }}>
           <Box className="icon">
-            <i className={item.iconClass}></i>
+            <i className={item?.icon}></i>
           </Box>
           <PrimaryText
-            props={{ fontSize: "1.25rem", fontWeight: 700, padding: "0.125rem" }}
+            props={{ fontSize: "1.25rem", fontWeight: 700, padding: "0.125rem", color:item?.color }}
           >
-            {item.title}
+            {item?.title}
           </PrimaryText>
           <PrimaryText
-            props={{ fontSize: "0.8rem", fontWeight: 300, padding: "0.125rem" }}
+            props={{ fontSize: "0.8rem", fontWeight: 300, padding: "0.125rem",color:item?.color }}
           >
-            {item.description}
+            {item?.description}
           </PrimaryText>
         </Box>
       ))}

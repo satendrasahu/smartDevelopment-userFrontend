@@ -11,7 +11,13 @@ const userPortfolio ={
   simplyReachOutTontactOptionsAbove:"   Simply reach out through the contact options above, and we’ll discuss your needs and start the process!",
   whatAreYourWorkingHours:"What are your working hours?",
   imAvailable:"I’m available Monday to Friday, 9 AM to 6 PM IST. However, I’m flexible for important projects!",
-  myResponsibilities:"My Responsibilities"
+  myResponsibilities:"My Responsibilities",
+  frontEnd:"Frontend",
+  backEnd :"Backend",
+  dataBase :"Database",
+  collaboration :"Collaboration",
+  testing:"Testing",
+  skills :"Technical Proficiencies"
 }
 
 export default {

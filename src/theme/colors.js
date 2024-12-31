@@ -6,6 +6,7 @@ export const colors = {
     btnColor: "#006d96",
     btnHoverColor: "#033d52",
   },
+
   secondary: {
     mainColor: "#003144",
     hoverColor: "",
@@ -22,6 +23,23 @@ export const colors = {
     warningColor: "",
     infoColor: "",
     errorColor: "#d50000",
-    cancelBtnColor: '#313543',
+    cancelBtnColor: "#313543",
+    newColor1: "#1286A8",
+    newColor2: "#0B374D",
+    newColor3: "#007FFF",
+    newColor4: "#7952B3",
+    newColor5: "#06B6D4",
+    newColor6: "#DB7093",
+    newColor7: "#D3302C",
+    newColor8: "#F3A22D",
+    newColor9: "#495460",
+    newColor10: "#0D6EFD",
+    newColor11: "#6710F5",
+    newColor12: "#6F42C1",
+    newColor13: "#D63384",
+    newColor14: "#DC3545",
+    newColor15:"#DA611E",
+    newColor16:"#AC2A1A",
+    newColor17:"#D2B53B"
   },
 };

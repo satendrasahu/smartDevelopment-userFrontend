@@ -22,12 +22,12 @@ const CircleCards = (props) => {
           >
             <i className={`fa-solid ${step.icon}`}></i>
           </Box>
-          <PrimaryText props={{ fontSize: "2rem", fontWeight: 500 }}>
+          <PrimaryText props={{ fontSize: "2rem", fontWeight: 500, color:listData?.color }}>
             {step.title}
           </PrimaryText>
-          <PrimaryText props={{ fontSize: "0.8rem", fontWeight: 300 }}>
+          {step.description && <PrimaryText props={{ fontSize: "0.8rem", fontWeight: 300,color:listData?.color }}>
             {step.description}
-          </PrimaryText>
+          </PrimaryText>}
         </Box>
       ))}
     </Box>

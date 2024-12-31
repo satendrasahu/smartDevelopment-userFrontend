@@ -1,33 +1,69 @@
-import React from 'react';
-import "./style.css"
-const ULWithIcons = () => {
-  return (
-    <div style={{zIndex:0, position:'relative'}}>
-      <ul className="ul-circles">
-        <li style={{ '--accent-color': '#D3302C' }}>
-          <i className="fa-brands fa-codepen"></i> Lorem Ipsum
-        </li>
-        <li style={{ '--accent-color': '#F3A22D' }}>
-          <i className="fa-brands fa-html5"></i> Lorem Ipsum
-        </li>
-        <li style={{ '--accent-color': '#495460' }}>
-          <i className="fa-brands fa-css3"></i> Lorem Ipsum
-        </li>
-      </ul>
+import React from "react";
+import "./style.css";
+import { Box } from "@mui/material";
+import { PrimaryText } from "../../../../assets/css/common.styles";
 
-      <ul className="ul-circles ul-circles-vertical">
-        <li style={{ '--accent-color': '#D3302C' }}>
-          <i className="fa-brands fa-codepen"></i> Lorem Ipsum
-        </li>
-        <li style={{ '--accent-color': '#F3A22D' }}>
-          <i className="fa-brands fa-html5"></i> Lorem Ipsum
-        </li>
-        <li style={{ '--accent-color': '#495460' }}>
-          <i className="fa-brands fa-css3"></i> Lorem Ipsum
-        </li>
-      </ul>
-    </div>
+const CirclesWithWaves = (props) => {
+  const { listData } = props;
+  const halfLength = Math.ceil(listData?.length / 2); // Calculate the midpoint
+  const firstHalf = listData.slice(0, halfLength); // First half of the list
+  const secondHalf = listData.slice(halfLength); // Second half of the list
+
+  return (
+    <Box style={{ zIndex: 0, position: "relative" }}>
+      <Box className="uiCircles">
+        {firstHalf?.map((item, index) => (
+          <Box
+            className="innerBox"
+            key={index}
+            style={{
+              "--accent-color": item?.accentColor,
+            }}
+            sx={{
+              marginTop: { xs: 0, sm: 0.5 },
+            }}
+          >
+            <i className={`fa-brands ${item?.icon}`}></i>
+            <PrimaryText
+              props={{
+                fontSize: "1rem",
+                fontWeight: 500,
+                color: listData?.color,
+              }}
+            >
+              {item?.title}
+            </PrimaryText>
+          </Box>
+        ))}
+      </Box>
+
+      <Box
+        className="uiCircles uiCircles-vertical"
+        sx={{
+          marginTop: { xs: 0, sm: 0.25 },
+        }}
+      >
+        {secondHalf?.map((item, index) => (
+          <Box
+            className="innerBox"
+            key={index}
+            style={{ "--accent-color": item?.accentColor }}
+          >
+            <i className={`fa-brands ${item?.icon}`}></i>
+            <PrimaryText
+              props={{
+                fontSize: "1rem",
+                fontWeight: 500,
+                color: listData?.color,
+              }}
+            >
+              {item?.title}
+            </PrimaryText>
+          </Box>
+        ))}
+      </Box>
+    </Box>
   );
 };
 
-export default ULWithIcons;
+export default CirclesWithWaves;
