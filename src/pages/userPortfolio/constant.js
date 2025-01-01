@@ -11,11 +11,11 @@ import Skills from "./skills";
 import WorkExperience from "./workExperience";
 
  export const tabList =(handleTabClick)=> [
-//     { id: "shortIntro", name: "Short Intro", component: <ShortIntro handleTabClick={handleTabClick} redirectIdTab="contact"/> },
-//     { id: "aboutMe", name: "About Me", component: <AboutMe /> },
+    // { id: "shortIntro", name: "Short Intro", component: <ShortIntro handleTabClick={handleTabClick} redirectIdTab="contact"/> },
+    // { id: "aboutMe", name: "About Me", component: <AboutMe /> },
     { id: "skills", name: "Skills", component: <Skills /> },
-    // { id: "education", name: "Education", component: <Education /> },
-    // // { id: "workExperience", name: "Work Experience", component: <WorkExperience /> },
+    { id: "education", name: "Education", component: <Education /> },
+    // { id: "workExperience", name: "Work Experience", component: <WorkExperience /> },
     // { id: "contact", name: "Contact", component: <Contact /> },
     // { id: "responsibilities", name: "Responsibilities", component: <Responsibilities /> },
     // { id: "achievements", name: "Achievements", component: <Achievements /> },

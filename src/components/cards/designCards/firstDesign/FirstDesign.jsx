@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./CircleCards.module.css";
 import { Box } from "@mui/material";
 import { PrimaryText } from "../../../../assets/css/common.styles";
-const CircleCards = (props) => {
+const FirstDesign = (props) => {
   const { listData } = props;
 
   return (
@@ -34,4 +34,4 @@ const CircleCards = (props) => {
   );
 };
 
-export default CircleCards;
+export default FirstDesign;

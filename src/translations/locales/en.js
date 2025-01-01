@@ -17,7 +17,10 @@ const userPortfolio ={
   dataBase :"Database",
   collaboration :"Collaboration",
   testing:"Testing",
-  skills :"Technical Proficiencies"
+  skills :"Technical Proficiencies",
+  versionControl:"Version Control",
+  deployMent:"Deployments",
+  tools:"Tools"
 }
 
 export default {

@@ -3,7 +3,7 @@ import "./style.css";
 import { Box } from "@mui/material";
 import { PrimaryText } from "../../../../assets/css/common.styles";
 
-const CirclesWithWaves = (props) => {
+const SecondDesign = (props) => {
   const { listData } = props;
   const halfLength = Math.ceil(listData?.length / 2); // Calculate the midpoint
   const firstHalf = listData.slice(0, halfLength); // First half of the list
@@ -66,4 +66,4 @@ const CirclesWithWaves = (props) => {
   );
 };
 
-export default CirclesWithWaves;
+export default SecondDesign;

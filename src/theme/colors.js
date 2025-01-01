@@ -40,6 +40,7 @@ export const colors = {
     newColor14: "#DC3545",
     newColor15:"#DA611E",
     newColor16:"#AC2A1A",
-    newColor17:"#D2B53B"
+    newColor17:"#D2B53B",
+    newColor18:"#008080",
   },
 };

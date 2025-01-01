@@ -1,10 +1,12 @@
 import React from "react";
 import { StyledSkillsContainer } from "./style";
-import CircleCards from "../../../components/cards/designCards/firstDesign/CircleCards";
-import CirclesWithWaves from "../../../components/cards/designCards/secondDesing/CirclesWithWaves";
-import StandingCards from "../../../components/cards/designCards/thirdDesign/StandingCards";
+import FirstDesign from "../../../components/cards/designCards/firstDesign/FirstDesign";
+import SecondDesign from "../../../components/cards/designCards/secondDesing/SecondDesign";
+import ThirdDesign from "../../../components/cards/designCards/thirdDesign/ThirdDesign";
 import FourthDesign from "../../../components/cards/designCards/fourthDesign/FourthDesign";
 import FifthDesignedCard from "../../../components/cards/designCards/fifthDesign/FifthDesignedCard";
+import SixthDesign from "../../../components/cards/designCards/sixthDesign/SixthDesign";
+import SeventhDesign from "../../../components/cards/designCards/seventhDesign/SeventhDesign";
 import {
   CenteredItemBox,
   PrimaryText,
@@ -13,6 +15,7 @@ import { useTranslation } from "react-i18next";
 import { Box } from "@mui/material";
 import NeonText from "../../../components/ui_kit/Headings/TextAnimationTwo/AnimationTwo";
 import { colors } from "../../../theme/colors";
+import EightthDesign from "../../../components/cards/designCards/eightthDesign/EightthDesign";
 const fronEndSkills = [
   {
     color: colors.extra.drakColor,
@@ -277,43 +280,105 @@ const testingSkills = [
   },
 ];
 
-const itemsData = [
+const versionControllSkills = [
   {
-    color: "#0D6EFD",
-    icon: "fa-brands fa-codepen",
-    title: "Codepen",
+    color: colors.extra.whiteColor,
+    icon: "fas fa-code-branch", // Icon representing branches in Git
+    title: "Git",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, impedit?",
-    accentColor: "#0D6EFD",
+      "Distributed version control system to track changes and collaborate effectively.",
+    accentColor: colors.extra.newColor18,
   },
   {
-    color: "#6710F5",
-    icon: "fa-brands fa-html5",
-    title: "HTML 5",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    accentColor: "#6710F5",
-  },
-  {
-    color: "#6F42C1",
-    icon: "fa-brands fa-css3",
-    title: "CSS 3",
-    description: "Lorem ipsum dolor sit.",
-    accentColor: "#6F42C1",
-  },
-  {
-    color: "#D63384",
-    icon: "fa-brands fa-js",
-    title: "Javascript",
+    color: colors.extra.whiteColor,
+    icon: "fab fa-github", // Icon for GitHub
+    title: "GitHub",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor laboriosam odio alias.",
-    accentColor: "#D63384",
+      "A platform for hosting and managing Git repositories with collaboration features.",
+    accentColor: colors.extra.newColor1,
   },
   {
-    color: "#DC3545",
-    icon: "fa-brands fa-github",
-    title: "Github",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    accentColor: "#DC3545",
+    color: colors.extra.whiteColor,
+    icon: "fab fa-gitlab", // Icon for GitLab
+    title: "GitLab",
+    description:
+      "DevOps platform for version control, CI/CD, and comprehensive project management.",
+    accentColor: colors.extra.newColor13,
+  },
+  {
+    color: colors.extra.whiteColor,
+    icon: "fab fa-bitbucket", // Icon for BitBucket
+    title: "BitBucket",
+    description:
+      "Git repository hosting service with built-in CI/CD and team collaboration tools.",
+    accentColor: colors.extra.newColor16,
+  },
+];
+
+const deploymentSkills = [
+  {
+    color: colors.extra.whiteColor,
+    title: "Vercel",
+    description:
+      "A platform for frontend frameworks and static sites, designed to work with the JAMstack architecture.",
+    accentColor: colors.extra.newColor18,
+    icon: "fas fa-cloud", // Icon for Vercel
+  },
+  {
+    color: colors.extra.whiteColor,
+    title: "Netlify",
+    description:
+      "Netlify is an all-in-one platform for automating modern web projects, including static site generation, serverless functions, and continuous deployment.",
+    accentColor: colors.extra.newColor1,
+    icon: "fas fa-code-branch", // Icon for Netlify
+  },
+  {
+    color: colors.extra.whiteColor,
+    title: "GitHub Pages",
+    description:
+      "GitHub Pages is a static site hosting service from GitHub that allows you to serve your project directly from your repository.",
+    accentColor: colors.extra.newColor13,
+    icon: "fab fa-github", // Icon for GitHub Pages
+  },
+  {
+    color: colors.extra.whiteColor,
+    title: "Firebase",
+    description:
+      "Firebase is a platform developed by Google for creating mobile and web applications, providing services like hosting, authentication, and real-time databases.",
+    accentColor: colors.extra.newColor16,
+    icon: "fab fa-fire", // Icon for Firebase
+  },
+  {
+    color: colors.extra.whiteColor,
+    title: "AWS",
+    description:
+      "Amazon Web Services (AWS) provides cloud computing services including storage, databases, networking, machine learning, and more.",
+    accentColor: colors.extra.newColor16,
+    icon: "fab fa-aws", // Icon for AWS
+  },
+];
+
+
+const toolsSkills = [
+  {
+    icon: "fab fa-vuejs", // Change to a common available icon for VSCode (or you can use a custom SVG)
+    title: "VSCode",
+    accentColor: colors.extra.newColor1,
+  },
+  {
+    icon: "fas fa-paint-brush",
+    title: "Figma",
+    accentColor: colors.extra.newColor14,
+  },
+  {
+    icon: "fas fa-tools",
+    title: "React DevTools",
+    accentColor: colors.extra.newColor15,
+  },
+  {
+    icon: "fas fa-database",
+    title: "PgAdmin",
+    accentColor: colors.extra.newColor2,
   },
 ];
 
@@ -333,7 +398,7 @@ const SkillsData = () => {
         >
           {t("frontEnd")}
         </PrimaryText>
-        <CircleCards listData={fronEndSkills} />
+        <FirstDesign listData={fronEndSkills} />
       </Box>
 
       <Box sx={{ display: "flex", flexDirection: "column", gap: "3rem" }}>
@@ -347,7 +412,7 @@ const SkillsData = () => {
         >
           {t("backEnd")}
         </PrimaryText>
-        <CirclesWithWaves listData={backEndSkills} />
+        <SecondDesign listData={backEndSkills} />
       </Box>
 
       <Box sx={{ display: "flex", flexDirection: "column", gap: "3rem" }}>
@@ -361,7 +426,7 @@ const SkillsData = () => {
         >
           {t("dataBase")}
         </PrimaryText>
-        <StandingCards listData={databaseSkills} />
+        <ThirdDesign listData={databaseSkills} />
       </Box>
 
       <Box sx={{ display: "flex", flexDirection: "column", gap: "3rem" }}>
@@ -377,7 +442,6 @@ const SkillsData = () => {
         </PrimaryText>
         <FourthDesign listData={collaborationSkills} />
       </Box>
-
       <Box sx={{ display: "flex", flexDirection: "column", gap: "3rem" }}>
         <PrimaryText
           className="fullscreen-heading"
@@ -391,6 +455,50 @@ const SkillsData = () => {
         </PrimaryText>
         <FifthDesignedCard listData={testingSkills} />
       </Box>
+
+      <Box sx={{ display: "flex", flexDirection: "column", gap: "3rem" }}>
+        <PrimaryText
+          className="fullscreen-heading"
+          props={{
+            color: colors.primary.btnColor,
+            fontSize: "clamp(2rem, 2.5vw, 3rem)",
+            fontWeight: "900",
+          }}
+        >
+          {t("versionControl")}
+        </PrimaryText>
+        <SixthDesign listData={versionControllSkills} />
+      </Box>
+
+      <Box sx={{ display: "flex", flexDirection: "column", gap: "3rem" }}>
+        <PrimaryText
+          className="fullscreen-heading"
+          props={{
+            color: colors.primary.btnColor,
+            fontSize: "clamp(2rem, 2.5vw, 3rem)",
+            fontWeight: "900",
+          }}
+        >
+          {t("tools")}
+        </PrimaryText>
+        <EightthDesign listData={toolsSkills} />
+      </Box>
+
+      <Box sx={{ display: "flex", flexDirection: "column", gap: "3rem" }}>
+        <PrimaryText
+          className="fullscreen-heading"
+          props={{
+            color: colors.primary.btnColor,
+            fontSize: "clamp(2rem, 2.5vw, 3rem)",
+            fontWeight: "900",
+          }}
+        >
+          {t("deployMent")}
+        </PrimaryText>
+        <SeventhDesign listData={deploymentSkills} />
+      </Box>
+
+  
     </StyledSkillsContainer>
   );
 };
