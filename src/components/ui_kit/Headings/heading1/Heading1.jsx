@@ -1,7 +1,8 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
 
-const AnimationOne = ({ text = "Education" }) => {
+const Heading1 = (props) => {
+  const {title} =props
   return (
     <Box
       sx={{
@@ -22,12 +23,12 @@ const AnimationOne = ({ text = "Education" }) => {
           backgroundSize: 'contain',
           position: 'relative',
           WebkitTextStroke: '1px #4f90ab',
-          filter: `
-            drop-shadow(0 0 2px rgba(255,255,255, 0.7))
-            drop-shadow(0 0 2px rgba(41, 131, 172, 0.7))
-            drop-shadow(0 0 30px rgba(125, 204, 239, 0.8))
-            drop-shadow(0 0 30px rgba(58, 122, 155, 0.8))
-          `,
+          // filter: `
+          //   drop-shadow(0 0 2px rgba(255,255,255, 0.7))
+          //   drop-shadow(0 0 2px rgba(41, 131, 172, 0.7))
+          //   drop-shadow(0 0 30px rgba(125, 204, 239, 0.8))
+          //   drop-shadow(0 0 30px rgba(58, 122, 155, 0.8))
+          // `,
           '& .animation': {
             position: 'absolute',
             left: 0,
@@ -46,11 +47,14 @@ const AnimationOne = ({ text = "Education" }) => {
           },
         }}
       >
-        <span>{text}</span>
-        <span className="animation" aria-hidden="true">{text}</span>
+        <span>{title}</span>
+        <span className="animation" aria-hidden="true">{title}</span>
       </Typography>
     </Box>
   );
 };
 
-export default AnimationOne;
+Heading1.defaultProps ={
+  title :"Heading1"
+}
+export default Heading1;

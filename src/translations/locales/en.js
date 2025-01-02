@@ -20,7 +20,9 @@ const userPortfolio ={
   skills :"Technical Proficiencies",
   versionControl:"Version Control",
   deployMent:"Deployments",
-  tools:"Tools"
+  tools:"Tools",
+  workExperience:"Work Experience",
+  education :"Education"
 }
 
 export default {

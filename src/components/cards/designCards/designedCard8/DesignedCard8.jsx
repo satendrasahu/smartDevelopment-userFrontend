@@ -65,7 +65,7 @@ const ToolCardComponent = ({ icon, title, color }) => (
   </ToolCard>
 );
 
-const EighthDesign = (props) => {
+const DesignedCard8 = (props) => {
   const { listData } = props;
   return (
     <Box sx={{ display: "flex", justifyContent: "center", width: "100%" }}>
@@ -83,4 +83,4 @@ const EighthDesign = (props) => {
   );
 };
 
-export default EighthDesign;
+export default DesignedCard8;

@@ -15,7 +15,7 @@ import { useTranslation } from "react-i18next";
 import { Box } from "@mui/material";
 import NeonText from "../../../components/ui_kit/Headings/TextAnimationTwo/AnimationTwo";
 import { colors } from "../../../theme/colors";
-import EightthDesign from "../../../components/cards/designCards/eightthDesign/EightthDesign";
+import DesignedCard8 from "../../../components/cards/designCards/designedCard8/DesignedCard8";
 const fronEndSkills = [
   {
     color: colors.extra.drakColor,
@@ -481,7 +481,7 @@ const SkillsData = () => {
         >
           {t("tools")}
         </PrimaryText>
-        <EightthDesign listData={toolsSkills} />
+        <DesignedCard8 listData={toolsSkills} />
       </Box>
 
       <Box sx={{ display: "flex", flexDirection: "column", gap: "3rem" }}>
