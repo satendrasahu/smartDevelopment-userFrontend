@@ -22,7 +22,9 @@ const userPortfolio ={
   deployMent:"Deployments",
   tools:"Tools",
   workExperience:"Work Experience",
-  education :"Education"
+  education :"Education",
+  domains:"Domains",
+  myProjects :"My Projects"
 }
 
 export default {

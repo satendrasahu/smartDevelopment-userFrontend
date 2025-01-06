@@ -5,6 +5,7 @@ import Header from "./component/header";
 import { tabList } from "./constant";
 import { Box } from "@mui/material";
 import { useTheme } from "@emotion/react";
+import ViewResume from "./resume/ViewResume";
 
 const UserPortfolio = () => {
   const [activeTab, setActiveTab] = useState(null);
@@ -97,6 +98,8 @@ const UserPortfolio = () => {
             {section.component}
           </Box>
         ))}
+
+        {/* <ViewResume/> */}
       </MainWrap>
     </MainLayout>
   );

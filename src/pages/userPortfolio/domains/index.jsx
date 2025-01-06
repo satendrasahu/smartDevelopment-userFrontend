@@ -1,14 +1,12 @@
 import React from "react";
+import { DomainSectionContainer, DomainGridContainer } from "./style";
+import DesignedCard10 from "../../../components/cards/designCards/designedCard10/DesignedCard10";
 import {
-  DomainSectionContainer,
-  DomainSectionTitle,
-  DomainGridContainer,
-  DomainCard,
-  DomainIcon,
-  DomainTitle,
-  DomainDescription,
-  DomainViewButton,
-} from "./style";
+  CenteredItemBox,
+  PrimaryText,
+} from "../../../assets/css/common.styles";
+import { useTranslation } from "react-i18next";
+import { colors } from "../../../theme/colors";
 
 // Data for the domains with descriptions and project links
 const domainsData = [
@@ -81,19 +79,15 @@ const domainsData = [
 ];
 
 const Domains = () => {
+  const { t } = useTranslation();
   return (
     <DomainSectionContainer>
-      <DomainSectionTitle>Domains I Have Worked In</DomainSectionTitle>
+      <CenteredItemBox>
+        <PrimaryText props={{color:colors.extra.darkColor}}>{t("domains")}</PrimaryText>
+      </CenteredItemBox>
       <DomainGridContainer>
-        {domainsData.map((domain) => (
-          <DomainCard key={domain.id}>
-            <DomainIcon>{domain.icon}</DomainIcon>
-            <DomainTitle variant="h5">{domain.title}</DomainTitle>
-            <DomainDescription>{domain.description}</DomainDescription>
-            {/* <DomainViewButton href={domain.projectLink} target="_blank">
-              View Projects
-            </DomainViewButton> */}
-          </DomainCard>
+        {domainsData?.map((domain) => (
+          <DesignedCard10 {...domain} />
         ))}
       </DomainGridContainer>
     </DomainSectionContainer>
