@@ -11,9 +11,9 @@ export const StyledWorkProjectContainer = styled(Box)(({ theme, props }) => ({
   minHeight: "70vh",
   transition: "background 0.5s ease",
   animation: "fadeIn 1.5s ease-in-out",
-  background:"#f0f4f8",
+  background: "#f0f4f8",
   boxShadow: `0 25px 60px rgba(0, 0, 0, 0.15)`,
-  padding :theme.spacing(3,2),
+  padding: theme.spacing(3, 2),
   "@keyframes fadeIn": {
     "0%": {
       opacity: 0,
@@ -24,7 +24,7 @@ export const StyledWorkProjectContainer = styled(Box)(({ theme, props }) => ({
   },
 
   [theme.breakpoints.down("sm")]: {
-    padding: "0rem",
+    padding: "0.5rem",
   },
 }));
 
@@ -89,6 +89,10 @@ export const HeaderBox = styled(Box)(({ theme }) => ({
   alignItems: "center",
   justifyContent: "center",
   textAlign: "center",
+  [theme.breakpoints.down("sm")]: {
+    flexDirection: "column",
+    gap: "2rem",
+  },
 }));
 
 export const BodyBox = styled(Box)(({ theme }) => ({

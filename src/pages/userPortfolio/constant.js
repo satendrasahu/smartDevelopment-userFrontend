@@ -21,5 +21,5 @@ import WorkExperience from "./workExperience";
     // { id: "achievements", name: "Achievements", component: <Achievements /> },
     // { id: "category", name: "Category", component: <Category /> },
     // { id: "domains", name: "Domains", component: <Domains /> },
-    { id: "projects", name: "Projects", component: <Projects /> },
+    // { id: "projects", name: "Projects", component: <Projects /> },
   ];

@@ -96,14 +96,10 @@ const Projects = () => {
           {t("myProjects")}
         </PrimaryText>
       </CenteredItemBox>
-      <Grid container justifyContent="center">
+      <Grid container justifyContent="left" spacing={3}>
         {projectData.map((project, index) => (
           <Grid item xs={12} md={6} xl={4} key={index}>
-            <ProjectCard
-              sx={{ marginLeft: index ===0 ? "0rem" :"3rem",
-                marginTop :"3rem"
-               }}
-            >
+            <ProjectCard>
               {/* <ProjectImage src={project.image} alt={project.name} /> */}
               <HeaderBox>
                 <DomainBox>
