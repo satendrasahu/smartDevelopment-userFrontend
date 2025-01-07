@@ -1,5 +1,4 @@
 import React from "react";
-import { useTheme } from "@mui/material";
 import {
   StyledWorkExperienceContainer,
 } from "./style";
@@ -11,7 +10,6 @@ import { CenteredItemBox } from "../../../assets/css/common.styles";
 
 export default function WorkExperience() {
   const { t } = useTranslation();
-  const theme = useTheme();
   const experienceData = [
     {
       index: 1,

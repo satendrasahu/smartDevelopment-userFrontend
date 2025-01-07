@@ -2,7 +2,7 @@ import { Box, styled } from "@mui/material";
 
 export const StyledWorkExperienceContainer = styled(Box)(
   ({ theme, props }) => ({
-    padding: "1rem auto",
+    padding: theme.spacing(5,'auto'),
     display: "flex",
     flexDirection: "column",
     gap: "3rem",
@@ -22,7 +22,7 @@ export const StyledWorkExperienceContainer = styled(Box)(
     },
 
     [theme.breakpoints.down("sm")]: {
-      padding: "0rem",
+      padding: theme.spacing(3,0.5),
     },
   })
 );

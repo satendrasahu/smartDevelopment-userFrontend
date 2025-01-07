@@ -24,7 +24,8 @@ const userPortfolio ={
   workExperience:"Work Experience",
   education :"Education",
   domains:"Domains",
-  myProjects :"My Projects"
+  myProjects :"My Projects",
+  allCategories :"All Categories"
 }
 
 export default {
@@ -90,4 +91,6 @@ export default {
   changePassword: "Change Password",
   currentPassword: "Current Password",
   alternateMobileNumber: "Alternate Mobile Number",
+  allRightsReserved:`© ${new Date().getFullYear()} Sahu's. All rights reserved`,
+  isOperatedBy :"is operated by Sahu's"
 };

@@ -59,15 +59,15 @@ const Header = ({ activeTab, setActiveTab, renderTabList, tabListRef,handleTabCl
           //   overflow: "auto",
           // }}
         >
-          {renderTabList.map((section) => (
+          {renderTabList?.map((section) => (
             <Tab
-              key={section.id}
-              data-id={section.id}
-              label={section.name}
-              onClick={() => handleTabClick(section.id)}
+              key={section?.id}
+              data-id={section?.id}
+              label={section?.name}
+              onClick={() => handleTabClick(section?.id)}
               sx={{
                 color:
-                  activeTab === section.id
+                  activeTab === section?.id
                     ? colors.extra.highLightColor
                     : "white",
                 textTransform: "none",

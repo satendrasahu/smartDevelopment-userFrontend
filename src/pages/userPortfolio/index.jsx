@@ -6,6 +6,7 @@ import { tabList } from "./constant";
 import { Box } from "@mui/material";
 import { useTheme } from "@emotion/react";
 import ViewResume from "./resume/ViewResume";
+import Footer from "./component/footer";
 
 const UserPortfolio = () => {
   const [activeTab, setActiveTab] = useState(null);
@@ -34,7 +35,6 @@ const UserPortfolio = () => {
       });
     }
   };
-
 
   const handleScroll = () => {
     renderTabList.forEach((section) => {
@@ -82,25 +82,28 @@ const UserPortfolio = () => {
         tabListRef={tabListRef}
         handleTabClick={handleTabClick}
       />
-      <MainWrap props={
-        {
+      <MainWrap
+        props={{
           margin: "4.5rem 0.5rem",
           [theme.breakpoints.down("sm")]: {
-            margin: "4rem 0.5rem", 
+            margin: "4rem 0.5rem",
           },
-        }
-      }>
+        }}
+      >
         {renderTabList.map((section) => (
-          <Box
-            key={section.id}
-            ref={sectionRefs[section.id]}
-          >
+          <Box key={section.id} ref={sectionRefs[section.id]}>
             {section.component}
           </Box>
         ))}
-
-        {/* <ViewResume/> */}
       </MainWrap>
+  
+      <Footer
+        activeTab={activeTab}
+        setActiveTab={setActiveTab}
+        renderTabList={renderTabList}
+        tabListRef={tabListRef}
+        handleTabClick={handleTabClick}
+      />
     </MainLayout>
   );
 };
