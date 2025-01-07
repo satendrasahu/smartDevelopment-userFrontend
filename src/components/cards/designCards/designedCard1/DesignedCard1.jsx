@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./CircleCards.module.css";
 import { Box } from "@mui/material";
 import { PrimaryText } from "../../../../assets/css/common.styles";
-const FirstDesign = (props) => {
+const DesignedCard1 = (props) => {
   const { listData } = props;
 
   return (
@@ -34,4 +34,4 @@ const FirstDesign = (props) => {
   );
 };
 
-export default FirstDesign;
+export default DesignedCard1;

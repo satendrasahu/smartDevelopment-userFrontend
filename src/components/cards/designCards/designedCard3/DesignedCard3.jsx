@@ -3,7 +3,7 @@ import "./style.css";
 import { Box } from "@mui/material";
 import { PrimaryText } from "../../../../assets/css/common.styles";
 
-const ThirdDesign = (props) => {
+const DesignedCard5 = (props) => {
   const { listData } = props;
 
   return (
@@ -31,4 +31,4 @@ const ThirdDesign = (props) => {
   );
 };
 
-export default ThirdDesign;
+export default DesignedCard5;

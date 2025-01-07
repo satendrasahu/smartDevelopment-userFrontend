@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 import { PrimaryText } from "../../../../assets/css/common.styles";
 import { colors } from "../../../../theme/colors";
 
-const SeventhDesign = ({ listData }) => {
+const DesignedCard7 = ({ listData }) => {
   const styles = {
     container: {
       display: "flex",
@@ -123,4 +123,4 @@ const SeventhDesign = ({ listData }) => {
   );
 };
 
-export default SeventhDesign;
+export default DesignedCard7;

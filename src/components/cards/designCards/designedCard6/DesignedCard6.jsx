@@ -68,7 +68,7 @@ const IconBox = styled(Box)(({ theme, commonColor }) => ({
     "-0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.45), inset -0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.45)",
 }));
 
-const SixthDesign = ({ listData }) => {
+const DesignedCard6 = ({ listData }) => {
   return (
     <CardContainer>
       {listData?.map((items) => (
@@ -102,4 +102,4 @@ const SixthDesign = ({ listData }) => {
   );
 };
 
-export default SixthDesign;
+export default DesignedCard6;
