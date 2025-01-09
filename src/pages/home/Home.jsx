@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useEffect } from "react";
 import MainLayout from "../../components/ui_kit/mainLayout/MainLayout";
 import {
   CenteredItemBox,
@@ -13,6 +13,11 @@ import { Grid } from "@mui/material";
 import SecondaryCard from "../../components/cards/SecondaryCard";
 import { homeData } from "./common";
 import { useNavigate } from "react-router-dom";
+import { fetchJsonPlaceHolderPostsService } from "../../network/services/general.service";
+import { ToastContainer, toast } from 'react-toastify';
+import { openSuccessToaster } from "../../helpers/toaster.helpers";
+import 'react-toastify/dist/ReactToastify.css';
+
 const Home = () => {
   const theme = useTheme();
   const { t } = useTranslation();
@@ -24,10 +29,32 @@ const Home = () => {
     return homeData(t, visitPage);
   }, [homeData]);
 
+  const fetchData = async ()=>{
+    const res=  await fetchJsonPlaceHolderPostsService()
+    console.log("res",res)
+  }
+
+  const showToast = () => {
+    console.log("from--------")
+    toast.success("This is a success message!");
+    openSuccessToaster({ message: "popup" })
+  };
+  useEffect(()=>{
+    fetchData()
+  },[])
+  toast.success("This is a success message!");
+
+  const botRight = () => {
+    console.log("jaane do")
+    toast.success('Hey 👋!', {
+      position: 'top-right',
+    });
+  };
   return (
     <MainLayout header footer sidebar>
       <MainWrap>
         <h1>hello this is dummy project for learning</h1>
+        <button onClick={botRight}>Show Toast</button>
         {/* <CenteredItemBox props={{ marginBottom: theme.spacing(2) }}>
           <PrimaryText props={{ fontSize: theme.spacing(5) }}>
             {t("welcomeText", { name: t(appDetails.APP_TITLE) })}
