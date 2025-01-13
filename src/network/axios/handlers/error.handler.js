@@ -1,5 +1,6 @@
 import { languageTranslator } from "../../../helpers/general.helpers";
 import { openErrorToaster } from "../../../helpers/toaster.helpers";
+import errorMessages from "../messages/errorMessages";
 
 export const errorHandler = (error) => {
 	// if (error?.response?.status === 500) {
@@ -27,16 +28,12 @@ export const errorHandler = (error) => {
 	// 	}
 	// 	return Promise.reject(error?.response?.data?.errors);
 	// }
-	// if (error?.response?.status === 404) {
-	// 	// Snackbar UnAuthed
-	// 	// openErrorToaster({
-	// 	//   message: languageTranslator(errorMessages.endPointNotFound),
-	// 	// })
-	// 	if (error?.response?.config?.loader) {
-	// 		store.dispatch(stopLoader(error.response.config.loader));
-	// 	}
-	// 	return;
-	// }
+	if (error?.response?.status === 404) {
+		openErrorToaster({
+		  message: languageTranslator(errorMessages.endPointNotFound),
+		})
+		return;
+	}
 	// if (error?.response?.status === 403) {
 	// 	window.location.href = '/';
 	// 	signOut();

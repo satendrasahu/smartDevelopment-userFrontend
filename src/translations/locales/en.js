@@ -92,5 +92,7 @@ export default {
   currentPassword: "Current Password",
   alternateMobileNumber: "Alternate Mobile Number",
   allRightsReserved:`© ${new Date().getFullYear()} Sahu's. All rights reserved`,
-  isOperatedBy :"is operated by Sahu's"
+  isOperatedBy :"is operated by Sahu's",
+  pageNotFound :"Page Not Found",
+  endPointNotFound :"Endpoint Not Found"
 };

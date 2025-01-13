@@ -9,6 +9,8 @@ import { Provider } from "react-redux";
 import { I18nextProvider } from "react-i18next";
 import i18n from "./translations";
 import { BrowserRouter as Router } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -17,6 +19,7 @@ root.render(
       <ThemeProvider theme={theme}> 
         <I18nextProvider i18n={i18n}>
           <Router>
+          <ToastContainer />
             <App />
           </Router>
         </I18nextProvider>
