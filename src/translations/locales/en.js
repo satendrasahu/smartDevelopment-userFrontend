@@ -25,7 +25,10 @@ const userPortfolio ={
   education :"Education",
   domains:"Domains",
   myProjects :"My Projects",
-  allCategories :"All Categories"
+  allCategories :"All Categories",
+  helloText :"Hello Text",
+  shortIntroText:"Short Intro Text",
+  editShortIntro :"Edit Short Intro"
 }
 
 export default {
@@ -94,5 +97,7 @@ export default {
   allRightsReserved:`© ${new Date().getFullYear()} Sahu's. All rights reserved`,
   isOperatedBy :"is operated by Sahu's",
   pageNotFound :"Page Not Found",
-  endPointNotFound :"Endpoint Not Found"
+  endPointNotFound :"Endpoint Not Found",
+  fullName :"Full Name",
+  save:"Save"
 };

@@ -5,6 +5,7 @@ import loginSclice from "./auth/login.sclice";
 import registerSlice from "./auth/register.slice";
 import coursesSlice from "./courses/courses.slice";
 import profilePicSlice from "./profile/profilePic.slice"
+import portfolioSlice from "./profile/portfolio.slice"
 
 export const rootReducer = combineReducers({
   home :homeSlice,
@@ -13,4 +14,5 @@ export const rootReducer = combineReducers({
   register:registerSlice,
   courses: coursesSlice,
   profilePic:profilePicSlice,
+  portfolio :portfolioSlice
   })

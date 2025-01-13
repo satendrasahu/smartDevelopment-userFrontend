@@ -134,16 +134,14 @@ const Index = () => {
                 );
               })}
             </StyledTabs>
-            <TabPanel p={0} value={value} index={0}>
-              <PersonalInformation />
-            </TabPanel>
-            <TabPanel value={value} index={1}>
-             <ResumeMaker/>
-            </TabPanel>
-            <TabPanel value={value} index={2}>
-              <h3>h3</h3>
-              {/* <CasinoTransactions /> */}
-            </TabPanel>
+
+            {tabList?.map((tab, index) => {
+              return (
+                <TabPanel p={0} value={value} index={tab?.tabIndex || index}>
+                  {tab?.component}
+                </TabPanel>
+              );
+            })}
           </ProfileContainer>
         </MainWrap>
       </MainLayout>
