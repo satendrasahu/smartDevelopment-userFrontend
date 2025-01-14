@@ -29,7 +29,21 @@ const userPortfolio ={
   helloText :"Hello Text",
   shortIntroText:"Short Intro Text",
   editShortIntro :"Edit Short Intro",
-  editAboutMeInfo :"Edit About Me Info"
+  editAboutMeInfo :"Edit About Me Info",
+  aboutMeText:"About Me Text",
+  editWorkExperience:"Edit Work Experience",
+  desigNationName :"Designation Name",
+  technologyName:"Technology Name",
+  designationTechName :"Designation-Technology Name",
+  companyName :"Company Name",
+  duration :"Duration",
+  companyWebsite :"Company Website",
+  editEducationDetails:"Edit Education Details",
+  courseName:"Course Name",
+  shortCourseName :"Short Course Name",
+  shortCollageName :"Short Collage Name",
+  collageName :"Collage Name",
+  collageWebsite :"collage Website"
 }
 
 export default {

@@ -27,19 +27,4 @@ export const tabList = [
     path: ROUTE_PATHS.profile,
     tabIndex :2
   },
-
-  {
-    title: "personalDetails",
-    path: ROUTE_PATHS.profile,
-  },
-
-  {
-    title: "transactionBanking",
-    path: ROUTE_PATHS.profile,
-  },
-
-  {
-    title: "casinoTransactions",
-    path: ROUTE_PATHS.profile,
-  },
 ];

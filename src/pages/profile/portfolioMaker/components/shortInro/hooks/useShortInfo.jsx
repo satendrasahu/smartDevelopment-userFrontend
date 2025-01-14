@@ -3,7 +3,7 @@ import { updateShortInfoThunk } from "../../../../../../redux/thunks/profile/por
 
 const useShortInfo = () => {
   const dispatch = useDispatch()
-  const { shortInforData, shortInfoLoader } = useSelector(
+  const { shortInfoData, shortInfoLoader } = useSelector(
     (state) => state?.portfolio
   );
   const handleSubmitHandler = (values) => {
@@ -11,7 +11,7 @@ const useShortInfo = () => {
     dispatch(updateShortInfoThunk(payload))
     
   };
-  return { handleSubmitHandler, shortInforData, shortInfoLoader };
+  return { handleSubmitHandler, shortInfoData, shortInfoLoader };
 };
 
 export default useShortInfo;

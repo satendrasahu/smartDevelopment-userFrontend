@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Grid, Button } from "@mui/material";
+import { Box, Grid, Switch } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import {
   CenteredItemBox,
@@ -10,20 +10,20 @@ import { StyledAboutMeContainer } from "./style";
 import { useTheme } from "@emotion/react";
 import { Form, Formik } from "formik";
 import TextArea from "../../../../../components/textArea";
-import { initialValues, shortInfoSchema } from "./schema";
-import useShortInfo from "./hooks/useShortInfo";
+import { initialValues, aboutMeSchema } from "./schema";
+import useAboutMeInfo from "./hooks/useAboutMeInfo";
 import DynamicFormContainer from "../../../../../components/dynamicFormContainer/DynamicFormContainer";
-import DeleteIcon from '@mui/icons-material/Delete';
-import DoneIcon from '@mui/icons-material/Done';
+import DeleteIcon from "@mui/icons-material/Delete";
+import DoneIcon from "@mui/icons-material/Done";
 const AboutMe = () => {
   const { t } = useTranslation();
   const theme = useTheme();
-  const { handleSubmitHandler, shortInfoLoader } = useShortInfo();
+  const { handleSubmitHandler, aboutMeLoader,aboutMeData } = useAboutMeInfo();
 
-  const renderForm = ({ form, index, deleteForm }) => (
+  const renderForm = ({ form, deleteForm }) => (
     <Formik
-      initialValues={initialValues}
-      validationSchema={() => shortInfoSchema(t)}
+      initialValues={()=>initialValues(aboutMeData)}
+      validationSchema={() => aboutMeSchema(t)}
       onSubmit={handleSubmitHandler}
     >
       {({ values, handleChange, handleBlur }) => (
@@ -34,16 +34,16 @@ const AboutMe = () => {
               value={values.shortIntroText}
               onChange={handleChange}
               onBlur={handleBlur}
-              name="shortIntroText"
+              name="aboutMeText"
               placeHolder={t("placeholderText", {
-                text: t("shortIntroText"),
+                text: t("aboutMeText"),
               })}
             />
             <StyledIconButton onClick={() => deleteForm(form.id)}>
-            <DeleteIcon/>
+              <DeleteIcon />
             </StyledIconButton>
-            <StyledIconButton type="submit" disabled={shortInfoLoader}>
-             <DoneIcon/>
+            <StyledIconButton type="submit" disabled={aboutMeLoader}>
+              <DoneIcon />
             </StyledIconButton>
           </CenteredItemBox>
         </Form>
@@ -58,12 +58,18 @@ const AboutMe = () => {
           <PrimaryText props={{ color: theme.colors.extra.highLightColor }}>
             {t("editAboutMeInfo")}
           </PrimaryText>
+          <Switch
+            // checked={showChatNotification}
+            // onChange={handleSwitchChange}
+            // value={showChatNotification}
+            inputProps={{ "aria-label": "controlled" }}
+          />
         </CenteredItemBox>
         <Grid container alignItems="center">
           <DynamicFormContainer
             StyledGridItemProps={{
-              xs:12,
-              md: 6,
+              xs: 12,
+              lg: 6,
             }}
             renderForm={renderForm}
           />

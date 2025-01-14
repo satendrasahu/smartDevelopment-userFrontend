@@ -37,7 +37,7 @@ const DynamicFormContainer = (props) => {
 
       <StyledIconButton
         onClick={addForm}
-        props={{ height: "fit-content !important" }}
+        props={{ height: "fit-content !important", margin :"1rem" }}
       >
         <AddIcon />
       </StyledIconButton>

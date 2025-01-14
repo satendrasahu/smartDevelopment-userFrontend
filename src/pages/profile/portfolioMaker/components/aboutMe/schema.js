@@ -1,15 +1,12 @@
 import * as Yup from "yup";
-export const initialValues = {
-  fullName:"",
-  helloText:"",
-  shortIntroText:""
-};
+export const initialValues = (aboutMeData) => ({
+  aboutMeText: aboutMeData||"",
+});
 
-export const shortInfoSchema = (t) => {
+export const aboutMeSchema = (t) => {
   return Yup.object().shape({
-    fullName: Yup.string().required(t('isRequired',{text :t('fullName')})),
-    helloText: Yup.string().required(t('isRequired',{text :t('helloText')})),
-    shortIntroText: Yup.string().required(t('isRequired',{text :t('shortIntroText')})),
-
+    aboutMeText: Yup.string().required(
+      t("isRequired", { text: t("aboutMeText") })
+    ),
   });
 };
