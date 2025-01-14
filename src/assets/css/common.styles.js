@@ -81,7 +81,14 @@ export const SecondaryButton = styled(Button)(({ theme, props }) => ({
 }));
 
 export const StyledIconButton = styled(IconButton)(({ theme, props }) => ({
-  color: theme.colors.primary.textColor,
+  color: theme.colors.extra.whiteColor,
+  margin:theme.spacing(0.25),
+  background:`rgba(255,255,255,0.1)`,
+  transition: "transform 0.3s ease, background 0.3s ease",
+  "&:hover": {
+    background:theme.colors.primary.btnColor,
+    transform : "scale(1.2)"
+  },
   ...props,
 }));
 export const StyledLinkButton = styled(Link)(({ theme, props }) => ({

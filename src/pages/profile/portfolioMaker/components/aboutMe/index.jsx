@@ -3,7 +3,7 @@ import { Box, Grid, Button } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import {
   CenteredItemBox,
-  PrimaryButton,
+  StyledIconButton,
   PrimaryText,
 } from "../../../../../assets/css/common.styles";
 import { StyledAboutMeContainer } from "./style";
@@ -13,7 +13,8 @@ import TextArea from "../../../../../components/textArea";
 import { initialValues, shortInfoSchema } from "./schema";
 import useShortInfo from "./hooks/useShortInfo";
 import DynamicFormContainer from "../../../../../components/dynamicFormContainer/DynamicFormContainer";
-
+import DeleteIcon from '@mui/icons-material/Delete';
+import DoneIcon from '@mui/icons-material/Done';
 const AboutMe = () => {
   const { t } = useTranslation();
   const theme = useTheme();
@@ -27,32 +28,24 @@ const AboutMe = () => {
     >
       {({ values, handleChange, handleBlur }) => (
         <Form>
-          <Grid container alignItems="center">
-            <Grid item xs={12}>
-              <CenteredItemBox props={{ width: "100%" }}>
-                <TextArea
-                  styledProps={{ margin: "1rem 0rem", width: "100%" }}
-                  value={values.shortIntroText}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  name="shortIntroText"
-                  placeHolder={t("placeholderText", {
-                    text: t("shortIntroText"),
-                  })}
-                />
-                <PrimaryButton
-                  variant="outlined"
-                  color="error"
-                  onClick={() => deleteForm(form.id)}
-                >
-                  {t("delete")}
-                </PrimaryButton>
-                <PrimaryButton type="submit" disabled={shortInfoLoader}>
-                  {t("save")}
-                </PrimaryButton>
-              </CenteredItemBox>
-            </Grid>
-          </Grid>
+          <CenteredItemBox props={{ width: "100%" }}>
+            <TextArea
+              styledProps={{ margin: "1rem 0rem", width: "100%" }}
+              value={values.shortIntroText}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              name="shortIntroText"
+              placeHolder={t("placeholderText", {
+                text: t("shortIntroText"),
+              })}
+            />
+            <StyledIconButton onClick={() => deleteForm(form.id)}>
+            <DeleteIcon/>
+            </StyledIconButton>
+            <StyledIconButton type="submit" disabled={shortInfoLoader}>
+             <DoneIcon/>
+            </StyledIconButton>
+          </CenteredItemBox>
         </Form>
       )}
     </Formik>
@@ -63,12 +56,13 @@ const AboutMe = () => {
       <Box sx={{ width: "100%" }}>
         <CenteredItemBox props={{ marginBottom: theme.spacing(2) }}>
           <PrimaryText props={{ color: theme.colors.extra.highLightColor }}>
-            {t("editShortIntro")}
+            {t("editAboutMeInfo")}
           </PrimaryText>
         </CenteredItemBox>
         <Grid container alignItems="center">
           <DynamicFormContainer
             StyledGridItemProps={{
+              xs:12,
               md: 6,
             }}
             renderForm={renderForm}

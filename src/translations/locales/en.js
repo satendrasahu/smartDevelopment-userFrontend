@@ -28,7 +28,8 @@ const userPortfolio ={
   allCategories :"All Categories",
   helloText :"Hello Text",
   shortIntroText:"Short Intro Text",
-  editShortIntro :"Edit Short Intro"
+  editShortIntro :"Edit Short Intro",
+  editAboutMeInfo :"Edit About Me Info"
 }
 
 export default {

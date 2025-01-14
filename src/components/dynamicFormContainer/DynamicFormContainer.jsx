@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { Box, Button, Grid, TextField } from "@mui/material";
 import { StyledGridItem } from "./style";
-import { PrimaryButton } from "../../assets/css/common.styles";
+import { StyledIconButton } from "../../assets/css/common.styles";
 
+import AddIcon from "@mui/icons-material/Add";
 const DynamicFormContainer = (props) => {
-  const { renderForm,StyledGridItemProps } = props;
+  const { renderForm, StyledGridItemProps } = props;
   const [forms, setForms] = useState([{ id: Date.now(), value: "" }]);
 
   // Add a new form
@@ -34,9 +35,12 @@ const DynamicFormContainer = (props) => {
         </StyledGridItem>
       ))}
 
-      <PrimaryButton onClick={addForm} props={{height:"fit-content !important"}}>
-        Add Form
-      </PrimaryButton>
+      <StyledIconButton
+        onClick={addForm}
+        props={{ height: "fit-content !important" }}
+      >
+        <AddIcon />
+      </StyledIconButton>
     </>
   );
 };
