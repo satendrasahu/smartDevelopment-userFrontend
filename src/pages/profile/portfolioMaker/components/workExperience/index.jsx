@@ -102,7 +102,7 @@ const WorkExperience = () => {
             <StyledIconButton onClick={() => deleteForm(form.id)}>
               <DeleteIcon />
             </StyledIconButton>
-            <StyledIconButton type="submit" disabled={workExperienceLoader}>
+            <StyledIconButton  type="submit" disabled={workExperienceLoader}>
               <DoneIcon />
             </StyledIconButton>
           </CenteredItemBox>
@@ -125,7 +125,7 @@ const WorkExperience = () => {
             inputProps={{ "aria-label": "controlled" }}
           />
         </CenteredItemBox>
-        <Grid container alignItems="center">
+        <Grid container alignItems="center" justifyContent="center">
           <DynamicFormContainer
             StyledGridItemProps={{
               xs: 12,

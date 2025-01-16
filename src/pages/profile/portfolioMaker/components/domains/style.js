@@ -1,5 +1,5 @@
 import { Box, styled } from "@mui/material";
-export const StyledWorkExperienceContainer = styled(Box)(({ theme, props }) => ({
+export const StyledDomainsContainer = styled(Box)(({ theme, props }) => ({
   padding: "2rem 0rem !important",
   background: `linear-gradient(135deg, ${theme.colors.primary.mainColor} 40%, ${theme.colors.secondary.mainColor} 100%)`, 
   display: "flex",

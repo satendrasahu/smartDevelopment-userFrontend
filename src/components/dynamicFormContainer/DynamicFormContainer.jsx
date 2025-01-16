@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Box, Button, Grid, TextField } from "@mui/material";
 import { StyledGridItem } from "./style";
 import { StyledIconButton } from "../../assets/css/common.styles";
 
@@ -31,13 +30,19 @@ const DynamicFormContainer = (props) => {
     <>
       {forms?.map((form, index) => (
         <StyledGridItem key={form.id} {...StyledGridItemProps} item>
-          {renderForm({ form, index, editForm, deleteForm })}
+          {renderForm({
+            form,
+            length: forms?.length,
+            deleteForm,
+            editForm,
+            index,
+          })}
         </StyledGridItem>
       ))}
 
       <StyledIconButton
         onClick={addForm}
-        props={{ height: "fit-content !important", margin :"1rem" }}
+        props={{ height: "fit-content !important", margin: "1rem" }}
       >
         <AddIcon />
       </StyledIconButton>

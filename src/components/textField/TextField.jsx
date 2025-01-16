@@ -1,5 +1,10 @@
 import React from "react";
-import { StyledInputAdornment, StyledInputLabel, StyledOutlinedInput, StyledTextField } from "./style";
+import {
+  StyledInputAdornment,
+  StyledInputLabel,
+  StyledOutlinedInput,
+  StyledTextField,
+} from "./style";
 import ErrorMessageComponent from "../errorMessage/ErrorMessageComponent";
 import IsRequiredIndicator from "../requiredIndicator/IsRequiredIndicator";
 
@@ -16,8 +21,9 @@ const TextField = (props) => {
     endIcon,
     styledProps,
     placeHolder,
+    onKeyDown,
   } = props;
-  
+
   return (
     <StyledTextField props={styledProps}>
       <StyledInputLabel>
@@ -32,13 +38,20 @@ const TextField = (props) => {
         name={name}
         onBlur={onBlur}
         placeholder={placeHolder}
+        onKeyDown={onKeyDown}
         startAdornment={
           startIcon && (
-            <StyledInputAdornment  position="start">{startIcon}</StyledInputAdornment>
+            <StyledInputAdornment position="start">
+              {startIcon}
+            </StyledInputAdornment>
           )
         }
         endAdornment={
-          endIcon && <StyledInputAdornment position="start">{endIcon}</StyledInputAdornment>
+          endIcon && (
+            <StyledInputAdornment position="start">
+              {endIcon}
+            </StyledInputAdornment>
+          )
         }
       />
       <ErrorMessageComponent name={name} />

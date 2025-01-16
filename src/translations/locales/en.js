@@ -43,7 +43,24 @@ const userPortfolio ={
   shortCourseName :"Short Course Name",
   shortCollageName :"Short Collage Name",
   collageName :"Collage Name",
-  collageWebsite :"collage Website"
+  collageWebsite :"collage Website",
+  editResponsibilities :"Edit Responsibiliites",
+  responsibilities :"responsibilities",
+  achievements:"Achievements",
+  editAchievements:"Edit AchieveMents",
+  category:"Category",
+  editCategory:"Edit Category Details",
+  categoryName :"Category Name",
+  projectLink:"Project Link",
+  domains:"Domains",
+  editDomainsDetails :"Edit Domain Details",
+  domainName:"Domain Name",
+  projects:"Projects",
+  editProjectDetails:"Edit Project Details",
+  projectName:"Project Name",
+  durationPlaceHolder:"Domains like dec 2024 - june 2025",
+  skillTags :"Skill Tags",
+  skillTagsPlaceholder :"Type and press Enter to add skill"
 }
 
 export default {
@@ -114,5 +131,6 @@ export default {
   pageNotFound :"Page Not Found",
   endPointNotFound :"Endpoint Not Found",
   fullName :"Full Name",
-  save:"Save"
+  save:"Save",
+  description:"Description"
 };

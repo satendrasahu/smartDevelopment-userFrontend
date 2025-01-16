@@ -10,39 +10,47 @@ import { StyledAboutMeContainer } from "./style";
 import { useTheme } from "@emotion/react";
 import { Form, Formik } from "formik";
 import TextArea from "../../../../../components/textArea";
-import { initialValues, aboutMeSchema } from "./schema";
-import useAboutMeInfo from "./hooks/useAboutMeInfo";
+import { initialValues, responsibilitiesSchema } from "./schema";
+import useResponsibilitiesInfo from "./hooks/useResponsibilitiesInfo";
 import DynamicFormContainer from "../../../../../components/dynamicFormContainer/DynamicFormContainer";
 import DeleteIcon from "@mui/icons-material/Delete";
 import DoneIcon from "@mui/icons-material/Done";
-const AboutMe = () => {
+const Responsibilities = () => {
   const { t } = useTranslation();
   const theme = useTheme();
-  const { handleSubmitHandler, aboutMeLoader,aboutMeData } = useAboutMeInfo();
+  const { handleSubmitHandler, responsibilitiesLoader, responsibilitiesData } =
+    useResponsibilitiesInfo();
 
-  const renderForm = ({ form,length, deleteForm }) => (
+  const renderForm = ({ form, index, length, deleteForm }) => (
     <Formik
-      initialValues={()=>initialValues(aboutMeData)}
-      validationSchema={() => aboutMeSchema(t)}
+      initialValues={initialValues}
+      validationSchema={() => responsibilitiesSchema(t)}
       onSubmit={handleSubmitHandler}
     >
       {({ values, handleChange, handleBlur }) => (
         <Form>
           <CenteredItemBox props={{ width: "100%" }}>
+            <PrimaryText props={{ color: theme.colors.extra.highLightColor }}>
+              {" "}
+              {index + 1}.
+            </PrimaryText>{" "}
+            &nbsp;
             <TextArea
               styledProps={{ margin: "1rem 0rem", width: "100%" }}
               value={values.shortIntroText}
               onChange={handleChange}
               onBlur={handleBlur}
-              name="aboutMeText"
+              name="responsibilities"
               placeHolder={t("placeholderText", {
-                text: t("aboutMeText"),
+                text: t("responsibilities"),
               })}
             />
-            {length>1&&<StyledIconButton onClick={() => deleteForm(form.id)}>
-              <DeleteIcon />
-            </StyledIconButton>}
-            <StyledIconButton type="submit" disabled={aboutMeLoader}>
+            {length > 1 && (
+              <StyledIconButton onClick={() => deleteForm(form.id)}>
+                <DeleteIcon />
+              </StyledIconButton>
+            )}
+            <StyledIconButton type="submit" disabled={responsibilitiesLoader}>
               <DoneIcon />
             </StyledIconButton>
           </CenteredItemBox>
@@ -56,7 +64,7 @@ const AboutMe = () => {
       <Box sx={{ width: "100%" }}>
         <CenteredItemBox props={{ marginBottom: theme.spacing(2) }}>
           <PrimaryText props={{ color: theme.colors.extra.highLightColor }}>
-            {t("editAboutMeInfo")}
+            {t("editResponsibilities")}
           </PrimaryText>
           <Switch
             // checked={showChatNotification}
@@ -68,7 +76,7 @@ const AboutMe = () => {
         <Grid container alignItems="center">
           <DynamicFormContainer
             StyledGridItemProps={{
-              xs: 12
+              xs: 12,
             }}
             renderForm={renderForm}
           />
@@ -78,4 +86,4 @@ const AboutMe = () => {
   );
 };
 
-export default AboutMe;
+export default Responsibilities;

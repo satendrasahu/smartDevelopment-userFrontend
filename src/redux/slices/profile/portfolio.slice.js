@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { updateAboutMeThunk, updateEducationThunk, updateShortInfoThunk, updateWorkExperienceThunk } from "../../thunks/profile/portfolio.thunk";
+import { updateAboutMeThunk, updateAchieveMentsThunk, updateCategoriesThunk, updateDomainsThunk, updateEducationThunk, updateProjectsThunk, updateResponsibilitiesThunk, updateShortInfoThunk, updateWorkExperienceThunk } from "../../thunks/profile/portfolio.thunk";
 const initialState = {
   shortInfoData: null,
   shortInfoLoader: false,
@@ -8,7 +8,17 @@ const initialState = {
   workExperienceData : null,
   workExperienceLoader : false,
   educationData:null,
-  educationLoader:false
+  educationLoader:false,
+  responsibilitiesData:null,
+  responsibilitiesLoader:false,
+  achieveMentsData:null,
+  achieveMentsLoader:false,
+  categoryData:null,
+  categoryLoader:false,
+  domainsData:null,
+  domainsLoader:false,
+  projectsData:null,
+  projectsLoader:false
 };
 
 const portfolioSlice = createSlice({
@@ -89,7 +99,7 @@ const portfolioSlice = createSlice({
           workExperienceLoader:false
         };
       })
-
+      
       .addCase(updateEducationThunk.fulfilled, (state, action) => {
         return {
           ...state,
@@ -111,6 +121,119 @@ const portfolioSlice = createSlice({
           educationLoader:false
         };
       })
+
+      .addCase(updateResponsibilitiesThunk.fulfilled, (state, action) => {
+        return {
+          ...state,
+          responsibilitiesData: action.payload,
+          responsibilitiesLoader:false
+        };
+      })
+      .addCase(updateResponsibilitiesThunk.pending, (state, action) => {
+        return {
+          ...state,
+          responsibilitiesData:null,
+          responsibilitiesLoader:true
+        };
+      })
+      .addCase(updateResponsibilitiesThunk.rejected, (state, action) => {
+        return {
+          ...state,
+          responsibilitiesData: action.payload,
+          responsibilitiesLoader:false
+        };
+      })
+      
+
+      .addCase(updateAchieveMentsThunk.fulfilled, (state, action) => {
+        return {
+          ...state,
+          achieveMentsData: action.payload,
+          achieveMentsLoader:false
+        };
+      })
+      .addCase(updateAchieveMentsThunk.pending, (state, action) => {
+        return {
+          ...state,
+          achieveMentsData:null,
+          achieveMentsLoader:true
+        };
+      })
+      .addCase(updateAchieveMentsThunk.rejected, (state, action) => {
+        return {
+          ...state,
+          achieveMentsData: action.payload,
+          achieveMentsLoader:false
+        };
+      })
+
+      .addCase(updateCategoriesThunk.fulfilled, (state, action) => {
+        return {
+          ...state,
+          categoryData: action.payload,
+          categoryLoader:false
+        };
+      })
+      .addCase(updateCategoriesThunk.pending, (state, action) => {
+        return {
+          ...state,
+          categoryData:null,
+          categoryLoader:true
+        };
+      })
+      .addCase(updateCategoriesThunk.rejected, (state, action) => {
+        return {
+          ...state,
+          categoryData: action.payload,
+          categoryLoader:false
+        };
+      })
+      .addCase(updateDomainsThunk.fulfilled, (state, action) => {
+        return {
+          ...state,
+          domainsData: action.payload,
+          domainsLoader:false
+        };
+      })
+      .addCase(updateDomainsThunk.pending, (state, action) => {
+        return {
+          ...state,
+          domainsData:null,
+          domainsLoader:true
+        };
+      })
+      .addCase(updateDomainsThunk.rejected, (state, action) => {
+        return {
+          ...state,
+          domainsData: action.payload,
+          domainsLoader:false
+        };
+      })
+
+      .addCase(updateProjectsThunk.fulfilled, (state, action) => {
+        return {
+          ...state,
+          projectsData: action.payload,
+          projectsLoader:false
+        };
+      })
+      .addCase(updateProjectsThunk.pending, (state, action) => {
+        return {
+          ...state,
+          projectsData:null,
+          projectsLoader:true
+        };
+      })
+      .addCase(updateProjectsThunk.rejected, (state, action) => {
+        return {
+          ...state,
+          projectsData: action.payload,
+          projectsLoader:false
+        };
+      })
+
+
+      
       
   },
 });

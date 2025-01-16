@@ -23,7 +23,7 @@ import {
 } from "../../../assets/css/common.styles";
 import { colors } from "../../../theme/colors";
 import { useTranslation } from "react-i18next";
-
+ 
 const projectData = [
   {
     domain: "I - GAMING  ",

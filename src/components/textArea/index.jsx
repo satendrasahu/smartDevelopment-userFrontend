@@ -3,6 +3,7 @@ import { Grid } from "@mui/material";
 import { CustomTextArea, StyledInputLabel, StyledTextField } from "./style";
 import { colors } from "../../theme/colors";
 import IsRequiredIndicator from "../requiredIndicator/IsRequiredIndicator";
+import ErrorMessageComponent from "../errorMessage/ErrorMessageComponent";
 // Custom styled TextArea component using styled API
 
 const TextArea = (props) => {
@@ -38,6 +39,7 @@ const TextArea = (props) => {
         }}
         {...props}
       />
+      <ErrorMessageComponent name={name} />
     </StyledTextField>
   );
 };

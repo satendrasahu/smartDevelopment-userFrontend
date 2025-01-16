@@ -6,75 +6,67 @@ import {
   StyledIconButton,
   PrimaryText,
 } from "../../../../../assets/css/common.styles";
-import { StyledEcucationContainer } from "./style";
+import { StyledProjectsContainer } from "./style";
 import { useTheme } from "@emotion/react";
 import { Form, Formik } from "formik";
-import { initialValues, workExperienceSchema } from "./schema";
-import useEducation from "./hooks/useEducation";
+import { initialValues, projectsSchema } from "./schema";
 import DynamicFormContainer from "../../../../../components/dynamicFormContainer/DynamicFormContainer";
 import DeleteIcon from "@mui/icons-material/Delete";
 import DoneIcon from "@mui/icons-material/Done";
 import TextField from "../../../../../components/textField/TextField";
-const Education = () => {
+import TextArea from "../../../../../components/textArea";
+import useProjects from "./hooks/useProjects";
+import TextFieldWithChips from "../../../../../components/TextFieldWithChips/TextFieldWithChips";
+
+const Projects = () => {
   const { t } = useTranslation();
   const theme = useTheme();
-  const { handleSubmitHandler, educationLoader, educationData } =
-    useEducation();
+  const { handleSubmitHandler, projectsLoader, projectsData } = useProjects();
 
   const renderForm = ({ form, deleteForm, length }) => (
     <Formik
-      initialValues={() => initialValues(educationData)}
-      validationSchema={() => workExperienceSchema(t)}
+      initialValues={() => initialValues(projectsData)}
+      validationSchema={() => projectsSchema(t)}
       onSubmit={handleSubmitHandler}
     >
       {({ values, handleChange, handleBlur }) => (
         <Form>
           <TextField
-            label={t("courseName")}
-            value={values.courseName}
+            label={t("domainName")}
+            value={values.domainName}
             onChange={handleChange}
             onBlur={handleBlur}
-            name="courseName"
+            name="domainName"
             placeHolder={t("placeholderText", {
-              text: t("courseName"),
-            })}
-            isRequired
-          />
-          <TextField
-            label={t("shortCourseName")}
-            value={values.shortCourseName}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            name="shortCourseName"
-            placeHolder={t("placeholderText", {
-              text: t("shortCourseName"),
+              text: t("domainName"),
             })}
             isRequired
           />
 
           <TextField
-            label={t("shortCollageName")}
-            value={values.shortCollageName}
+            label={t("projectName")}
+            value={values?.projectName}
             onChange={handleChange}
             onBlur={handleBlur}
-            name="shortCollageName"
+            name="projectName"
             placeHolder={t("placeholderText", {
-              text: t("shortCollageName"),
+              text: t("projectName"),
             })}
             isRequired
           />
 
-          <TextField
-            label={t("collageName")}
-            value={values.collageName}
+          <TextArea
+            outerLabel={t("description")}
+            value={values.description}
             onChange={handleChange}
             onBlur={handleBlur}
-            name="collageName"
+            name="description"
             placeHolder={t("placeholderText", {
-              text: t("collageName"),
+              text: t("description"),
             })}
             isRequired
           />
+
           <TextField
             label={t("duration")}
             value={values.duration}
@@ -82,18 +74,30 @@ const Education = () => {
             onBlur={handleBlur}
             name="duration"
             placeHolder={t("placeholderText", {
-              text: t("duration"),
+              text: t("durationPlaceHolder"),
             })}
             isRequired
           />
+
           <TextField
-            label={t("collageWebsite")}
-            value={values.collageWebsite}
+            label={t("projectLink")}
+            value={values.projectLink}
             onChange={handleChange}
             onBlur={handleBlur}
-            name="collageWebsite"
+            name="projectLink"
             placeHolder={t("placeholderText", {
-              text: t("collageWebsite"),
+              text: t("projectLink"),
+            })}
+          />
+
+          <TextFieldWithChips
+            label={t("skillTags")}
+            value={values.skillTags}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            name="skillTags"
+            placeHolder={t("placeholderText", {
+              text: t("skillTagsPlaceholder"),
             })}
             isRequired
           />
@@ -104,7 +108,7 @@ const Education = () => {
                 <DeleteIcon />
               </StyledIconButton>
             )}
-            <StyledIconButton type="submit" disabled={educationLoader}>
+            <StyledIconButton type="submit" disabled={projectsLoader}>
               <DoneIcon />
             </StyledIconButton>
           </CenteredItemBox>
@@ -114,11 +118,11 @@ const Education = () => {
   );
 
   return (
-    <StyledEcucationContainer>
+    <StyledProjectsContainer>
       <Box sx={{ width: "100%" }}>
         <CenteredItemBox props={{ marginBottom: theme.spacing(2) }}>
           <PrimaryText props={{ color: theme.colors.extra.highLightColor }}>
-            {t("editEducationDetails")}
+            {t("editProjectDetails")}
           </PrimaryText>
           <Switch
             // checked={showChatNotification}
@@ -137,8 +141,8 @@ const Education = () => {
           />
         </Grid>
       </Box>
-    </StyledEcucationContainer>
+    </StyledProjectsContainer>
   );
 };
 
-export default Education;
+export default Projects;
