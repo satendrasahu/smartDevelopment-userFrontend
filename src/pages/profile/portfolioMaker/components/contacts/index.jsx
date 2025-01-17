@@ -6,72 +6,72 @@ import {
   StyledIconButton,
   PrimaryText,
 } from "../../../../../assets/css/common.styles";
-import { StyledDomainsContainer } from "./style";
+import { StyledProjectsContainer } from "./style";
 import { useTheme } from "@emotion/react";
 import { Form, Formik } from "formik";
-import { initialValues, domainsSchema } from "./schema";
-import useDomain from "./hooks/useDomain";
+import { initialValues, contactsSchema } from "./schema";
 import DynamicFormContainer from "../../../../../components/dynamicFormContainer/DynamicFormContainer";
 import DeleteIcon from "@mui/icons-material/Delete";
 import DoneIcon from "@mui/icons-material/Done";
 import TextField from "../../../../../components/textField/TextField";
-import TextArea from "../../../../../components/textArea/TextArea";
+import useContacts from "./hooks/useContacts";
+import { preventEnterKeyDefault } from "../../../../../utils/common.function";
 
-const Domains = () => {
+const Contacts = () => {
   const { t } = useTranslation();
   const theme = useTheme();
-  const { handleSubmitHandler, domainsLoader, domainsData } = useDomain();
+  const { handleSubmitHandler, projectsLoader, projectsData } = useContacts();
 
   const renderForm = ({ form, deleteForm, length }) => (
     <Formik
-      initialValues={() => initialValues(domainsData)}
-      validationSchema={() => domainsSchema(t)}
+      initialValues={() => initialValues(projectsData)}
+      validationSchema={() => contactsSchema(t)}
       onSubmit={handleSubmitHandler}
     >
       {({ values, handleChange, handleBlur }) => (
-        <Form>
+        <Form onKeyDown={preventEnterKeyDefault}>
           <TextField
-            label={t("domainName")}
-            value={values?.domainName}
+            label={t("contactType")}
+            value={values?.contactType}
             onChange={handleChange}
             onBlur={handleBlur}
-            name="domainName"
+            name="contactType"
             placeHolder={t("placeholderText", {
-              text: t("domainName"),
+              text: t("contactType"),
             })}
             isRequired
           />
 
           <TextField
-            label={t("projectLink")}
-            value={values.projectLink}
+            label={t("contactName")}
+            value={values.contactName}
             onChange={handleChange}
             onBlur={handleBlur}
-            name="projectLink"
+            name="contactName"
             placeHolder={t("placeholderText", {
-              text: t("projectLink"),
-            })}
-            isRequired
-          />
-          <TextArea
-            outerLabel={t("description")}
-            value={values.description}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            name="description"
-            placeHolder={t("placeholderText", {
-              text: t("description"),
+              text: t("contactName"),
             })}
             isRequired
           />
 
+          <TextField
+            label={t("contactLink")}
+            value={values.contactLink}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            name="contactLink"
+            placeHolder={t("placeholderText", {
+              text: t("durationPlaceHolder"),
+            })}
+            isRequired
+          />
           <CenteredItemBox props={{ width: "100%" }}>
             {length > 1 && (
               <StyledIconButton onClick={() => deleteForm(form.id)}>
                 <DeleteIcon />
               </StyledIconButton>
             )}
-            <StyledIconButton type="submit" disabled={domainsLoader}>
+            <StyledIconButton type="submit" disabled={projectsLoader}>
               <DoneIcon />
             </StyledIconButton>
           </CenteredItemBox>
@@ -81,11 +81,11 @@ const Domains = () => {
   );
 
   return (
-    <StyledDomainsContainer>
+    <StyledProjectsContainer>
       <Box sx={{ width: "100%" }}>
         <CenteredItemBox props={{ marginBottom: theme.spacing(2) }}>
           <PrimaryText props={{ color: theme.colors.extra.highLightColor }}>
-            {t("editDomainsDetails")}
+            {t("editContactDeatils")}
           </PrimaryText>
           <Switch
             // checked={showChatNotification}
@@ -104,8 +104,8 @@ const Domains = () => {
           />
         </Grid>
       </Box>
-    </StyledDomainsContainer>
+    </StyledProjectsContainer>
   );
 };
 
-export default Domains;
+export default Contacts;

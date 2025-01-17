@@ -8,18 +8,22 @@ import Achievements from "./components/achievements";
 import Categories from "./components/categories";
 import Domains from "./components/domains";
 import Projects from "./components/projects";
+import Contacts from "./components/contacts";
+import Skills from "./components/skills";
 
 const PortFolioMaker = () => {
   return (
     <>
-      {/* <ShortIntro />
+      <ShortIntro />
       <AboutMe />
       <WorkExperience/>
       <Education/> 
       <Responsibilities/>
       <Achievements/>
-      <Categories/> */}
-      {/* <Domains/> */}
+      <Categories/>
+      <Skills/>
+      <Contacts/>
+      <Domains/>
       <Projects/>
     </>
   );

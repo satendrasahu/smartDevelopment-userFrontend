@@ -14,7 +14,7 @@ import DynamicFormContainer from "../../../../../components/dynamicFormContainer
 import DeleteIcon from "@mui/icons-material/Delete";
 import DoneIcon from "@mui/icons-material/Done";
 import TextField from "../../../../../components/textField/TextField";
-import TextArea from "../../../../../components/textArea";
+import TextArea from "../../../../../components/textArea/TextArea";
 import useProjects from "./hooks/useProjects";
 import TextFieldWithChips from "../../../../../components/TextFieldWithChips/TextFieldWithChips";
 import { preventEnterKeyDefault } from "../../../../../utils/common.function";

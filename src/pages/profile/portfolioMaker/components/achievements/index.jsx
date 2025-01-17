@@ -9,7 +9,7 @@ import {
 import { StyledAboutMeContainer } from "./style";
 import { useTheme } from "@emotion/react";
 import { Form, Formik } from "formik";
-import TextArea from "../../../../../components/textArea";
+import TextArea from "../../../../../components/textArea/TextArea";
 import { initialValues, resAchievementsSchema } from "./schema";
 import useAchievementsInfo from "./hooks/useAchievementsInfo";
 import DynamicFormContainer from "../../../../../components/dynamicFormContainer/DynamicFormContainer";

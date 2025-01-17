@@ -62,7 +62,14 @@ const userPortfolio ={
   skillTags :"Skill Tags",
   skillTagsPlaceholder :"Type and press Enter to add skill",
   responsibilities:"Responsibilities",
-  responsibilitiesPlaceholder :"Add your responsibilities"
+  responsibilitiesPlaceholder :"Add your responsibilities",
+  contactName:"Contact Name",
+  contactType:"Contact Type",
+  contactLink :"Contact Link",
+  editContactDeatils:"Edit Contact Details",
+  skills:"Skills",
+  editSkills :"Edit Skills",
+  skillName:"Skill Name",
 }
 
 export default {
@@ -134,5 +141,6 @@ export default {
   endPointNotFound :"Endpoint Not Found",
   fullName :"Full Name",
   save:"Save",
-  description:"Description"
+  description:"Description",
+  remove:"Remove"
 };

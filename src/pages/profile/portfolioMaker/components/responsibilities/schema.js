@@ -1,6 +1,6 @@
 import * as Yup from "yup";
 export const initialValues = {
-  responsibilities:"",
+  responsibilities:[],
 }
 
 // (responsibilitiesData) => ({
@@ -9,9 +9,9 @@ export const initialValues = {
 
 export const responsibilitiesSchema = (t) => {
   return Yup.object().shape({
-    responsibilities: Yup.string().required(
-      t("isRequired", { text: t("responsibilities") })
-    ),
+    // responsibilities: Yup.string().required(
+    //   t("isRequired", { text: t("responsibilities") })
+    // ),
   });
 
 

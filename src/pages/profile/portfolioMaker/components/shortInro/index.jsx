@@ -13,7 +13,7 @@ import TextField from "../../../../../components/textField/TextField";
 import { AccountCircle } from "@mui/icons-material";
 import { initialValues, shortInfoSchema } from "./schema";
 import useShortInfo from "./hooks/useShortInfo";
-import TextArea from "../../../../../components/textArea";
+import TextArea from "../../../../../components/textArea/TextArea";
 import useImageUploader from "./hooks/useImageUploader";
 
 const ShortIntro = () => {

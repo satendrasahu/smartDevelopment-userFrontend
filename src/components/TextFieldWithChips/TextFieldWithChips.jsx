@@ -7,8 +7,11 @@ import { useFormikContext } from "formik";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import CheckIcon from "@mui/icons-material/Check";
-import { CenteredItemBox, StyledIconButton } from "../../assets/css/common.styles";
-import TextArea from "../textArea";
+import {
+  CenteredItemBox,
+  StyledIconButton,
+} from "../../assets/css/common.styles";
+import TextArea from "../textArea/TextArea";
 
 const TextFieldWithChips = (props) => {
   const { outputType, name } = props;
@@ -53,7 +56,7 @@ const TextFieldWithChips = (props) => {
 
   const handleEditSkill = (index) => {
     setInputValue(skills[index]);
-    setEditIndex(index); 
+    setEditIndex(index);
   };
 
   const handleSaveEdit = () => {
@@ -72,7 +75,9 @@ const TextFieldWithChips = (props) => {
   };
 
   useMemo(() => {
-    setValues((prev)=>{return{...prev, [name]: skills }});
+    setValues((prev) => {
+      return { ...prev, [name]: skills };
+    });
   }, [skills]);
 
   const renderOutput = () => {
@@ -88,7 +93,6 @@ const TextFieldWithChips = (props) => {
                     onChange={handleInputChange}
                     onKeyDown={handleKeyDown}
                     styledProps={{ width: "100%" }}
-                    autoFocus
                     name={index}
                   />
                 ) : (
@@ -148,7 +152,7 @@ const TextFieldWithChips = (props) => {
         onChange={handleInputChange}
         onKeyDown={handleKeyDown}
       />
-      <Box mt={2}>{renderOutput()}</Box>
+      {skills.length > 0 && <Box mt={2}>{renderOutput()}</Box>}
     </>
   );
 };

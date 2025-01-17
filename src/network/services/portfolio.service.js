@@ -61,5 +61,14 @@ export const updateProjectsService = async (payload) => {
     })
 };
 
+export const updateContactsService = async (payload) => {
+    return await  axiosInstanceService(methods.PATCH, '/profile/portfolio/contacts',payload,{
+        // message:"custom message"
+    })
+};
 
-
+export const updateSkillsService = async (payload) => {
+    return await  axiosInstanceService(methods.PATCH, '/profile/portfolio/skills',payload,{
+        // message:"custom message"
+    })
+};

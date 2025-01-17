@@ -15,7 +15,7 @@ import DynamicFormContainer from "../../../../../components/dynamicFormContainer
 import DeleteIcon from "@mui/icons-material/Delete";
 import DoneIcon from "@mui/icons-material/Done";
 import TextField from "../../../../../components/textField/TextField";
-import TextArea from "../../../../../components/textArea";
+import TextArea from "../../../../../components/textArea/TextArea";
 
 const Categories = () => {
   const { t } = useTranslation();

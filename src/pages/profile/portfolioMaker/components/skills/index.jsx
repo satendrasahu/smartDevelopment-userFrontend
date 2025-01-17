@@ -6,53 +6,43 @@ import {
   StyledIconButton,
   PrimaryText,
 } from "../../../../../assets/css/common.styles";
-import { StyledDomainsContainer } from "./style";
+import { StyledSkillsContainer } from "./style";
 import { useTheme } from "@emotion/react";
 import { Form, Formik } from "formik";
-import { initialValues, domainsSchema } from "./schema";
-import useDomain from "./hooks/useDomain";
+import { initialValues, skillsSchema } from "./schema";
 import DynamicFormContainer from "../../../../../components/dynamicFormContainer/DynamicFormContainer";
 import DeleteIcon from "@mui/icons-material/Delete";
 import DoneIcon from "@mui/icons-material/Done";
 import TextField from "../../../../../components/textField/TextField";
 import TextArea from "../../../../../components/textArea/TextArea";
+import useSkills from "./hooks/useSkills";
+import { preventEnterKeyDefault } from "../../../../../utils/common.function";
 
-const Domains = () => {
+const Skills = () => {
   const { t } = useTranslation();
   const theme = useTheme();
-  const { handleSubmitHandler, domainsLoader, domainsData } = useDomain();
+  const { handleSubmitHandler, skillsLoader, skillsData } = useSkills();
 
   const renderForm = ({ form, deleteForm, length }) => (
     <Formik
-      initialValues={() => initialValues(domainsData)}
-      validationSchema={() => domainsSchema(t)}
+      initialValues={() => initialValues(skillsData)}
+      validationSchema={() => skillsSchema(t)}
       onSubmit={handleSubmitHandler}
     >
       {({ values, handleChange, handleBlur }) => (
-        <Form>
+        <Form onKeyDown={preventEnterKeyDefault}>
           <TextField
-            label={t("domainName")}
-            value={values?.domainName}
+            label={t("skillName")}
+            value={values.skillName}
             onChange={handleChange}
             onBlur={handleBlur}
-            name="domainName"
+            name="skillName"
             placeHolder={t("placeholderText", {
-              text: t("domainName"),
+              text: t("skillName"),
             })}
             isRequired
           />
 
-          <TextField
-            label={t("projectLink")}
-            value={values.projectLink}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            name="projectLink"
-            placeHolder={t("placeholderText", {
-              text: t("projectLink"),
-            })}
-            isRequired
-          />
           <TextArea
             outerLabel={t("description")}
             value={values.description}
@@ -71,7 +61,7 @@ const Domains = () => {
                 <DeleteIcon />
               </StyledIconButton>
             )}
-            <StyledIconButton type="submit" disabled={domainsLoader}>
+            <StyledIconButton type="submit" disabled={skillsLoader}>
               <DoneIcon />
             </StyledIconButton>
           </CenteredItemBox>
@@ -81,11 +71,11 @@ const Domains = () => {
   );
 
   return (
-    <StyledDomainsContainer>
+    <StyledSkillsContainer>
       <Box sx={{ width: "100%" }}>
         <CenteredItemBox props={{ marginBottom: theme.spacing(2) }}>
           <PrimaryText props={{ color: theme.colors.extra.highLightColor }}>
-            {t("editDomainsDetails")}
+            {t("editSkills")}
           </PrimaryText>
           <Switch
             // checked={showChatNotification}
@@ -104,8 +94,8 @@ const Domains = () => {
           />
         </Grid>
       </Box>
-    </StyledDomainsContainer>
+    </StyledSkillsContainer>
   );
 };
 
-export default Domains;
+export default Skills;
