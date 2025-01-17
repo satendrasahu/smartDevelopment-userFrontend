@@ -17,6 +17,8 @@ import TextField from "../../../../../components/textField/TextField";
 import TextArea from "../../../../../components/textArea";
 import useProjects from "./hooks/useProjects";
 import TextFieldWithChips from "../../../../../components/TextFieldWithChips/TextFieldWithChips";
+import { preventEnterKeyDefault } from "../../../../../utils/common.function";
+import { outputTypeList } from "../../../../../components/TextFieldWithChips/constant";
 
 const Projects = () => {
   const { t } = useTranslation();
@@ -30,7 +32,7 @@ const Projects = () => {
       onSubmit={handleSubmitHandler}
     >
       {({ values, handleChange, handleBlur }) => (
-        <Form>
+        <Form onKeyDown={preventEnterKeyDefault}>
           <TextField
             label={t("domainName")}
             value={values.domainName}
@@ -93,13 +95,24 @@ const Projects = () => {
           <TextFieldWithChips
             label={t("skillTags")}
             value={values.skillTags}
-            onChange={handleChange}
             onBlur={handleBlur}
             name="skillTags"
             placeHolder={t("placeholderText", {
               text: t("skillTagsPlaceholder"),
             })}
             isRequired
+          />
+
+          <TextFieldWithChips
+            label={t("responsibilities")}
+            value={values.responsibilities}
+            onBlur={handleBlur}
+            name="responsibilities"
+            placeHolder={t("placeholderText", {
+              text: t("responsibilitiesPlaceholder"),
+            })}
+            isRequired
+            outputType={outputTypeList.LIST}
           />
 
           <CenteredItemBox props={{ width: "100%" }}>

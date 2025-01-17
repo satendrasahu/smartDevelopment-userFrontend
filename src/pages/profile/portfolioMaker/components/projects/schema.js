@@ -6,7 +6,8 @@ export const initialValues = (educationData) => {
     projectLink:"",
     domainName:"",
     duration :"",
-    skillTags :[]
+    skillTags :[],
+    responsibilities:[]
   };
 };
 
@@ -17,6 +18,9 @@ export const projectsSchema = (t) => {
     ),
     duration: Yup.string().required(
       t("isRequired", { text: t("duration") })
+    ),
+    description: Yup.string().required(
+      t("isRequired", { text: t("description") })
     ),
   });
 };

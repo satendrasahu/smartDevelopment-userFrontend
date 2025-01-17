@@ -7,6 +7,8 @@ const useProjects = () => {
     (state) => state?.portfolio
   );
   const handleSubmitHandler = (values) => {
+
+    console.log("--",values)
     const payload = { aboutMeText: [...(projectsData || []), values?.aboutMeText] };
     dispatch(updateProjectsThunk(payload));
   };

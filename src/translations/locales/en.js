@@ -60,7 +60,9 @@ const userPortfolio ={
   projectName:"Project Name",
   durationPlaceHolder:"Domains like dec 2024 - june 2025",
   skillTags :"Skill Tags",
-  skillTagsPlaceholder :"Type and press Enter to add skill"
+  skillTagsPlaceholder :"Type and press Enter to add skill",
+  responsibilities:"Responsibilities",
+  responsibilitiesPlaceholder :"Add your responsibilities"
 }
 
 export default {

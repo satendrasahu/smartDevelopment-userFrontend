@@ -8,3 +8,10 @@ export function generateUniqueKey() {
 
 console.log(generateUniqueKey()); // e.g., 'l5z7r-5kb8c-0'
 console.log(generateUniqueKey()); // e.g., 'l5z7r-6uivg-1'
+
+
+ export const preventEnterKeyDefault = (event) => {
+    if (event.key === "Enter") {
+      event.preventDefault();
+    }
+  };
