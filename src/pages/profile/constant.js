@@ -1,13 +1,13 @@
 import { ROUTE_PATHS } from "../../routes/routesPath";
-import PersonalInformation from "./personalInformation/personalInformation";
-import PortFolioMaker from "./portfolioMaker";
+import PersonalInformation from "./screens/personalInformation";
+import PortFolioMaker from "./screens/portfolioMaker";
 
 export const tabList = [
   {
     title: "personalDetails",
     path: ROUTE_PATHS.profile,
-    tabIndex:0, 
-    component :<PersonalInformation/>
+    tabIndex: 0,
+    component: <PersonalInformation />,
   },
 
   // {
@@ -15,16 +15,15 @@ export const tabList = [
   //   // path: ROUTE_PATHS.resumeMaker,
   // },
   {
-    title:"Design Profile",
+    title: "Design Profile",
     // path: ROUTE_PATHS.portfolioMaker,
-    tabIndex :1,
-    component: <PortFolioMaker/>
-
+    tabIndex: 1,
+    component: <PortFolioMaker />,
   },
 
   {
     title: "casinoTransactions",
     path: ROUTE_PATHS.profile,
-    tabIndex :2
+    tabIndex: 2,
   },
 ];

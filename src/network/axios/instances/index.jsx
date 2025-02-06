@@ -7,7 +7,7 @@ const axiosInstance = axios.create({
   baseURL: config?.apiUrl,
   timeout: config?.apiCallTimeOut,
   headers: {
-    "Content-Type": "application/json",
+    // "Content-Type": "application/json",
   },
 });
 setupRequestInterceptor(axiosInstance);

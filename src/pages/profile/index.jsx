@@ -12,9 +12,9 @@ import { ProfileContainer, useProfile } from "./style";
 import { useLocation, useNavigate } from "react-router-dom";
 import MainLayout from "../../components/ui_kit/mainLayout/MainLayout";
 import { tabList } from "./constant";
-import PersonalInformation from "./personalInformation/personalInformation";
-import AirMovingHeading from "../../components/ui_kit/Headings/AirMovingHeading";
-import ResumeMaker from "./resumeMaker";
+// import PersonalInformation from "./personalInformation/personalInformation";
+// import AirMovingHeading from "../../components/ui_kit/Headings/AirMovingHeading";
+// import ResumeMaker from "./resumeMaker";
 
 const StyledTabs = styled(Tabs)(({ theme }) => ({
   // borderBottom: `1px solid ${theme.palette.divider}`,
