@@ -1,5 +1,4 @@
-
-import { Box, Button, styled, Typography } from "@mui/material";
+import { Box, Button, Grid, styled, Typography } from "@mui/material";
 // const fallbackImage ="https://static.vecteezy.com/system/resources/previews/024/999/781/non_2x/3d-sportsman-character-exuding-confidence-with-arms-crossed-pose-in-a-dynamic-setting-free-png.png"
 
 export const StyledShortIntroContainer = styled(Box)(({ theme, props }) => ({
@@ -24,6 +23,24 @@ export const StyledShortIntroContainer = styled(Box)(({ theme, props }) => ({
   [theme.breakpoints.down("sm")]: {
     padding: "0rem",
     minHeight: "auto",
+  },
+}));
+
+export const ImageContainer = styled(Grid)(({ theme }) => ({
+  textAlign: "center",
+  [theme.breakpoints.down("sm")]: {
+    paddingTop: "2rem",
+    marginBottom: "3rem",
+  },
+  [theme.breakpoints.down("md")]: {
+    marginBottom: "4rem",
+  },
+}));
+
+export const IntroContainer = styled(Grid)(({ theme }) => ({
+  textAlign: "center",
+  [theme.breakpoints.down("md")]: {
+    paddingBottom: "4rem",
   },
 }));
 
@@ -70,7 +87,7 @@ export const StyledImage = styled("img")(({ theme }) => ({
   maxHeight: "84.5vh",
   borderRadius: "50%",
   // boxShadow: `0 20px 50px rgba(0, 0, 0, 0.1)`, // Softer shadow
-  transition: "transform 0.5s ease-in-out, box-shadow 0.3s ease",  
+  transition: "transform 0.5s ease-in-out, box-shadow 0.3s ease",
   opacity: 0,
   animation: "fadeInImage 1s forwards, zoomInImage 0.5s ease-out", // Animation for zoom effect
   // background: `url(${fallbackImage}) center center / cover no-repeat`, // Fallback background image

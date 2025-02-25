@@ -1,14 +1,5 @@
-import React from "react";
-import {
-  StyledWorkExperienceContainer,
-} from "./style";
 import { useTranslation } from "react-i18next";
-import { v4 as uuidv4 } from "uuid";
-import Heading1 from "../../../components/ui_kit/Headings/heading1/Heading1";
-import DesignedCard12 from "../../../components/cards/designCards/designedCard12/DesignedCard12";
-import { CenteredItemBox } from "../../../assets/css/common.styles";
-
-export default function WorkExperience() {
+const useWorkExperience = () => {
   const { t } = useTranslation();
   const experienceData = [
     {
@@ -32,17 +23,7 @@ export default function WorkExperience() {
       companyWebsite: "https://gnspsc.ac.in/",
     },
   ];
+  return { t, experienceData };
+};
 
-  return (
-    <StyledWorkExperienceContainer>
-       <CenteredItemBox>
-              <Heading1 title={t("workExperience")} />
-            </CenteredItemBox>
-      {experienceData?.map((expData) => {
-        return (
-         <DesignedCard12 {...expData}  key={uuidv4()}/>
-        );
-      })}
-    </StyledWorkExperienceContainer>
-  );
-}
+export default useWorkExperience;

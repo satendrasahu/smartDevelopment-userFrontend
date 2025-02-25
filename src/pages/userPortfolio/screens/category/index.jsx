@@ -9,7 +9,7 @@ import {
   ViewProjectButton,
   SectionTitle,
 } from "./style";
-import DesignedCard9 from "../../../components/cards/designCards/designedCard9/DesignedCare9";
+import DesignedCard9 from "../../../../components/cards/designCards/designedCard9/DesignedCare9";
 import { v4 as uuidv4 } from "uuid";
 
 // Example Data for the domains with more cards and animations

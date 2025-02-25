@@ -9,7 +9,6 @@ import {
   YouTube,
 } from "@mui/icons-material";
 import "./ContactUs.css";
-import { PrimaryText } from "../../../assets/css/common.styles";
 import { useTranslation } from "react-i18next";
 
 // Reusable Contact Item Component

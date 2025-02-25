@@ -20,8 +20,8 @@ import {
 import {
   CenteredItemBox,
   PrimaryText,
-} from "../../../assets/css/common.styles";
-import { colors } from "../../../theme/colors";
+} from "../../../../assets/css/common.styles";
+import { colors } from "../../../../theme/colors";
 import { useTranslation } from "react-i18next";
  
 const projectData = [

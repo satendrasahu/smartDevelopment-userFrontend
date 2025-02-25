@@ -1,12 +1,12 @@
 import React from "react";
 import { DomainSectionContainer, DomainGridContainer } from "./style";
-import DesignedCard10 from "../../../components/cards/designCards/designedCard10/DesignedCard10";
+import DesignedCard10 from "../../../../components/cards/designCards/designedCard10/DesignedCard10";
 import {
   CenteredItemBox,
   PrimaryText,
-} from "../../../assets/css/common.styles";
+} from "../../../../assets/css/common.styles";
 import { useTranslation } from "react-i18next";
-import { colors } from "../../../theme/colors";
+import { colors } from "../../../../theme/colors";
 
 // Data for the domains with descriptions and project links
 const domainsData = [
@@ -83,7 +83,9 @@ const Domains = () => {
   return (
     <DomainSectionContainer>
       <CenteredItemBox>
-        <PrimaryText props={{color:colors.extra.darkColor}}>{t("domains")}</PrimaryText>
+        <PrimaryText props={{ color: colors.extra.darkColor }}>
+          {t("domains")}
+        </PrimaryText>
       </CenteredItemBox>
       <DomainGridContainer>
         {domainsData?.map((domain) => (
