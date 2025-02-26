@@ -1,5 +1,5 @@
 import React from "react";
-import "./animationTwo.css"; // Ensure this file contains the @keyframes definition
+import "./animationTwo.css";
 import { PrimaryText } from "../../../../assets/css/common.styles";
 
 const NeonText = (props) => {
@@ -11,7 +11,8 @@ const NeonText = (props) => {
     textTransform: "uppercase",
     fontWeight: 700,
     fontFamily: '"Josefin Sans", sans-serif',
-    background: "linear-gradient(to right, #095fab 10%, #25abe8 50%, #57d75b 60%)",
+    background:
+      "linear-gradient(to right, #095fab 10%, #25abe8 50%, #57d75b 60%)",
     backgroundSize: "200% auto",
     backgroundClip: "text",
     WebkitBackgroundClip: "text",

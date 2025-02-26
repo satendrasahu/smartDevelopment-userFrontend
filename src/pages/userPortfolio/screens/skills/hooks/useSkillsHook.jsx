@@ -1,10 +1,19 @@
 import { useTranslation } from "react-i18next";
 import { colors } from "../../../../../theme/colors";
 
+import DesignedCard1 from "../../../../../components/cards/designCards/designedCard1/DesignedCard1";
+import DesignedCard2 from "../../../../../components/cards/designCards/designedCard2/DesignedCard2";
+import DesignedCard3 from "../../../../../components/cards/designCards/designedCard3/DesignedCard3";
+import DesignedCard4 from "../../../../../components/cards/designCards/designedCard4/DesignedCard4";
+import DesignedCard5 from "../../../../../components/cards/designCards/designedCard5/DesignedCard5";
+import DesignedCard6 from "../../../../../components/cards/designCards/designedCard6/DesignedCard6";
+import DesignedCard7 from "../../../../../components/cards/designCards/designedCard7/DesignedCard7";
+import DesignedCard8 from "../../../../../components/cards/designCards/designedCard8/DesignedCard8";
+
 const fronEndSkills = [
   {
     color: colors.extra.drakColor,
-    icon: "fa-react",
+    icon: "fa-brands fa-react",
     title: "React",
     description: "Redux (Toolkit, Thunk, Saga, Persist, RTK)",
     accentColor: colors.extra.newColor1,
@@ -367,16 +376,33 @@ const toolsSkills = [
 ];
 const useSkillsHook = () => {
   const { t } = useTranslation();
+
+  const skills = [
+    { title: t("frontEnd"), data: fronEndSkills, Component: DesignedCard1 },
+    { title: t("backEnd"), data: backEndSkills, Component: DesignedCard2 },
+    { title: t("dataBase"), data: databaseSkills, Component: DesignedCard3 },
+    {
+      title: t("collaboration"),
+      data: collaborationSkills,
+      Component: DesignedCard4,
+    },
+    { title: t("testing"), data: testingSkills, Component: DesignedCard5 },
+    {
+      title: t("versionControl"),
+      data: versionControllSkills,
+      Component: DesignedCard6,
+    },
+    {
+      title: t("deployMent"),
+      data: deploymentSkills,
+      Component: DesignedCard7,
+    },
+    { title: t("tools"), data: toolsSkills, Component: DesignedCard8 },
+  ];
+
   return {
     t,
-    fronEndSkills,
-    backEndSkills,
-    databaseSkills,
-    collaborationSkills,
-    testingSkills,
-    versionControllSkills,
-    deploymentSkills,
-    toolsSkills,
+    skills,
   };
 };
 
