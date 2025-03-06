@@ -60,7 +60,7 @@ const ToolLabel = styled(Typography)({
 
 const ToolCardComponent = ({ icon, title, color }) => (
   <ToolCard color={color}>
-    <ToolIcon className={icon} />
+    <ToolIcon> {icon}</ToolIcon>
     <ToolLabel>{title}</ToolLabel>
   </ToolCard>
 );
@@ -70,7 +70,7 @@ const DesignedCard8 = (props) => {
   return (
     <Box sx={{ display: "flex", justifyContent: "center", width: "100%" }}>
       <ToolGrid>
-        {listData?.map((tool, index) => (
+        {listData?.map((tool) => (
           <ToolCardComponent
             key={uuidv4()}
             icon={tool.icon}

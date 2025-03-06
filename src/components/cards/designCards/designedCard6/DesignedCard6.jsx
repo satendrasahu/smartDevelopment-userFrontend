@@ -74,7 +74,7 @@ const DesignedCard6 = ({ listData }) => {
       {listData?.map((items) => (
         <Card key={uuidv4()} commonColor={items.accentColor}>
           <IconBox commonColor={items.accentColor}>
-            <i className={items.icon}></i>
+            <i>{items.icon}</i>
           </IconBox>
           <PrimaryText
             props={{

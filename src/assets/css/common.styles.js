@@ -23,11 +23,10 @@ import { styled } from "@mui/material/styles";
 //   ...props,
 // }));
 
-
 export const MainWrap = styled(Box)(({ theme, props }) => ({
   // background:theme.colors.extra.dark,
   margin: theme.spacing(7, 5),
-  minHeight:"calc(100vh - 440px)",
+  minHeight: "calc(100vh - 440px)",
   width: `calc(100vw-230px)`,
   borderRadius: theme.borderRadius,
   [theme.breakpoints.down("sm")]: {
@@ -44,6 +43,9 @@ export const PrimaryButton = styled(Button)(({ theme, props }) => ({
   padding: theme.spacing(0.5, 1),
   margin: theme.spacing(0.5),
   borderRadius: theme.spacing(0.25),
+  height: "51px",
+  fontSize: "14px",
+
   [theme.breakpoints.down("md")]: {
     minWidth: "auto",
   },
@@ -58,36 +60,45 @@ export const PrimaryButton = styled(Button)(({ theme, props }) => ({
 
   "&.Mui-disabled": {
     background: theme.colors.extra.cancelBtnColor,
-    color:"#FFF"
+    color: "#FFF",
   },
   ...props,
 }));
-export const SecondaryButton = styled(Button)(({ theme, props }) => ({
+export const SecondaryButton = styled(Button)(({ theme }) => ({
   background: theme.colors.secondary.btnColor,
-  color: theme.colors.primary.textColor,
+  color: theme.colors.secondary.textColor,
   fontWeight: theme.typography.fontWeightSemiBold,
   padding: theme.spacing(0.5, 1),
   margin: theme.spacing(0.5),
-
   borderRadius: theme.spacing(0.25),
+
   [theme.breakpoints.down("md")]: {
     minWidth: "auto",
   },
+
   "&:hover": {
     background: theme.colors.secondary.btnHoverColor,
     color: theme.colors.extra.whiteColor,
   },
-  ...props,
+
+  "&:focus": {
+    outline: "none",
+  },
+
+  "&.Mui-disabled": {
+    background: theme.colors.extra.cancelBtnColor,
+    color: "#FFF",
+  },
 }));
 
 export const StyledIconButton = styled(IconButton)(({ theme, props }) => ({
   color: theme.colors.extra.whiteColor,
-  margin:theme.spacing(0.25),
-  background:`rgba(255,255,255,0.1)`,
+  margin: theme.spacing(0.25),
+  background: `rgba(255,255,255,0.1)`,
   transition: "transform 0.3s ease, background 0.3s ease",
   "&:hover": {
-    background:theme.colors.primary.btnColor,
-    transform : "scale(1.2)"
+    background: theme.colors.primary.btnColor,
+    transform: "scale(1.2)",
   },
   ...props,
 }));
@@ -100,7 +111,6 @@ export const StyledLinkButton = styled(Link)(({ theme, props }) => ({
   },
   ...props,
 }));
-
 
 export const CenteredItemBox = styled(Box)(({ theme, props }) => ({
   display: "flex",

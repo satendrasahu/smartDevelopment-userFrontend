@@ -23,7 +23,7 @@ const DesignedCard5 = (props) => {
               marginTop: { xs: 0, sm: 0.5 },
             }}
           >
-            <i className={`fa-brands ${item?.icon}`}></i>
+            <i>{item?.icon}</i>
             <PrimaryText
               props={{
                 fontSize: "1rem",
@@ -49,7 +49,7 @@ const DesignedCard5 = (props) => {
             key={index}
             style={{ "--accent-color": item?.accentColor }}
           >
-            <i className={`fa-brands ${item?.icon}`}></i>
+            <i>{item?.icon}</i>
             <PrimaryText
               props={{
                 fontSize: "1rem",

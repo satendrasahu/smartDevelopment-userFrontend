@@ -10,7 +10,7 @@ export default function WorkExperience() {
   const { t, experienceData } = useWorkExperience();
   return (
     <StyledWorkExperienceContainer>
-      <CenteredItemBox>
+      <CenteredItemBox props={{ marginBottom: { sm: "5rem" } }}>
         <Heading1 title={t("workExperience")} />
       </CenteredItemBox>
       {experienceData?.map((expData) => {

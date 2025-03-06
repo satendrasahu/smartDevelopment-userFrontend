@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Typography, Button, styled } from "@mui/material";
+import { Box, Typography, styled } from "@mui/material";
 import { v4 as uuidv4 } from "uuid";
 import { PrimaryText } from "../../../../assets/css/common.styles";
 import { colors } from "../../../../theme/colors";
@@ -12,8 +12,8 @@ const DesignedCard7 = ({ listData }) => {
       alignItems: "center",
       flexWrap: "wrap",
       background: colors.extra.newColor18,
-      padding:"2rem 0.5rem",
-      margin:"auto -0.5rem"
+      padding: "2rem 0.5rem",
+      margin: "auto -0.5rem",
     },
     items: {
       position: "relative",
@@ -93,7 +93,7 @@ const DesignedCard7 = ({ listData }) => {
 
             <Box sx={styles.content}>
               <IconBox sx={styles.iconBox} commonColor={items?.accentColor}>
-                <i className={items?.icon}></i>
+                <i>{items?.icon}</i>
               </IconBox>
               <PrimaryText
                 props={{

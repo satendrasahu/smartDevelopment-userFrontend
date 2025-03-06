@@ -15,7 +15,7 @@ const DesignedCard5 = (props) => {
           style={{ "--accent-color": item?.accentColor }}
         >
           <Box className="icon">
-            <i className={`fa-brands ${item?.icon}`}></i>
+            <i>{item?.icon}</i>
           </Box>
           <PrimaryText className="title" props={{ color: listData?.color }}>
             {item?.title}

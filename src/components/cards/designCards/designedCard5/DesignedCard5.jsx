@@ -15,12 +15,16 @@ const DesignedCard5 = (props) => {
           className="innerCard"
         >
           <Box className="icon">
-            <i className={card.icon}></i>
+            <i> {card.icon}</i>
           </Box>
-          <PrimaryText props={{ fontSize: "1.3rem", fontWeight: 700, color: "#000" }}>
+          <PrimaryText
+            props={{ fontSize: "1.3rem", fontWeight: 700, color: "#000" }}
+          >
             {card.title}
           </PrimaryText>
-          <PrimaryText props={{ fontSize: "0.875rem", fontWeight: 300, color: "#000" }}>
+          <PrimaryText
+            props={{ fontSize: "0.875rem", fontWeight: 300, color: "#000" }}
+          >
             {card.description}
           </PrimaryText>
         </Box>

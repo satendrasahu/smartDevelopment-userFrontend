@@ -20,14 +20,28 @@ const DesignedCard1 = (props) => {
               textAlign: "center",
             }}
           >
-            <i className={`fa-solid ${step.icon}`}></i>
+            {step?.icon}
           </Box>
-          <PrimaryText props={{ fontSize: "2rem", fontWeight: 500, color:listData?.color }}>
+          <PrimaryText
+            props={{
+              fontSize: "2rem",
+              fontWeight: 500,
+              color: listData?.color,
+            }}
+          >
             {step.title}
           </PrimaryText>
-          {step.description && <PrimaryText props={{ fontSize: "0.8rem", fontWeight: 300,color:listData?.color }}>
-            {step.description}
-          </PrimaryText>}
+          {step.description && (
+            <PrimaryText
+              props={{
+                fontSize: "0.8rem",
+                fontWeight: 300,
+                color: listData?.color,
+              }}
+            >
+              {step.description}
+            </PrimaryText>
+          )}
         </Box>
       ))}
     </Box>
