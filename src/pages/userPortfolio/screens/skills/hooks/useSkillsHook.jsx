@@ -9,7 +9,6 @@ import DesignedCard5 from "../../../../../components/cards/designCards/designedC
 import DesignedCard6 from "../../../../../components/cards/designCards/designedCard6/DesignedCard6";
 import DesignedCard7 from "../../../../../components/cards/designCards/designedCard7/DesignedCard7";
 import DesignedCard8 from "../../../../../components/cards/designCards/designedCard8/DesignedCard8";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import useAllImportedIcons from "../../../../../hooks/useAllImportedIcons";
 
 const useSkillsHook = () => {

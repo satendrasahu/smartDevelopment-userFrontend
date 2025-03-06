@@ -1,7 +1,7 @@
 const userPortfolio = {
   resumeMaker: "Resume Maker",
   heyThere: "Hey there! ",
-  shortIntro:
+  shortIntroDescription:
     " A passionate Full Stack / MERN Stack Developer specializing in building scalable and user-centric web applications.",
   letsConnect: "Let's Connect",
   ILoveHearYou: " I’d love to hear from you. Reach out via the options below!",
@@ -145,7 +145,6 @@ export default {
   alternateMobileNumber: "Alternate Mobile Number",
   allRightsReserved: `© ${new Date().getFullYear()} Sahu's. All rights reserved`,
   isOperatedBy: "is operated by Sahu's",
-  pageNotFound: "Page Not Found",
   endPointNotFound: "Endpoint Not Found",
   fullName: "Full Name",
   save: "Save",

@@ -14,13 +14,8 @@ import {
 import useShortInfoHook from "./hooks/useShortInfoHook";
 
 const ShortIntro = ({ handleTabClick, redirectIdTab }) => {
-  const {
-    t,
-    imageLoaded,
-    imageError,
-    handleImageLoad,
-    handleImageError,
-  } = useShortInfoHook();
+  const { t, imageLoaded, imageError, handleImageLoad, handleImageError } =
+    useShortInfoHook();
   return (
     <StyledShortIntroContainer>
       <Grid container justifyContent="center" alignItems="center">
@@ -40,7 +35,7 @@ const ShortIntro = ({ handleTabClick, redirectIdTab }) => {
         <IntroContainer item xs={12} md={6}>
           <HeroText>{t("Hey there!")}</HeroText>
           <SubtitleText>{t("I'm Satendra Sahu")}</SubtitleText>
-          <DescriptionText>{t("shortIntro")}</DescriptionText>
+          <DescriptionText>{t("shortIntroDescription")}</DescriptionText>
           <CenteredItemBox>
             <ButtonStyled
               onClick={() => {
